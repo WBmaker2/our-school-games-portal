@@ -118,8 +118,10 @@ function drawBlock(ctx, x, y, size, color, isActive = false) {
   ctx.fillRect(x + size - 5, y + 2, 3, size - 4);
 
   // Inner subtle box
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-  ctx.fillRect(x + 6, y + 6, size - 12, size - 12);
+  if (size >= 16) {
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+    ctx.fillRect(x + 6, y + 6, size - 12, size - 12);
+  }
 
   ctx.restore();
 }
@@ -290,7 +292,7 @@ export default function TetrisGame({ onScoreSubmitted }) {
     }
 
     // 4. Draw Ghost Piece (semi-transparent outline & subtle glow)
-    if (currentP && (gameStateRef.current === 'playing' || gameStateRef.current === 'paused')) {
+    if (currentP && ghostY !== currentP.y && (gameStateRef.current === 'playing' || gameStateRef.current === 'paused')) {
       const pieceKey = currentP.key;
       let pieceVal = 1;
       for (const row of currentP.matrix) {
@@ -370,15 +372,17 @@ export default function TetrisGame({ onScoreSubmitted }) {
       ctx.restore();
       return true;
     });
-
-    // 8. Render Next Piece Previews
-    if (previewCanvasRef.current && nextPieceRef.current) {
-      drawPreview(previewCanvasRef.current, nextPieceRef.current);
-    }
-    if (mobilePreviewCanvasRef.current && nextPieceRef.current) {
-      drawPreview(mobilePreviewCanvasRef.current, nextPieceRef.current);
-    }
   }, []);
+
+  // Dedicated effect for Next Piece preview canvases (only redraws when nextPiece updates)
+  useEffect(() => {
+    if (previewCanvasRef.current && nextPiece) {
+      drawPreview(previewCanvasRef.current, nextPiece);
+    }
+    if (mobilePreviewCanvasRef.current && nextPiece) {
+      drawPreview(mobilePreviewCanvasRef.current, nextPiece);
+    }
+  }, [nextPiece]);
 
   // ---------------------------------------------------------------------------
   // Piece Lock & Spawn Logic
@@ -616,7 +620,6 @@ export default function TetrisGame({ onScoreSubmitted }) {
     currentPieceRef.current = dropped;
     setCurrentPiece(dropped);
 
-    tetrisSound.playSFX('drop');
     triggerImpactHaptic();
 
     lockAndSpawn();
@@ -718,7 +721,17 @@ export default function TetrisGame({ onScoreSubmitted }) {
         return;
       }
 
-      if (e.key === 'p' || e.key === 'P' || e.key === 'Escape') {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        if (isHowToPlayOpen) {
+          setIsHowToPlayOpen(false);
+          return;
+        }
+        togglePause();
+        return;
+      }
+
+      if (e.key === 'p' || e.key === 'P') {
         e.preventDefault();
         togglePause();
         return;
@@ -732,13 +745,13 @@ export default function TetrisGame({ onScoreSubmitted }) {
       } else if (e.key === 'ArrowRight') {
         e.preventDefault();
         handleMoveRight();
-      } else if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') {
+      } else if ((e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') && !e.repeat) {
         e.preventDefault();
         handleRotate();
       } else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {
         e.preventDefault();
         handleSoftDrop();
-      } else if (e.code === 'Space' || e.key === ' ') {
+      } else if ((e.code === 'Space' || e.key === ' ') && !e.repeat) {
         e.preventDefault();
         handleHardDrop();
       }
@@ -746,7 +759,7 @@ export default function TetrisGame({ onScoreSubmitted }) {
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [handleMoveLeft, handleMoveRight, handleRotate, handleSoftDrop, handleHardDrop, togglePause]);
+  }, [handleMoveLeft, handleMoveRight, handleRotate, handleSoftDrop, handleHardDrop, togglePause, isHowToPlayOpen]);
 
   // ---------------------------------------------------------------------------
   // 60FPS Game Loop

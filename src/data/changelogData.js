@@ -3,11 +3,40 @@
 
 export const CHANGELOG_DATA = [
   {
+    version: 'v1.54.0',
+    date: '2026-10-11',
+    title: '🧱 [도촌 테트리스] 35번째 신작 클래식 아케이드 정식 개장 및 실시간 클라우드 명예의 전당 연동',
+    badge: 'LATEST',
+    badgeColor: 'emerald',
+    items: [
+      {
+        tag: 'NEW RELEASE',
+        tagColor: 'emerald',
+        text: '[신규 게임 35호 정식 오픈] 7종의 다채로운 테트로미노 블록을 회전하고 맞춰 가로줄을 삭제하는 전 세계 인기 클래식 퍼즐 \'도촌 테트리스(DOCHON TETRIS)\' 전격 개장'
+      },
+      {
+        tag: 'CLOUD LEADERBOARD',
+        tagColor: 'amber',
+        text: '[실시간 클라우드 명예의 전당 연동] 100점 초과 달성 시 실시간 학교 명예의 전당에 점수를 등록하고, 등록 즉시 도촌 테트리스 랭킹 탭으로 자동 연결되어 자신의 순위를 실시간 확인 가능'
+      },
+      {
+        tag: 'ACCESSIBILITY & AUDIO',
+        tagColor: 'blue',
+        text: '[학생 맞춤 편의성 및 레트로 신디사이저 사운드] 블록 착지 예상 위치를 보여주는 고스트 피스(Ghost Piece) 가이드, 연속 콤보 네온 연출, Web Audio API 기반 오리지널 코로베이니키(Korobeiniki) BGM 및 효과음 내장'
+      },
+      {
+        tag: 'MOBILE RESPONSIVE',
+        tagColor: 'purple',
+        text: '[모바일·태블릿 터치 컨트롤 최적화] 스마트폰과 태블릿 환경에서도 직관적으로 플레이할 수 있도록 좌우 이동, 회전, 소프트 드롭, 하드 드롭 전용 온스크린 터치 패드 완벽 지원'
+      }
+    ]
+  },
+  {
     version: 'v1.53.4',
     date: '2026-09-14',
     title: '🏴‍☠️ [도촌 해적선 코인 쟁탈전] WebRTC P2P + Firebase RTDB 하이브리드 실시간 릴레이 자동 폴백 엔진 탑재 (포털 5대 멀티 100% 구축 완성)',
-    badge: 'LATEST',
-    badgeColor: 'emerald',
+    badge: 'UPDATE',
+    badgeColor: 'blue',
     items: [
       {
         tag: 'HYBRID RELAY FALLBACK',

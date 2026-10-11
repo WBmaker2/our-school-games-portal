@@ -55,7 +55,7 @@ export class TetrisSoundManager {
     this.init();
     if (!this.audioContext) return;
     if (this.audioContext.state === 'suspended') {
-      this.audioContext.resume();
+      this.audioContext.resume().catch(() => {});
     }
     this.isPlayingTheme = true;
     this.sequenceIndex = 0;
@@ -73,6 +73,9 @@ export class TetrisSoundManager {
 
   scheduleNotes() {
     if (!this.isPlayingTheme || !this.audioContext) return;
+    if (this.nextNoteTime < this.audioContext.currentTime) {
+      this.nextNoteTime = this.audioContext.currentTime;
+    }
     while (this.nextNoteTime < this.audioContext.currentTime + 0.1) {
       this.playNote(this.melody[this.sequenceIndex]);
       this.advanceNote();
@@ -81,21 +84,25 @@ export class TetrisSoundManager {
   }
 
   playNote(noteInfo) {
-    const noteName = noteInfo[0];
-    const duration = noteInfo[1] * this.noteDuration;
-    if (noteName && this.frequencies[noteName] && this.audioContext) {
-      const osc = this.audioContext.createOscillator();
-      const gain = this.audioContext.createGain();
-      osc.type = 'square';
-      osc.frequency.value = this.frequencies[noteName];
-      osc.connect(gain);
-      gain.connect(this.audioContext.destination);
+    try {
+      const noteName = noteInfo[0];
+      const duration = noteInfo[1] * this.noteDuration;
+      if (noteName && this.frequencies[noteName] && this.audioContext) {
+        const osc = this.audioContext.createOscillator();
+        const gain = this.audioContext.createGain();
+        osc.type = 'square';
+        osc.frequency.value = this.frequencies[noteName];
+        osc.connect(gain);
+        gain.connect(this.audioContext.destination);
 
-      osc.start(this.nextNoteTime);
-      osc.stop(this.nextNoteTime + duration - 0.05);
+        osc.start(this.nextNoteTime);
+        osc.stop(this.nextNoteTime + duration - 0.05);
 
-      gain.gain.setValueAtTime(0.06, this.nextNoteTime);
-      gain.gain.exponentialRampToValueAtTime(0.005, this.nextNoteTime + duration - 0.05);
+        gain.gain.setValueAtTime(0.06, this.nextNoteTime);
+        gain.gain.exponentialRampToValueAtTime(0.005, this.nextNoteTime + duration - 0.05);
+      }
+    } catch (e) {
+      // Audio node scheduling guard
     }
   }
 
@@ -110,7 +117,7 @@ export class TetrisSoundManager {
     this.init();
     if (!this.audioContext) return;
     if (this.audioContext.state === 'suspended') {
-      this.audioContext.resume();
+      this.audioContext.resume().catch(() => {});
     }
     const now = this.audioContext.currentTime;
 

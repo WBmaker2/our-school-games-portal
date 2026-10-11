@@ -48,6 +48,7 @@ const GAME_COMPONENTS = {
   schooltag: lazy(() => import('./components/games/schooltag/SchoolTagGame')),
   microkart: lazy(() => import('./components/games/microkart/MicroKartGame')),
   piratecoin: lazy(() => import('./components/games/piratecoin/PirateCoinGame')),
+  tetris: lazy(() => import('./components/games/tetris/TetrisGame')),
 };
 
 export default function App() {
@@ -235,6 +236,7 @@ export default function App() {
     if (game.id === 'solitaire') return '🔥 솔리테어 챔피언에 도전하기';
     if (game.id === 'minesweeper') return '🔥 지뢰찾기 챔피언에 도전하기';
     if (game.id === 'baseball') return '🔥 야구왕 챔피언에 도전하기';
+    if (game.id === 'tetris') return '🔥 테트리스 챔피언에 도전하기';
     return `🔥 ${game.title.replace('도촌 ', '')} 챔피언에 도전하기`;
   };
 

@@ -513,6 +513,21 @@ export const PLAYABLE_GAMES = [
     isPlayable: true,
     badgeText: '🏴‍☠️ NEW 34위',
     description: '황금 보물섬에서 금화를 모아 자기 배로 나르고, 상대를 들이받아 코인을 강탈하는 4인 실시간 해적선 코인 쟁탈전!'
+  },
+  {
+    id: 'tetris',
+    title: '도촌 테트리스',
+    englishTitle: 'DOCHON TETRIS',
+    category: '클래식',
+    imageSrc: getThumb('tetris.jpg'),
+    iconEmoji: '🧱',
+    themeGradient: 'linear-gradient(135deg, #06B6D4, #8B5CF6)',
+    scoreUnit: '점',
+    releaseOrder: 35,
+    isNew: true,
+    isPlayable: true,
+    badgeText: '🧱 NEW 35위',
+    description: '다채로운 블록을 빈틈없이 맞춰 라인을 클리어하고, 연속 콤보로 최고 점수를 기록해보세요!'
   }
 ];
 

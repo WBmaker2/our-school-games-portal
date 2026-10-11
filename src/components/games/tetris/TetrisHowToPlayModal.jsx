@@ -1,17 +1,14 @@
 import React from 'react';
 import {
-  HelpCircle,
   X,
   Gamepad2,
   Smartphone,
   Trophy,
   Sparkles,
   Layers,
-  Zap,
-  RotateCw,
-  ArrowDown,
   CheckCircle2
 } from 'lucide-react';
+import './tetris.css';
 
 export default function TetrisHowToPlayModal({ isOpen, onClose }) {
   if (!isOpen) return null;

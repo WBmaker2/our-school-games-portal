@@ -1,4 +1,4 @@
-// Dochon Games Portal - School Tag How To Play Modal
+// Our School Games Portal - School Tag How To Play Modal
 // Rules, Mechanics & Keyboard/Touch Control Guide
 
 import React from 'react';

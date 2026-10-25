@@ -76,7 +76,7 @@ export default function PonyExpressGame({ onScoreSubmitted }) {
     }
   };
 
-  // Submit High Score to Cloud DB (Strict Dochon Rule: score > 100 & placeholder "예: 홍길동")
+  // Submit High Score to Cloud DB (Strict Our School Rule: score > 100 & placeholder "예: 홍길동")
   const handleSubmitScore = async (e) => {
     e.preventDefault();
     if (!playerName.trim() || isSubmitting || isSubmitted) return;
@@ -249,7 +249,7 @@ export default function PonyExpressGame({ onScoreSubmitted }) {
         <div className="flex items-center gap-3">
           <span className="text-2xl">🐎</span>
           <div>
-            <h2 className="text-base font-black text-amber-300">도촌 포니 익스프레스</h2>
+            <h2 className="text-base font-black text-amber-300">우리학교 포니 익스프레스</h2>
             <p className="text-xs text-amber-200/70">{hudData.stageName}</p>
           </div>
         </div>
@@ -348,11 +348,11 @@ export default function PonyExpressGame({ onScoreSubmitted }) {
                 <span className="text-xl font-black text-amber-400">{hudData.score.toLocaleString()} 점</span>
               </div>
 
-              {/* Strict Dochon Rule: Score Registration Form only if score > 100, placeholder "예: 홍길동" */}
+              {/* Strict Our School Rule: Score Registration Form only if score > 100, placeholder "예: 홍길동" */}
               {hudData.score > 100 ? (
                 <div className="pony-submit-form">
                   <p className="text-xs text-amber-300/90 font-medium">
-                    🏆 100점 돌파! 도촌초 명예의 전당에 이름을 등록하세요:
+                    🏆 100점 돌파! 우리학교 명예의 전당에 이름을 등록하세요:
                   </p>
                   {!isSubmitted ? (
                     <form onSubmit={handleSubmitScore} className="pony-submit-input-group">
@@ -376,7 +376,7 @@ export default function PonyExpressGame({ onScoreSubmitted }) {
                   ) : (
                     <div className="p-2.5 mt-2 bg-emerald-950/60 border border-emerald-500/50 rounded-lg text-emerald-300 text-xs font-bold flex items-center justify-center gap-1.5">
                       <Trophy className="w-4 h-4 text-amber-400" />
-                      도촌초 명예의 전당에 등록되었습니다!
+                      우리학교 명예의 전당에 등록되었습니다!
                     </div>
                   )}
                   {submitError && (
@@ -385,7 +385,7 @@ export default function PonyExpressGame({ onScoreSubmitted }) {
                 </div>
               ) : (
                 <div className="mt-3 p-2 bg-slate-800/80 rounded-lg text-xs text-slate-400">
-                  💡 100점을 초과하여 달성하면 도촌초 명예의 전당에 등록할 수 있습니다!
+                  💡 100점을 초과하여 달성하면 우리학교 명예의 전당에 등록할 수 있습니다!
                 </div>
               )}
             </div>
@@ -403,7 +403,7 @@ export default function PonyExpressGame({ onScoreSubmitted }) {
           <div className="pony-overlay animate-fadeIn">
             <div className="pony-title-card">
               <div className="text-4xl mb-2">🐎✉️</div>
-              <h2 className="pony-title-text">도촌 포니 익스프레스</h2>
+              <h2 className="pony-title-text">우리학교 포니 익스프레스</h2>
               <p className="pony-subtitle-text">100통의 편지를 싣고 서부 황무지를 가로질러 질주하세요!</p>
             </div>
 

@@ -12,7 +12,7 @@ export default function GhoulDuelHowToPlayModal({ isOpen, onClose, onStartGame }
           <div className="header-title-box">
             <span className="title-emoji">👻</span>
             <div>
-              <h3 className="modal-title">도촌 영혼 대결 완벽 가이드</h3>
+              <h3 className="modal-title">우리학교 영혼 대결 완벽 가이드</h3>
               <p className="modal-subtitle">초록팀 vs 보라팀 4:4 실시간 꼬리 뺏기 대전!</p>
             </div>
           </div>

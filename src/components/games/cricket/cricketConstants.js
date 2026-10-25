@@ -1,4 +1,4 @@
-// Dochon Cricket Game Constants & Configurations
+// Our School Cricket Game Constants & Configurations
 
 export const CANVAS_WIDTH = 960;
 export const CANVAS_HEIGHT = 540;
@@ -15,7 +15,7 @@ export const PITCH_BOUNCE_Y = 310;
 export const CRICKET_THEMES = [
   {
     id: 'DAY',
-    name: '도촌 그린 파크 ☀️',
+    name: '우리학교 그린 파크 ☀️',
     minScore: 0,
     skyTop: '#38BDF8',
     skyBottom: '#BAE6FD',
@@ -241,7 +241,7 @@ export const SPEED_LEVELS = [
   { minScore: 110, name: '마스터 (Lv.4)', level: 4, color: '#FBBF24', badge: 'Lv.4 마스터', speedMultiplier: 1.75, timingScale: 0.70 },
   { minScore: 170, name: '챔피언 (Lv.5)', level: 5, color: '#FB923C', badge: 'Lv.5 챔피언', speedMultiplier: 2.10, timingScale: 0.60 },
   { minScore: 240, name: '레전드 (Lv.6)', level: 6, color: '#F43F5E', badge: 'Lv.6 레전드', speedMultiplier: 2.50, timingScale: 0.50 },
-  { minScore: 320, name: '도촌 신화 (Lv.7)', level: 7, color: '#C084FC', badge: 'Lv.7 신화', speedMultiplier: 2.95, timingScale: 0.42 },
+  { minScore: 320, name: '우리학교 신화 (Lv.7)', level: 7, color: '#C084FC', badge: 'Lv.7 신화', speedMultiplier: 2.95, timingScale: 0.42 },
   { minScore: 420, name: '익스트림 (Lv.8)', level: 8, color: '#E879F9', badge: 'Lv.8 익스트림', speedMultiplier: 3.45, timingScale: 0.35 },
   { minScore: 540, name: '초신성 블리츠 (Lv.9+)', level: 9, color: '#FDE047', badge: 'Lv.9+ 블리츠', speedMultiplier: 4.00, timingScale: 0.28 }
 ];

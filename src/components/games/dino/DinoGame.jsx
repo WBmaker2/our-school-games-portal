@@ -184,7 +184,7 @@ export default function DinoGame({ onScoreSubmitted }) {
         // School Backpack
         g.obstacles.push({
           type: 'backpack',
-          label: '도촌 책가방',
+          label: '우리학교 책가방',
           x: CANVAS_WIDTH + 20,
           y: GROUND_Y - 48,
           width: 44,
@@ -600,9 +600,9 @@ export default function DinoGame({ onScoreSubmitted }) {
       {/* Header Bar */}
       <div className="dino-header">
         <div className="dino-title-wrap">
-          <span className="dino-title">🦖 Dochon Dino Runner</span>
+          <span className="dino-title">🦖 Our School Dino Runner</span>
           <span className="dino-badge">
-            도촌초 장애물 달리기
+            우리학교 장애물 달리기
           </span>
         </div>
         <div className="dino-score-wrap">
@@ -628,7 +628,7 @@ export default function DinoGame({ onScoreSubmitted }) {
         {/* Overlay States */}
         {gameState === 'IDLE' && (
           <div className="dino-overlay">
-            <h3 className="dino-overlay-title dino-title">도촌 공룡 달리기 시작!</h3>
+            <h3 className="dino-overlay-title dino-title">우리학교 공룡 달리기 시작!</h3>
             <p className="dino-overlay-desc">
               <span style={{ color: '#2DD4BF', fontWeight: 900 }}>스페이스바 / 방향키 위 ↑</span> 키로 책가방과 꼬깔을 점프하고,<br />
               <span style={{ color: '#FBBF24', fontWeight: 900 }}>방향키 아래 ↓</span> 키로 날아다니는 숙제 유령을 피하세요!
@@ -659,7 +659,7 @@ export default function DinoGame({ onScoreSubmitted }) {
               !submitted ? (
                 <form onSubmit={handleScoreSubmit} className="dino-score-form">
                   <label style={{ fontSize: '12px', color: '#2DD4BF', fontWeight: 900, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
-                    <Sparkles style={{ width: '14px', height: '14px' }} /> 도촌 명예의 전당 점수 등록
+                    <Sparkles style={{ width: '14px', height: '14px' }} /> 우리학교 명예의 전당 점수 등록
                   </label>
                   <input
                     type="text"
@@ -676,7 +676,7 @@ export default function DinoGame({ onScoreSubmitted }) {
                 </form>
               ) : (
                 <p style={{ color: '#34D399', fontWeight: 900, background: 'rgba(6, 78, 59, 0.8)', border: '1.5px solid #10B981', padding: '8px 18px', borderRadius: '12px' }}>
-                  ✅ 도촌 명예의 전당에 성공적으로 등록되었습니다!
+                  ✅ 우리학교 명예의 전당에 성공적으로 등록되었습니다!
                 </p>
               )
             ) : (

@@ -28,7 +28,7 @@ export default function BubbleTeaGame({ onScoreSubmitted }) {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(() => {
     try {
-      return Number(localStorage.getItem('dochon_bubbletea_highscore')) || 0;
+      return Number(localStorage.getItem('school_bubbletea_highscore')) || 0;
     } catch (e) {
       return 0;
     }
@@ -85,7 +85,7 @@ export default function BubbleTeaGame({ onScoreSubmitted }) {
     if (score > highScore) {
       setHighScore(score);
       try {
-        localStorage.setItem('dochon_bubbletea_highscore', String(score));
+        localStorage.setItem('school_bubbletea_highscore', String(score));
       } catch (e) {}
     }
   }, [score, highScore]);
@@ -513,7 +513,7 @@ export default function BubbleTeaGame({ onScoreSubmitted }) {
                 <div className="bubbletea-ranking-form">
                   <div style={{ fontSize: '13px', fontWeight: 800, color: '#FBBF24', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
                     <Trophy className="w-4 h-4 text-amber-400" />
-                    도촌초등학교 명예의 전당 점수 등록
+                    우리학교 명예의 전당 점수 등록
                   </div>
 
                   {isSubmitted ? (

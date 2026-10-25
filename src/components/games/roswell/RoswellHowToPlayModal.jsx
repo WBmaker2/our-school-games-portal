@@ -15,7 +15,7 @@ export default function RoswellHowToPlayModal({ isOpen, onClose }) {
             </div>
             <div>
               <h2 className="text-lg font-black text-emerald-300 flex items-center gap-1.5">
-                도촌 UFO 탈출작전 가이드
+                우리학교 UFO 탈출작전 가이드
               </h2>
               <p className="text-xs text-slate-400">구글 두들 로즈웰 66주년 기념작 모티브 어드벤처</p>
             </div>
@@ -38,7 +38,7 @@ export default function RoswellHowToPlayModal({ isOpen, onClose }) {
               <span>📖</span> 불시착 스토리
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              도촌초등학교 인근 시골 마을에 불시착한 외계인을 도와주세요!<br />
+              우리학교 인근 시골 마을에 불시착한 외계인을 도와주세요!<br />
               마을 곳곳(들판, 헛간, 농가)에 흩어진 <strong className="text-emerald-400">3가지 핵심 UFO 부품</strong>을 찾아 비행접시를 수리하고 무사히 우주로 탈출시키는 포인트 앤 클릭 어드벤처 퍼즐입니다.
             </p>
           </div>

@@ -1,4 +1,4 @@
-// Dochon Pani Puri Master - React UI Wrapper
+// Our School Pani Puri Master - React UI Wrapper
 // Connects UI controls directly to the PaniPuriEngine Single Source of Truth
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -52,7 +52,7 @@ export default function PaniPuriGame({ onScoreSubmitted }) {
 
   const [highScore, setHighScore] = useState(() => {
     try {
-      return Number(localStorage.getItem('dochon_panipuri_highscore')) || 0;
+      return Number(localStorage.getItem('school_panipuri_highscore')) || 0;
     } catch (e) {
       return 0;
     }
@@ -73,7 +73,7 @@ export default function PaniPuriGame({ onScoreSubmitted }) {
     setHighScore(prev => {
       if (finalScore > prev) {
         try {
-          localStorage.setItem('dochon_panipuri_highscore', String(finalScore));
+          localStorage.setItem('school_panipuri_highscore', String(finalScore));
         } catch (e) {}
         return finalScore;
       }
@@ -245,7 +245,7 @@ export default function PaniPuriGame({ onScoreSubmitted }) {
     return match;
   }, [gameState.currentCustomer, gameState.preparedPuris, gameState.isFever]);
 
-  // Submit Score to Dochon Leaderboard
+  // Submit Score to Our School Leaderboard
   const handleScoreSubmit = async (e) => {
     e.preventDefault();
     if (!playerName.trim() || isSubmitting || isSubmitted) return;
@@ -289,7 +289,7 @@ export default function PaniPuriGame({ onScoreSubmitted }) {
               <h1 className="panipuri-brand-title">파니 푸리 마스터</h1>
               <span className="panipuri-badge-tag">TYCOON</span>
             </div>
-            <p className="panipuri-brand-subtitle">Celebrating Pani Puri · 도촌 아케이드</p>
+            <p className="panipuri-brand-subtitle">Celebrating Pani Puri · 우리학교 아케이드</p>
           </div>
         </div>
 
@@ -394,7 +394,7 @@ export default function PaniPuriGame({ onScoreSubmitted }) {
             <div className="panipuri-overlay-card text-center">
               <span className="text-5xl mb-2 block animate-bounce">🫓</span>
               <h2 className="text-2xl font-black text-amber-300 mb-1">
-                도촌 파니 푸리 마스터
+                우리학교 파니 푸리 마스터
               </h2>
               <p className="text-xs text-slate-300 mb-4">
                 손님들의 개성 넘치는 주문을 신속하게 조리하고 서빙하세요!

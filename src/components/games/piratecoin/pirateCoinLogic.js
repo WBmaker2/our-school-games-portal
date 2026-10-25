@@ -1,4 +1,4 @@
-// Dochon Games Portal - Dochon Pirate Coin Heist Simulation Logic Engine
+// Our School Games Portal - Our School Pirate Coin Heist Simulation Logic Engine
 // Ship Physics, Coin Chain Dynamics, Ramming Impact, Banking Zones, Items & AI Bots
 
 import {
@@ -57,7 +57,7 @@ export class PirateCoinLogic {
 
     const humanPlayer = this._createShip({
       id: humanPlayerConfig.id || 'player_me',
-      name: humanPlayerConfig.name || '도촌 선장',
+      name: humanPlayerConfig.name || '우리학교 선장',
       isMe: true,
       isAi: false,
       teamId: myTeamId,

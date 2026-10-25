@@ -366,7 +366,7 @@ export default function ColorTileGame({ onScoreSubmitted }) {
         <div className="colortile-title-group">
           <span className="colortile-title-text">
             <span>🧩</span>
-            <span>도촌 <span className="colortile-title-highlight">컬러 타일</span></span>
+            <span>우리학교 <span className="colortile-title-highlight">컬러 타일</span></span>
           </span>
 
           {/* Mode Selector */}
@@ -639,7 +639,7 @@ export default function ColorTileGame({ onScoreSubmitted }) {
               <form onSubmit={handleScoreSubmit} className="colortile-hof-form">
                 <div style={{ fontSize: '11px', color: '#FBBF24', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <Crown style={{ width: '13px', height: '13px' }} />
-                  <span>도촌초 명예의 전당 점수 등록</span>
+                  <span>우리학교 명예의 전당 점수 등록</span>
                 </div>
 
                 {!isSubmitted ? (

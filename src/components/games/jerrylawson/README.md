@@ -1,6 +1,6 @@
 # 제리 로슨 (Jerry Lawson) 게임 프로젝트
 
-도촌초등학교 게임 포털의 인터랙티브 레트로 아케이드 & 게임 메이커 **제리 로슨(Jerry Lawson)** 전용 프로젝트 폴더입니다.
+우리학교 게임 포털의 인터랙티브 레트로 아케이드 & 게임 메이커 **제리 로슨(Jerry Lawson)** 전용 프로젝트 폴더입니다.
 
 ## 📁 에셋 경로 (`public/assets/jerrylawson/`)
 * `console_frame.jpg`: Fairchild Channel F 및 8비트 레트로 콘솔 프레임 UI

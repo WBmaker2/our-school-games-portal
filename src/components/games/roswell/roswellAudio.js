@@ -1,4 +1,4 @@
-// Web Audio API Procedural Synthesizer for Dochon Roswell UFO Adventure
+// Web Audio API Procedural Synthesizer for Our School Roswell UFO Adventure
 
 class RoswellAudio {
   constructor() {

@@ -1,4 +1,4 @@
-// Dochon Pizza Master - Main Game Controller Component
+// Our School Pizza Master - Main Game Controller Component
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { PizzaEngine } from './pizzaEngine';
 import { pizzaAudio } from './pizzaAudio';
@@ -52,7 +52,7 @@ export default function PizzaGame({ onScoreSubmitted }) {
   const [isGameClear, setIsGameClear] = useState(false);
   const [highScore, setHighScore] = useState(() => {
     try {
-      return Number(localStorage.getItem('dochon_pizza_highscore')) || 0;
+      return Number(localStorage.getItem('school_pizza_highscore')) || 0;
     } catch (e) {
       return 0;
     }
@@ -167,7 +167,7 @@ export default function PizzaGame({ onScoreSubmitted }) {
     setHighScore(prev => {
       const newHigh = Math.max(prev, score);
       try {
-        localStorage.setItem('dochon_pizza_highscore', String(newHigh));
+        localStorage.setItem('school_pizza_highscore', String(newHigh));
       } catch (e) {}
       return newHigh;
     });
@@ -306,7 +306,7 @@ export default function PizzaGame({ onScoreSubmitted }) {
       setHighScore(prev => {
         const newHigh = Math.max(prev, finalTotalScore);
         try {
-          localStorage.setItem('dochon_pizza_highscore', String(newHigh));
+          localStorage.setItem('school_pizza_highscore', String(newHigh));
         } catch (e) {}
         return newHigh;
       });
@@ -534,7 +534,7 @@ export default function PizzaGame({ onScoreSubmitted }) {
         {!isPlaying && !isGameOver && (
           <div className="pizza-stage-result-overlay">
             <div className="text-6xl mb-3 animate-pulse">🍕</div>
-            <h2 className="text-3xl font-black text-amber-400 mb-2 tracking-tight">도촌 피자 마스터</h2>
+            <h2 className="text-3xl font-black text-amber-400 mb-2 tracking-tight">우리학교 피자 마스터</h2>
             <p className="text-sm sm:text-base text-slate-100 font-semibold max-w-xs mb-7 leading-relaxed">
               피자를 자르고 분수를 마스터하라!<br />
               총 10개 코스 주문을 완성하고 마스터 셰프에 등극해보세요! (플레이 타임 약 2분)
@@ -597,7 +597,7 @@ export default function PizzaGame({ onScoreSubmitted }) {
 
             <p className="pizza-gameover-desc">
               {isGameClear
-                ? '축하합니다! 10개 코스를 완벽하게 제패하여 도촌 최고의 피자 셰프로 인증되었습니다!'
+                ? '축하합니다! 10개 코스를 완벽하게 제패하여 우리학교 최고의 피자 셰프로 인증되었습니다!'
                 : `오늘의 피자 주방 영업이 마감되었습니다. (총 ${TOTAL_STAGES}개 코스 중 ${stageIndex + 1}단계 도달)`}
             </p>
 

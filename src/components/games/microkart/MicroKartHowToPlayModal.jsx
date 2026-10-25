@@ -1,4 +1,4 @@
-// Dochon Games Portal - Micro Kart How to Play Guide Modal
+// Our School Games Portal - Micro Kart How to Play Guide Modal
 import React from 'react';
 import { X, Trophy, Zap, Shield, HelpCircle, Gamepad2, Smartphone, Flag } from 'lucide-react';
 
@@ -13,7 +13,7 @@ export default function MicroKartHowToPlayModal({ isOpen, onClose }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontSize: '24px' }}>🏎️</span>
             <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800, color: '#F59E0B' }}>
-              도촌 마이크로 카트 레이싱 가이드
+              우리학교 마이크로 카트 레이싱 가이드
             </h2>
           </div>
           <button
@@ -27,7 +27,7 @@ export default function MicroKartHowToPlayModal({ isOpen, onClose }) {
 
         {/* Story & Overview */}
         <div style={{ background: 'rgba(15, 23, 42, 0.6)', padding: '12px', borderRadius: '10px', fontSize: '0.85rem', color: '#CBD5E1', lineHeight: '1.5' }}>
-          🏫 <strong>도촌 마이크로 카트 레이싱 3대 서킷 그랑프리!</strong><br />
+          🏫 <strong>우리학교 마이크로 카트 레이싱 3대 서킷 그랑프리!</strong><br />
           1) <strong>교실 책상 서킷</strong> (초급 와이드 스피드웨이)<br />
           2) <strong>과학실 실험대 서킷</strong> (연속 S자 시케인 & 화학 플라스크)<br />
           3) <strong>미술실 스케치북 서킷</strong> (아크릴 물감 슬로우존 & 지그재그 헤어핀)<br />

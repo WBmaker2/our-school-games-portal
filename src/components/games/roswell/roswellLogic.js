@@ -1,4 +1,4 @@
-// Canvas 2D Adventure & Puzzle Logic Engine for Dochon Roswell UFO Adventure
+// Canvas 2D Adventure & Puzzle Logic Engine for Our School Roswell UFO Adventure
 import { CANVAS_WIDTH, CANVAS_HEIGHT, SCENES, ITEMS, SCORE_CONFIG, RETRO_COLORS } from './roswellConstants';
 import { roswellAudio } from './roswellAudio';
 
@@ -48,7 +48,7 @@ export class RoswellLogic {
 
     // Dialogue / Narrative Banner
     this.dialogue = {
-      text: '🛸 외계인: 삐리리... (도촌에 불시착했다! 흩어진 UFO 부품 3개를 찾아야 해!)',
+      text: '🛸 외계인: 삐리리... (우리학교에 불시착했다! 흩어진 UFO 부품 3개를 찾아야 해!)',
       timer: 260
     };
 
@@ -180,7 +180,7 @@ export class RoswellLogic {
           // Launch UFO!
           this.ufoState = 'LAUNCHING';
           roswellAudio.playUFOEscape();
-          this.setDialogue('🚀 UFO 이륙 성공! 도촌초 상공을 넘어 우주로 탈출합니다!');
+          this.setDialogue('🚀 UFO 이륙 성공! 우리학교 상공을 넘어 우주로 탈출합니다!');
         }
       } else {
         const remaining = 3 - this.collectedParts.length;
@@ -213,7 +213,7 @@ export class RoswellLogic {
         this.inventory.push(ITEMS.CARROT);
         this.score += SCORE_CONFIG.INTERACTION_BONUS;
         roswellAudio.playItemPickup();
-        this.setDialogue('🥕 싱싱한 도촌 [유기농 당근]을 밭에서 뽑았습니다! (배고픈 동물에게 줘보세요)');
+        this.setDialogue('🥕 싱싱한 우리학교 [유기농 당근]을 밭에서 뽑았습니다! (배고픈 동물에게 줘보세요)');
       } else {
         this.setDialogue('당근을 뽑아낸 흙구덩이입니다.');
       }

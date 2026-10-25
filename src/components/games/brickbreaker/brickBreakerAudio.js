@@ -1,4 +1,4 @@
-// Web Audio API Synthesizer for Dochon Brick Breaker (도촌 벽돌 격파왕)
+// Web Audio API Synthesizer for Our School Brick Breaker (우리학교 벽돌 격파왕)
 
 class BrickBreakerAudio {
   constructor() {

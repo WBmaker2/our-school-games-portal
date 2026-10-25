@@ -1,4 +1,4 @@
-// Dochon Games Portal - The Great Ghoul Duel 2D Canvas Physics, AI & P2P Network Renderer Engine
+// Our School Games Portal - The Great Ghoul Duel 2D Canvas Physics, AI & P2P Network Renderer Engine
 // v4: Synchronized P2P Authority (Position Sync, Lag-Compensated Pickups/Deposits, Viewport Culling & Chromebook Optimization)
 
 import {

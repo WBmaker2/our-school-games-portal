@@ -42,7 +42,7 @@ export default function PizzaHowToPlayModal({ isOpen, onClose }) {
               🍕
             </div>
             <div>
-              <h2 style={{ fontSize: '18px', fontWeight: 900, color: '#FBBF24', margin: 0 }}>도촌 피자 마스터 게임 방법</h2>
+              <h2 style={{ fontSize: '18px', fontWeight: 900, color: '#FBBF24', margin: 0 }}>우리학교 피자 마스터 게임 방법</h2>
               <p style={{ fontSize: '12px', color: '#94A3B8', margin: 0 }}>분수와 기하학을 배우는 재미있는 피자 커팅 퍼즐!</p>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function PizzaHowToPlayModal({ isOpen, onClose }) {
                 <Sparkles className="w-4 h-4 text-purple-400" /> 콤보 & 명예의 전당 등록
               </h3>
               <p style={{ fontSize: '13px', color: '#E2E8F0', lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
-                연속으로 완벽하게 주문을 완수하면 콤보 보너스 점수가 쌓입니다! 최종 획득 점수가 <strong style={{ color: '#FCD34D', fontWeight: 800 }}>100점을 초과</strong>하면 도촌초등학교 명예의 전당에 랭킹을 등록할 수 있습니다.
+                연속으로 완벽하게 주문을 완수하면 콤보 보너스 점수가 쌓입니다! 최종 획득 점수가 <strong style={{ color: '#FCD34D', fontWeight: 800 }}>100점을 초과</strong>하면 우리학교 명예의 전당에 랭킹을 등록할 수 있습니다.
               </p>
             </div>
           </div>

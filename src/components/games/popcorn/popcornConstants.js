@@ -1,4 +1,4 @@
-// Constants and Configuration for Dochon Popcorn Survival Game
+// Constants and Configuration for Our School Popcorn Survival Game
 
 export const CANVAS_WIDTH = 800;
 export const CANVAS_HEIGHT = 600;
@@ -6,7 +6,7 @@ export const PAN_CENTER_X = CANVAS_WIDTH / 2;
 export const PAN_CENTER_Y = CANVAS_HEIGHT / 2;
 export const PAN_RADIUS = 230; // Circular arena boundary
 
-// Helper to resolve asset path with Vite base URL in production (e.g. /dochon-games-portal/assets/...)
+// Helper to resolve asset path with Vite base URL in production (e.g. /our-school-games-portal/assets/...)
 export const getPopcornAsset = (file) => `${import.meta.env.BASE_URL}assets/popcorn/${file}`;
 
 export const PLAYER_CLASSES = {

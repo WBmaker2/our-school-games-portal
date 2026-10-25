@@ -63,7 +63,7 @@ export default function ChangelogModal({ isOpen, onClose }) {
                 </span>
               </div>
               <p className="text-[11px] text-slate-400 font-medium">
-                도촌초등학교 게임 포털의 개발 및 개선 히스토리
+                우리 학교 게임 포털의 개발 및 개선 히스토리
               </p>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function ChangelogModal({ isOpen, onClose }) {
         <div className="changelog-footer">
           <div className="flex items-center justify-center gap-1.5 text-xs text-amber-300/80 font-bold">
             <Zap className="w-3.5 h-3.5 text-amber-400" />
-            <span>도촌초 학생들을 위한 새로운 기능과 게임이 계속 업데이트됩니다!</span>
+            <span>우리 학교 학생들을 위한 새로운 기능과 게임이 계속 업데이트됩니다!</span>
           </div>
         </div>
       </div>

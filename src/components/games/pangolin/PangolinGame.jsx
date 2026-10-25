@@ -1,4 +1,4 @@
-// Main React Component for Dochon Pangolin Adventure (도촌 천산갑의 모험)
+// Main React Component for Our School Pangolin Adventure (우리학교 천산갑의 모험)
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { PangolinGameLogic } from './pangolinLogic';
 import { pangolinAudio } from './pangolinAudio';
@@ -75,7 +75,7 @@ export default function PangolinGame({ onScoreSubmitted }) {
     }
   };
 
-  // Strict Dochon Portal Rule: Score > 100 & Placeholder '예: 홍길동'
+  // Strict Our School Portal Rule: Score > 100 & Placeholder '예: 홍길동'
   const handleSubmitScore = async (e) => {
     e.preventDefault();
     if (!playerName.trim() || isSubmitting || isSubmitted) return;
@@ -258,7 +258,7 @@ export default function PangolinGame({ onScoreSubmitted }) {
         <div className="pangolin-top-title-group">
           <span className="pangolin-top-title">
             <span>🦔</span>
-            <span>도촌 천산갑의 모험</span>
+            <span>우리학교 천산갑의 모험</span>
           </span>
           <span className="pangolin-stage-badge">
             {hudData.stageName} ({hudData.stageIndex + 1}/4)
@@ -344,7 +344,7 @@ export default function PangolinGame({ onScoreSubmitted }) {
                 🦔
               </div>
               <h2 className="text-xl font-black text-amber-300 mb-1">
-                도촌 천산갑의 모험
+                우리학교 천산갑의 모험
               </h2>
               <p className="text-xs text-slate-300 mb-4 leading-relaxed">
                 사랑하는 친구에게 감동적인 선물을 전하기 위해 떠나는 세계 여행!<br />
@@ -423,7 +423,7 @@ export default function PangolinGame({ onScoreSubmitted }) {
                   {!isSubmitted ? (
                     <form onSubmit={handleSubmitScore} className="space-y-2">
                       <label className="block text-xs font-bold text-amber-300">
-                        🏆 도촌초등학교 명예의 전당 랭킹 등록
+                        🏆 우리학교 명예의 전당 랭킹 등록
                       </label>
                       <div className="flex gap-2">
                         <input
@@ -491,7 +491,7 @@ export default function PangolinGame({ onScoreSubmitted }) {
                   {!isSubmitted ? (
                     <form onSubmit={handleSubmitScore} className="space-y-2">
                       <label className="block text-xs font-bold text-amber-300">
-                        🏆 도촌초등학교 명예의 전당 랭킹 등록
+                        🏆 우리학교 명예의 전당 랭킹 등록
                       </label>
                       <div className="flex gap-2">
                         <input

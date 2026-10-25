@@ -1,4 +1,4 @@
-// Dochon Baseball Game Constants & Configurations
+// Our School Baseball Game Constants & Configurations
 
 export const CANVAS_WIDTH = 960;
 export const CANVAS_HEIGHT = 540;
@@ -154,7 +154,7 @@ export const PITCH_TYPES = {
   },
   ZIGZAG: {
     id: 'ZIGZAG',
-    name: '도촌 마구 (지그재그)',
+    name: '우리학교 마구 (지그재그)',
     color: '#EC4899',
     trailColor: 'rgba(236, 72, 153, 0.7)',
     baseSpeed: 2000,
@@ -165,7 +165,7 @@ export const PITCH_TYPES = {
   },
   GHOST: {
     id: 'GHOST',
-    name: '도촌 유령 마구',
+    name: '우리학교 유령 마구',
     color: '#94A3B8',
     trailColor: 'rgba(148, 163, 184, 0.5)',
     baseSpeed: 2100,

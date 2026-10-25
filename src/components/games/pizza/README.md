@@ -1,4 +1,4 @@
-# 도촌 피자 마스터 (Dochon Pizza Master)
+# 우리학교 피자 마스터 (Our School Pizza Master)
 
 ## 1. 게임 개요
 - **장르**: 수학 분수 & 기하학 커팅 퍼즐 / 타이쿤

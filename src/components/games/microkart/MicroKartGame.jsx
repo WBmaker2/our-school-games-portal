@@ -1,4 +1,4 @@
-// Dochon Games Portal - Micro Kart Racing React Component
+// Our School Games Portal - Micro Kart Racing React Component
 // 100% Zero-Asset Procedural Graphics, Web Audio API & WebRTC P2P Support
 // 3 Unique School Circuits: 1) 교실 책상 서킷, 2) 과학실 실험대 서킷, 3) 미술실 스케치북 서킷
 
@@ -638,7 +638,7 @@ export default function MicroKartGame({ onScoreSubmitted }) {
       <div className="microkart-header">
         <div className="microkart-header-title">
           <span style={{ fontSize: '24px' }}>🏎️</span>
-          <h1>도촌 마이크로 카트 레이싱</h1>
+          <h1>우리학교 마이크로 카트 레이싱</h1>
         </div>
 
         <div className="microkart-header-controls">
@@ -783,7 +783,7 @@ export default function MicroKartGame({ onScoreSubmitted }) {
         {gameState === 'LOBBY' && (
           <div className="microkart-overlay">
             <div className="microkart-card">
-              <h2 className="microkart-card-title">🏁 도촌 마이크로 카트 레이싱</h2>
+              <h2 className="microkart-card-title">🏁 우리학교 마이크로 카트 레이싱</h2>
 
               {/* Mode Select Tabs */}
               <div className="microkart-tabs">
@@ -812,7 +812,7 @@ export default function MicroKartGame({ onScoreSubmitted }) {
                   type="text"
                   value={p2pName}
                   onChange={(e) => setP2pName(e.target.value)}
-                  placeholder="예: 김도촌 (6A)"
+                  placeholder="예: 김학생 (6A)"
                   maxLength={10}
                   className="microkart-input"
                   style={{ width: '100%', boxSizing: 'border-box', padding: '6px 10px', fontSize: '0.85rem' }}
@@ -1139,7 +1139,7 @@ export default function MicroKartGame({ onScoreSubmitted }) {
                 <form onSubmit={handleSubmitScore} className="microkart-submit-form">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', fontWeight: 800, color: '#F59E0B' }}>
                     <Trophy size={16} />
-                    <span>도촌 명예의 전당 점수 등록</span>
+                    <span>우리학교 명예의 전당 점수 등록</span>
                   </div>
                   {isScoreSubmitted ? (
                     <div style={{ color: '#10B981', fontSize: '0.82rem', fontWeight: 800, textAlign: 'center', padding: '6px' }}>

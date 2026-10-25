@@ -1,4 +1,4 @@
-// Dochon Pani Puri Master - Constants & Configuration
+// Our School Pani Puri Master - Constants & Configuration
 
 export const CANVAS_WIDTH = 800;
 export const CANVAS_HEIGHT = 520;

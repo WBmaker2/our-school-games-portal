@@ -1017,7 +1017,7 @@ export default function ChampionGame({ onScoreSubmitted }) {
         {/* 1. Team Selection Overlay */}
         {gameMode === 'team_select' && (
           <div className="team-select-overlay">
-            <h1 className="team-select-title">🏝️ 도촌 챔피언 아일랜드</h1>
+            <h1 className="team-select-title">🏝️ 우리학교 챔피언 아일랜드</h1>
             <p className="team-select-subtitle">참가할 팀을 선택하고 섬의 4대 챔피언에게 도전하세요!</p>
             <div className="team-cards-row">
               {TEAMS.map(team => (
@@ -1125,7 +1125,7 @@ export default function ChampionGame({ onScoreSubmitted }) {
                 👑🏝️✨
               </div>
               <h2 className="result-title grand-title">
-                도촌 챔피언 아일랜드 대통합 챔피언 등극!
+                우리학교 챔피언 아일랜드 대통합 챔피언 등극!
               </h2>
               <p className="result-subtitle">
                 4개의 성스러운 두루마리를 모두 수집하여 섬의 전설적인 챔피언이 되었습니다!
@@ -1160,7 +1160,7 @@ export default function ChampionGame({ onScoreSubmitted }) {
                 <form onSubmit={handleScoreSubmit} className="leaderboard-form">
                   <div className="leaderboard-form-title">
                     <Trophy size={16} className="icon-gold" />
-                    <span>도촌초등학교 명예의 전당 최종 랭킹 등록</span>
+                    <span>우리학교 명예의 전당 최종 랭킹 등록</span>
                   </div>
                   <input
                     type="text"

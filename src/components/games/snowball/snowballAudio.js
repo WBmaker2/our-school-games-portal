@@ -1,4 +1,4 @@
-// Dochon Games Portal - Snowball Survival Web Audio API Synthesizer
+// Our School Games Portal - Snowball Survival Web Audio API Synthesizer
 // 100% Procedural Zero-Asset Sound Engine
 
 class SnowballAudioEngine {

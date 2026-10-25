@@ -1,4 +1,4 @@
-// Dochon Games Portal - School Tag (도촌 야간 학교 숨바꼭질) Constants
+// Our School Games Portal - School Tag (우리학교 야간 학교 숨바꼭질) Constants
 // 2D Fog of War Raycasting Lighting, Physics, Scoring & Network Constants
 
 export const SCHOOL_TAG_CONSTANTS = {
@@ -51,7 +51,7 @@ export const SCHOOL_TAG_CONSTANTS = {
   SCORE_SURVIVAL_TIME_PER_SEC: 3,
 
   // P2P WebRTC Network Settings
-  PEER_PREFIX: 'dochon-schooltag-',
+  PEER_PREFIX: 'school-tag-',
   SYNC_RATE_HZ: 20, // 20 updates per second
 };
 
@@ -69,8 +69,8 @@ export const GAME_STATES = {
 };
 
 export const CHARACTER_SKINS = [
-  { id: 'boy', name: '도촌 남학생', role: '도망자', color: '#38bdf8', icon: '👦' },
-  { id: 'girl', name: '도촌 여학생', role: '도망자', color: '#f472b6', icon: '👧' },
+  { id: 'boy', name: '우리학교 남학생', role: '도망자', color: '#38bdf8', icon: '👦' },
+  { id: 'girl', name: '우리학교 여학생', role: '도망자', color: '#f472b6', icon: '👧' },
   { id: 'detective', name: '추리 탐정', role: '도망자', color: '#fbbf24', icon: '🕵️' },
   { id: 'ghost', name: '당직 도깨비', role: '술래', color: '#ef4444', icon: '👹' },
 ];

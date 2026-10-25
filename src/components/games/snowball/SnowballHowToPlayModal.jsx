@@ -1,4 +1,4 @@
-// Dochon Games Portal - Snowball Survival How To Play Modal Guide
+// Our School Games Portal - Snowball Survival How To Play Modal Guide
 
 import React from 'react';
 import { X, Sparkles, Trophy, ShieldAlert, Zap, Compass } from 'lucide-react';
@@ -13,7 +13,7 @@ export default function SnowballHowToPlayModal({ isOpen, onClose }) {
         <div className="snowball-modal-header">
           <div className="snowball-modal-title">
             <span className="snowball-title-icon">☃️</span>
-            <h2>도촌 눈싸움 서바이벌 게임 가이드</h2>
+            <h2>우리학교 눈싸움 서바이벌 게임 가이드</h2>
           </div>
           <button className="snowball-modal-close-btn" onClick={onClose}>
             <X size={20} />
@@ -83,7 +83,7 @@ export default function SnowballHowToPlayModal({ isOpen, onClose }) {
           {/* Section 3: Hall of Fame Rule */}
           <div className="snowball-guide-rule">
             <ShieldAlert size={18} color="#F59E0B" />
-            <span>도촌초 명예의 전당 점수 등록은 <strong>100점을 초과</strong>하여 달성했을 때 등록 창이 활성화됩니다!</span>
+            <span>우리학교 명예의 전당 점수 등록은 <strong>100점을 초과</strong>하여 달성했을 때 등록 창이 활성화됩니다!</span>
           </div>
         </div>
 

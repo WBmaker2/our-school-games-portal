@@ -896,7 +896,7 @@ export default function SolitaireGame({ onScoreSubmitted }) {
               !submitted ? (
                 <form onSubmit={handleScoreSubmit} className="solitaire-score-form">
                   <label className="text-xs font-black text-emerald-400 flex items-center justify-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" /> 도촌 명예의 전당 점수 등록
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400" /> 우리학교 명예의 전당 점수 등록
                   </label>
                   <input
                     type="text"
@@ -913,7 +913,7 @@ export default function SolitaireGame({ onScoreSubmitted }) {
                 </form>
               ) : (
                 <p className="text-emerald-400 font-black bg-emerald-950/80 border border-emerald-500 py-2.5 px-5 rounded-xl text-sm">
-                  ✅ 도촌 명예의 전당에 성공적으로 등록되었습니다!
+                  ✅ 우리학교 명예의 전당에 성공적으로 등록되었습니다!
                 </p>
               )
             ) : (

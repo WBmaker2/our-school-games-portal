@@ -1,4 +1,4 @@
-// Web Audio API Sound Synthesizer for Dochon Memory Master
+// Web Audio API Sound Synthesizer for Our School Memory Master
 
 class MemoryAudioEngine {
   constructor() {

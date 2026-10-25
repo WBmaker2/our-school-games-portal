@@ -12,7 +12,7 @@ export default function SkyJumperHowToPlayModal({ isOpen, onClose }) {
         <div className="sj-modal-header">
           <div className="sj-modal-title-group">
             <HelpCircle className="sj-modal-icon" />
-            <h2 className="sj-modal-title">도촌 스카이 점퍼 게임 가이드</h2>
+            <h2 className="sj-modal-title">우리학교 스카이 점퍼 게임 가이드</h2>
           </div>
           <button onClick={onClose} className="sj-modal-close-btn" title="닫기">
             <X style={{ width: '20px', height: '20px' }} />
@@ -136,7 +136,7 @@ export default function SkyJumperHowToPlayModal({ isOpen, onClose }) {
           <div className="sj-guide-section">
             <h3 className="sj-guide-heading">🌌 고도별 4단계 배경 테마</h3>
             <ul className="sj-altitude-list">
-              <li><strong>0 ~ 2,000m:</strong> 🌤️ 맑고 푸른 도촌의 하늘과 뭉게구름</li>
+              <li><strong>0 ~ 2,000m:</strong> 🌤️ 맑고 푸른 우리학교의 하늘과 뭉게구름</li>
               <li><strong>2,000 ~ 5,000m:</strong> 🌇 환상적인 핑크빛 석양 노을</li>
               <li><strong>5,000 ~ 10,000m:</strong> 🌌 신비로운 밤하늘과 오로라</li>
               <li><strong>10,000m 이상:</strong> 🚀 광활한 우주 은하수와 별무리 & 별똥별</li>

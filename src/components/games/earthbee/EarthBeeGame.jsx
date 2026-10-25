@@ -76,7 +76,7 @@ export default function EarthBeeGame({ onScoreSubmitted }) {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(() => {
     try {
-      return Number(localStorage.getItem('dochon_earthbee_highscore')) || 0;
+      return Number(localStorage.getItem('school_earthbee_highscore')) || 0;
     } catch (e) {
       return 0;
     }
@@ -112,7 +112,7 @@ export default function EarthBeeGame({ onScoreSubmitted }) {
     if (score > highScore) {
       setHighScore(score);
       try {
-        localStorage.setItem('dochon_earthbee_highscore', String(score));
+        localStorage.setItem('school_earthbee_highscore', String(score));
       } catch (e) {}
     }
   }, [score, highScore]);
@@ -492,12 +492,12 @@ export default function EarthBeeGame({ onScoreSubmitted }) {
                 {isCleared ? '🌇' : '🌙'}
               </div>
               <h2 className="earthbee-result-title">
-                {isCleared ? '도촌 생태계 정원 완벽 완성!' : '꿀벌의 하루 활동 시간 종료!'}
+                {isCleared ? '우리학교 생태계 정원 완벽 완성!' : '꿀벌의 하루 활동 시간 종료!'}
               </h2>
               <p className="text-xs text-amber-200 mb-3 px-2 leading-relaxed">
                 {isCleared
-                  ? '🎉 60송이 개화 완벽 달성! (+1,000점 완벽 보너스) 도촌초 정원에 노을이 지고 꿀벌이 집으로 돌아갑니다.'
-                  : `총 ${totalBlooms}송이의 꽃을 피워 도촌초 정원을 가꿨어요!`}
+                  ? '🎉 60송이 개화 완벽 달성! (+1,000점 완벽 보너스) 우리학교 정원에 노을이 지고 꿀벌이 집으로 돌아갑니다.'
+                  : `총 ${totalBlooms}송이의 꽃을 피워 우리학교 정원을 가꿨어요!`}
               </p>
 
               <div className="earthbee-score-grid">
@@ -520,7 +520,7 @@ export default function EarthBeeGame({ onScoreSubmitted }) {
                 <div className="bg-slate-900/90 border border-amber-500/30 rounded-2xl p-3.5 mb-3">
                   <div className="flex items-center justify-center gap-1.5 text-xs text-amber-300 font-bold mb-2">
                     <Trophy className="w-4 h-4 text-amber-400" />
-                    <span>도촌초 명예의 전당 랭킹 등록</span>
+                    <span>우리학교 명예의 전당 랭킹 등록</span>
                   </div>
 
                   {isSubmitted ? (

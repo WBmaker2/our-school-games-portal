@@ -1,4 +1,4 @@
-// Dochon Games Portal - The Great Ghoul Duel Web Audio API Sound Synthesizer
+// Our School Games Portal - The Great Ghoul Duel Web Audio API Sound Synthesizer
 // Zero external sound asset dependencies, instantaneous zero-latency audio synthesis
 
 class GhoulDuelAudioEngine {

@@ -1,4 +1,4 @@
-// Olympics Constants and Configurations for Dochon Mini Olympics
+// Olympics Constants and Configurations for Our School Mini Olympics
 
 export const GAME_EVENTS = {
   INTRO: 'INTRO',
@@ -86,8 +86,8 @@ export const MEDAL_CUTOFFS = {
 
 // Athlete Character Palette
 export const ATHLETE_PALETTES = [
-  { id: 'red', name: '도촌 불꽃팀', primary: '#EF4444', secondary: '#FCA5A5', skin: '#FCD34D' },
-  { id: 'blue', name: '도촌 푸른팀', primary: '#3B82F6', secondary: '#93C5FD', skin: '#FDE68A' },
-  { id: 'green', name: '도촌 에메랄드팀', primary: '#10B981', secondary: '#6EE7B7', skin: '#FCD34D' },
-  { id: 'purple', name: '도촌 번개팀', primary: '#8B5CF6', secondary: '#C4B5FD', skin: '#FDE68A' }
+  { id: 'red', name: '우리학교 불꽃팀', primary: '#EF4444', secondary: '#FCA5A5', skin: '#FCD34D' },
+  { id: 'blue', name: '우리학교 푸른팀', primary: '#3B82F6', secondary: '#93C5FD', skin: '#FDE68A' },
+  { id: 'green', name: '우리학교 에메랄드팀', primary: '#10B981', secondary: '#6EE7B7', skin: '#FCD34D' },
+  { id: 'purple', name: '우리학교 번개팀', primary: '#8B5CF6', secondary: '#C4B5FD', skin: '#FDE68A' }
 ];

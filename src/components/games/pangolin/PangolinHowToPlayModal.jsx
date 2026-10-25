@@ -1,4 +1,4 @@
-// How to Play Guide Modal for Dochon Pangolin Adventure
+// How to Play Guide Modal for Our School Pangolin Adventure
 import React from 'react';
 import { X, Trophy, Sparkles, Heart, Zap, Flame, Compass } from 'lucide-react';
 
@@ -12,7 +12,7 @@ export default function PangolinHowToPlayModal({ isOpen, onClose }) {
         <div className="pangolin-guide-header">
           <div className="flex items-center gap-2">
             <span className="text-2xl animate-bounce">🦔</span>
-            <h3 className="text-lg font-black text-amber-300">도촌 천산갑의 모험 게임 가이드</h3>
+            <h3 className="text-lg font-black text-amber-300">우리학교 천산갑의 모험 게임 가이드</h3>
           </div>
           <button onClick={onClose} className="pangolin-guide-close-btn">
             <X className="w-5 h-5 text-slate-300 hover:text-white" />
@@ -93,9 +93,9 @@ export default function PangolinHowToPlayModal({ isOpen, onClose }) {
           <div className="pangolin-guide-card bg-rose-950/30 border border-rose-500/30 text-[11px] text-rose-200">
             <strong className="text-rose-300 font-black flex items-center gap-1 mb-1">
               <Trophy className="w-3.5 h-3.5" />
-              도촌초등학교 명예의 전당 랭킹 등록 규칙
+              우리학교 명예의 전당 랭킹 등록 규칙
             </strong>
-            4개 스테이지를 모두 완주하면 <strong className="text-amber-400">+5,000점의 대형 완주 보너스</strong>가 주어집니다! 획득 점수가 <strong className="text-yellow-300">100점을 초과</strong>한 경우에만 도촌초 실시간 명예의 전당에 이름을 올릴 수 있습니다.
+            4개 스테이지를 모두 완주하면 <strong className="text-amber-400">+5,000점의 대형 완주 보너스</strong>가 주어집니다! 획득 점수가 <strong className="text-yellow-300">100점을 초과</strong>한 경우에만 우리학교 실시간 명예의 전당에 이름을 올릴 수 있습니다.
           </div>
         </div>
 

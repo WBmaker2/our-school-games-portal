@@ -6,7 +6,7 @@ const getThumb = (file) => `${import.meta.env.BASE_URL}thumbnails/${file}`;
 export const PLAYABLE_GAMES = [
   {
     id: 'pacman',
-    title: '도촌 팩맨',
+    title: '우리학교 팩맨',
     englishTitle: 'DOCHON PAC-MAN',
     category: '클래식',
     imageSrc: getThumb('pacman.jpg'),
@@ -21,7 +21,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'dino',
-    title: '도촌 공룡 달리기',
+    title: '우리학교 공룡 달리기',
     englishTitle: 'DOCHON DINO RUN',
     category: '액션',
     imageSrc: getThumb('dino.jpg'),
@@ -36,7 +36,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'snake',
-    title: '도촌 스네이크',
+    title: '우리학교 스네이크',
     englishTitle: 'DOCHON SNAKE MASTER',
     category: '클래식',
     imageSrc: getThumb('snake.jpg'),
@@ -47,11 +47,11 @@ export const PLAYABLE_GAMES = [
     isNew: false,
     isPlayable: true,
     badgeText: '🐍 인기 3위',
-    description: '사과를 먹고 몸집을 불려 도촌 스네이크 마스터가 되어보세요!'
+    description: '사과를 먹고 몸집을 불려 우리학교 스네이크 마스터가 되어보세요!'
   },
   {
     id: 'solitaire',
-    title: '도촌 솔리테어',
+    title: '우리학교 솔리테어',
     englishTitle: 'DOCHON SOLITAIRE',
     category: '카드',
     imageSrc: getThumb('solitaire.jpg'),
@@ -66,7 +66,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'minesweeper',
-    title: '도촌 지뢰찾기',
+    title: '우리학교 지뢰찾기',
     englishTitle: 'DOCHON MINESWEEPER',
     category: '퍼즐',
     imageSrc: getThumb('minesweeper.jpg'),
@@ -77,11 +77,11 @@ export const PLAYABLE_GAMES = [
     isNew: false,
     isPlayable: true,
     badgeText: '💣 5위',
-    description: '지뢰를 피해 잔디밭을 탐색하고 도촌 추리 마스터가 되어보세요!'
+    description: '지뢰를 피해 잔디밭을 탐색하고 우리학교 추리 마스터가 되어보세요!'
   },
   {
     id: 'baseball',
-    title: '도촌 야구왕',
+    title: '우리학교 야구왕',
     englishTitle: 'DOCHON BASEBALL KING',
     category: '스포츠',
     imageSrc: getThumb('baseball.jpg'),
@@ -92,11 +92,11 @@ export const PLAYABLE_GAMES = [
     isNew: false,
     isPlayable: true,
     badgeText: '⚾ 6위',
-    description: '구속과 변화구를 예측하고 만루홈런을 날려 도촌 야구왕이 되어보세요!'
+    description: '구속과 변화구를 예측하고 만루홈런을 날려 우리학교 야구왕이 되어보세요!'
   },
   {
     id: 'colortile',
-    title: '도촌 컬러 타일',
+    title: '우리학교 컬러 타일',
     englishTitle: 'DOCHON COLOR TILE',
     category: '퍼즐',
     imageSrc: getThumb('colortile.jpg'),
@@ -107,11 +107,11 @@ export const PLAYABLE_GAMES = [
     isNew: false,
     isPlayable: true,
     badgeText: '🧩 7위',
-    description: '빈 칸을 클릭하여 십자 방향 같은 색 타일을 찾아 없애는 도촌 두뇌 퍼즐!'
+    description: '빈 칸을 클릭하여 십자 방향 같은 색 타일을 찾아 없애는 우리학교 두뇌 퍼즐!'
   },
   {
     id: 'gnome',
-    title: '도촌 정원 요정',
+    title: '우리학교 정원 요정',
     englishTitle: 'DOCHON GARDEN GNOMES',
     category: '액션',
     imageSrc: getThumb('gnome.jpg'),
@@ -126,7 +126,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'popcorn',
-    title: '도촌 팝콘',
+    title: '우리학교 팝콘',
     englishTitle: 'DOCHON POPCORN SURVIVAL',
     category: '액션',
     imageSrc: getThumb('popcorn.jpg'),
@@ -141,7 +141,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'tictactoe',
-    title: '도촌 도넛 틱택토',
+    title: '우리학교 도넛 틱택토',
     englishTitle: 'DONUT TIC-TAC-TOE',
     category: '퍼즐',
     imageSrc: getThumb('donut-tictactoe.jpg'),
@@ -156,7 +156,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'champion',
-    title: '도촌 챔피언 아일랜드',
+    title: '우리학교 챔피언 아일랜드',
     englishTitle: 'CHAMPION ISLAND',
     category: '어드벤처',
     imageSrc: getThumb('champion.jpg'),
@@ -171,7 +171,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'cricket',
-    title: '도촌 크리켓',
+    title: '우리학교 크리켓',
     englishTitle: 'DOCHON CRICKET',
     category: '스포츠',
     imageSrc: getThumb('cricket.jpg'),
@@ -186,7 +186,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'ponyexpress',
-    title: '도촌 포니 익스프레스',
+    title: '우리학교 포니 익스프레스',
     englishTitle: 'PONY EXPRESS',
     category: '액션',
     imageSrc: getThumb('ponyexpress.jpg'),
@@ -201,7 +201,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'jerrylawson',
-    title: '도촌 제리 로슨',
+    title: '우리학교 제리 로슨',
     englishTitle: 'JERRY LAWSON',
     category: '액션',
     imageSrc: getThumb('jerrylawson.jpg'),
@@ -216,7 +216,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'magic',
-    title: '도촌 매직 캣 아카데미',
+    title: '우리학교 매직 캣 아카데미',
     englishTitle: 'MAGIC CAT ACADEMY',
     category: '어드벤처',
     imageSrc: getThumb('magic.jpg'),
@@ -231,7 +231,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'fruitmerge',
-    title: '도촌 과일 합치기',
+    title: '우리학교 과일 합치기',
     englishTitle: 'DOCHON FRUIT MERGE',
     category: '퍼즐',
     imageSrc: getThumb('fruitmerge.jpg'),
@@ -242,11 +242,11 @@ export const PLAYABLE_GAMES = [
     isNew: false,
     isPlayable: true,
     badgeText: '🍉 16위',
-    description: '떨어지는 과일을 합쳐 거대한 도촌 수박을 만드는 초인기 2D 물리 합성 퍼즐!'
+    description: '떨어지는 과일을 합쳐 거대한 우리학교 수박을 만드는 초인기 2D 물리 합성 퍼즐!'
   },
   {
     id: 'brickbreaker',
-    title: '도촌 벽돌 격파왕',
+    title: '우리학교 벽돌 격파왕',
     englishTitle: 'DOCHON BRICK BREAKER',
     category: '액션',
     imageSrc: getThumb('brickbreaker.jpg'),
@@ -261,7 +261,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'skyjumper',
-    title: '도촌 스카이 점퍼',
+    title: '우리학교 스카이 점퍼',
     englishTitle: 'DOCHON SKY JUMPER',
     category: '액션',
     imageSrc: getThumb('skyjumper.jpg'),
@@ -276,7 +276,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'kidscoding',
-    title: '도촌 코딩 토끼',
+    title: '우리학교 코딩 토끼',
     englishTitle: 'DOCHON KIDS CODING',
     category: '퍼즐',
     imageSrc: getThumb('kidscoding.jpg'),
@@ -291,7 +291,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'bubbletea',
-    title: '도촌 버블티 카페',
+    title: '우리학교 버블티 카페',
     englishTitle: 'DOCHON BUBBLE TEA CAFE',
     category: '액션',
     imageSrc: getThumb('bubbletea.jpg'),
@@ -306,7 +306,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'pizza',
-    title: '도촌 피자 마스터',
+    title: '우리학교 피자 마스터',
     englishTitle: 'DOCHON PIZZA MASTER',
     category: '퍼즐',
     imageSrc: getThumb('pizza.jpg'),
@@ -321,7 +321,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'earthbee',
-    title: '도촌 꿀벌의 비행',
+    title: '우리학교 꿀벌의 비행',
     englishTitle: 'DOCHON EARTH BEE',
     category: '액션',
     imageSrc: getThumb('earthbee.jpg'),
@@ -332,11 +332,11 @@ export const PLAYABLE_GAMES = [
     isNew: false,
     isPlayable: true,
     badgeText: '🐝 22위',
-    description: '꽃가루를 묻혀 꽃을 피우고 도촌초 생태계를 가꾸는 구글 두들 모티브 힐링 비행 액션!'
+    description: '꽃가루를 묻혀 꽃을 피우고 우리학교 생태계를 가꾸는 구글 두들 모티브 힐링 비행 액션!'
   },
   {
     id: 'olympics',
-    title: '도촌 미니 올림픽',
+    title: '우리학교 미니 올림픽',
     englishTitle: 'DOCHON MINI OLYMPICS',
     category: '스포츠',
     imageSrc: getThumb('olympics.jpg'),
@@ -351,7 +351,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'pangolin',
-    title: '도촌 천산갑의 모험',
+    title: '우리학교 천산갑의 모험',
     englishTitle: 'PANGOLIN ADVENTURE',
     category: '어드벤처',
     imageSrc: getThumb('pangolin.jpg'),
@@ -366,7 +366,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'roswell',
-    title: '도촌 UFO 탈출작전',
+    title: '우리학교 UFO 탈출작전',
     englishTitle: 'DOCHON ROSWELL',
     category: '어드벤처',
     imageSrc: getThumb('roswell.jpg'),
@@ -381,7 +381,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'petanque',
-    title: '도촌 페탕크 마스터',
+    title: '우리학교 페탕크 마스터',
     englishTitle: 'DOCHON PETANQUE',
     category: '스포츠',
     imageSrc: getThumb('petanque.jpg'),
@@ -426,7 +426,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'memory',
-    title: '도촌 기억력 마스터',
+    title: '우리학교 기억력 마스터',
     englishTitle: 'DOCHON MEMORY MASTER',
     category: '퍼즐',
     imageSrc: getThumb('memory.jpg'),
@@ -441,7 +441,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'ghoulduel',
-    title: '도촌 영혼 대결',
+    title: '우리학교 영혼 대결',
     englishTitle: 'DOCHON GHOUL DUEL',
     category: '멀티',
     imageSrc: getThumb('ghoulduel.jpg'),
@@ -456,7 +456,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'snowball',
-    title: '도촌 눈싸움 서바이벌',
+    title: '우리학교 눈싸움 서바이벌',
     englishTitle: 'DOCHON SNOWBALL',
     category: '멀티',
     imageSrc: getThumb('snowball.jpg'),
@@ -471,7 +471,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'schooltag',
-    title: '도촌 야간 학교 숨바꼭질',
+    title: '우리학교 야간 학교 숨바꼭질',
     englishTitle: 'DOCHON SCHOOL TAG',
     category: '멀티',
     imageSrc: getThumb('schooltag.jpg'),
@@ -486,7 +486,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'microkart',
-    title: '도촌 마이크로 카트 레이싱',
+    title: '우리학교 마이크로 카트 레이싱',
     englishTitle: 'DOCHON MICRO KART',
     category: '멀티',
     imageSrc: getThumb('microkart.jpg'),
@@ -501,7 +501,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'piratecoin',
-    title: '도촌 해적선 코인 쟁탈전',
+    title: '우리학교 해적선 코인 쟁탈전',
     englishTitle: 'DOCHON PIRATE COIN HEIST',
     category: '멀티',
     imageSrc: getThumb('piratecoin.jpg'),
@@ -516,7 +516,7 @@ export const PLAYABLE_GAMES = [
   },
   {
     id: 'tetris',
-    title: '도촌 테트리스',
+    title: '우리학교 테트리스',
     englishTitle: 'DOCHON TETRIS',
     category: '클래식',
     imageSrc: getThumb('tetris.jpg'),
@@ -534,42 +534,42 @@ export const PLAYABLE_GAMES = [
 export const COMING_SOON_GAMES = [
   {
     id: 'bachai',
-    title: '도촌 바흐 AI 작곡기',
+    title: '우리학교 바흐 AI 작곡기',
     category: '퍼즐',
     imageSrc: getThumb('bachai.jpg'),
     isPlayable: false
   },
   {
     id: 'moogsynth',
-    title: '도촌 레트로 신디사이저',
+    title: '우리학교 레트로 신디사이저',
     category: '클래식',
     imageSrc: getThumb('moogsynth.jpg'),
     isPlayable: false
   },
   {
     id: 'rubikscube',
-    title: '도촌 3D 루빅스 큐브',
+    title: '우리학교 3D 루빅스 큐브',
     category: '퍼즐',
     imageSrc: getThumb('rubikscube.jpg'),
     isPlayable: false
   },
   {
     id: 'doctorwho',
-    title: '도촌 타디스 탈출작전',
+    title: '우리학교 타디스 탈출작전',
     category: '어드벤처',
     imageSrc: getThumb('doctorwho.jpg'),
     isPlayable: false
   },
   {
     id: 'turingmachine',
-    title: '도촌 튜링 암호 머신',
+    title: '우리학교 튜링 암호 머신',
     category: '퍼즐',
     imageSrc: getThumb('turingmachine.jpg'),
     isPlayable: false
   },
   {
     id: 'robotadventure',
-    title: '도촌 로봇 사이버 어드벤처',
+    title: '우리학교 로봇 사이버 어드벤처',
     category: '어드벤처',
     imageSrc: getThumb('robotadventure.jpg'),
     isPlayable: false

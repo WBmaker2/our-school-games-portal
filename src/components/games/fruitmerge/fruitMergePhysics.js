@@ -1,4 +1,4 @@
-// 2D Circle Physics Engine & Particle System for Fruit Merge (도촌 과일 합치기)
+// 2D Circle Physics Engine & Particle System for Fruit Merge (우리학교 과일 합치기)
 import {
   CANVAS_WIDTH,
   CANVAS_HEIGHT,

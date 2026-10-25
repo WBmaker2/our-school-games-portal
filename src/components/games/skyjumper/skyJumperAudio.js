@@ -1,5 +1,5 @@
 /**
- * Dochon Sky Jumper - Web Audio API Procedural Synthesizer
+ * Our School Sky Jumper - Web Audio API Procedural Synthesizer
  */
 
 class SkyJumperAudio {

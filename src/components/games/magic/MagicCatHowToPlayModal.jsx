@@ -16,7 +16,7 @@ export default function MagicCatHowToPlayModal({ isOpen, onClose }) {
             </div>
             <div>
               <h3 className="text-lg font-black text-white tracking-tight">
-                🧙‍♂️ 도촌 매직 캣 아카데미 게임 방법
+                🧙‍♂️ 우리학교 매직 캣 아카데미 게임 방법
               </h3>
               <p className="text-xs text-purple-200">
                 마법 지팡이로 기호를 화면에 그려 침공한 유령들을 물리치세요!
@@ -98,7 +98,7 @@ export default function MagicCatHowToPlayModal({ isOpen, onClose }) {
           {/* Stages & Pro Tips */}
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-amber-500/30">
             <h4 className="text-xs font-black text-amber-300 mb-2 flex items-center gap-1.5">
-              <Trophy className="w-4 h-4 text-amber-400" /> 고득점 마스터 비법 (도촌 랭킹 TIP)
+              <Trophy className="w-4 h-4 text-amber-400" /> 고득점 마스터 비법 (우리학교 랭킹 TIP)
             </h4>
             <ul className="text-[11px] text-slate-300 space-y-1.5 list-disc list-inside">
               <li>
@@ -111,7 +111,7 @@ export default function MagicCatHowToPlayModal({ isOpen, onClose }) {
                 <strong className="text-purple-300">5단계 거대 보스 결전:</strong> 옥상 보스전에서는 보스의 콤보 기호 라인을 연속으로 빠르게 그려야 합니다.
               </li>
               <li>
-                <strong className="text-amber-300">도촌 명예의 전당:</strong> 최종 100점을 초과하면 전교 랭킹에 자랑스러운 이름을 남길 수 있습니다!
+                <strong className="text-amber-300">우리학교 명예의 전당:</strong> 최종 100점을 초과하면 전교 랭킹에 자랑스러운 이름을 남길 수 있습니다!
               </li>
             </ul>
           </div>

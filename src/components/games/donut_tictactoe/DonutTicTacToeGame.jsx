@@ -219,7 +219,7 @@ export default function DonutTicTacToeGame({ onScoreSubmitted }) {
       <div className="donut-top-bar">
         <div className="donut-title-pill">
           <span className="text-xl">🍩</span>
-          <h2>도촌 도넛 틱택토</h2>
+          <h2>우리학교 도넛 틱택토</h2>
         </div>
 
         <div className="donut-top-actions">
@@ -404,7 +404,7 @@ export default function DonutTicTacToeGame({ onScoreSubmitted }) {
             <div className="donut-score-submit-box">
               <p className="text-[11px] text-amber-300 text-center font-bold flex items-center justify-center gap-1">
                 <Trophy className="w-3.5 h-3.5 text-amber-400" />
-                <span>도촌초 명예의 전당 등록 가능! ({totalScore}점 달성)</span>
+                <span>우리학교 명예의 전당 등록 가능! ({totalScore}점 달성)</span>
               </p>
               <form onSubmit={handleSubmitScore} className="donut-score-submit-form">
                 <input

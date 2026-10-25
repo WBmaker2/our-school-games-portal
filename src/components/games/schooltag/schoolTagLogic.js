@@ -1,4 +1,4 @@
-// Dochon Games Portal - School Tag Game Core Logic
+// Our School Games Portal - School Tag Game Core Logic
 // 2D Raycasting Lighting, Physics Collision, Noise Propagation, Smart AI & State Machine
 
 import { SCHOOL_TAG_CONSTANTS, ROLE_TYPES } from './schoolTagConstants';

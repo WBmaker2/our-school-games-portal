@@ -17,7 +17,7 @@ export default function JerryHowToPlayModal({ isOpen, onClose }) {
               🕹️
             </div>
             <div>
-              <h2 className="jerry-modal-title">도촌 제리 로슨 (Jerry Lawson) 게임 가이드</h2>
+              <h2 className="jerry-modal-title">우리학교 제리 로슨 (Jerry Lawson) 게임 가이드</h2>
               <p className="jerry-modal-subtitle">8비트 레트로 아케이드 & 나만의 게임 메이커</p>
             </div>
           </div>
@@ -132,10 +132,10 @@ export default function JerryHowToPlayModal({ isOpen, onClose }) {
           <div className="jerry-guide-section honor-theme">
             <h3 className="jerry-guide-heading" style={{ color: '#FFB800' }}>
               <Trophy style={{ width: '18px', height: '18px', color: '#FFB800' }} />
-              <span>4. 도촌초 명예의 전당 등록 안내</span>
+              <span>4. 우리학교 명예의 전당 등록 안내</span>
             </h3>
             <p style={{ margin: 0, fontSize: '12px', color: '#CBD5E1', lineHeight: '1.5' }}>
-              게임 플레이 후 <strong style={{ color: '#FFD700' }}>100점을 초과</strong>하여 달성하면 도촌초등학교 실시간 명예의 전당에 여러분의 이름을 남길 수 있습니다!
+              게임 플레이 후 <strong style={{ color: '#FFD700' }}>100점을 초과</strong>하여 달성하면 우리학교 실시간 명예의 전당에 여러분의 이름을 남길 수 있습니다!
             </p>
           </div>
         </div>

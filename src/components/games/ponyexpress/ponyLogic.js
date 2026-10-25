@@ -1,4 +1,4 @@
-// Core Logic & Canvas Drawing Engine for Dochon Pony Express
+// Core Logic & Canvas Drawing Engine for Our School Pony Express
 import {
   CANVAS_WIDTH,
   CANVAS_HEIGHT,
@@ -684,7 +684,7 @@ export class PonyGameLogic {
     ctx.fillStyle = '#78350F';
     ctx.font = 'bold 16px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('DOCHON EXPRESS', 130, 47);
+    ctx.fillText('OUR SCHOOL EXPRESS', 130, 47);
 
     // Wooden Balcony & Windows
     ctx.fillStyle = '#FEF08A';

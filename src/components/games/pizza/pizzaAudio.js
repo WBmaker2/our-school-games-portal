@@ -1,4 +1,4 @@
-// Dochon Pizza Master - Web Audio API Synthesizer (Zero-dependency)
+// Our School Pizza Master - Web Audio API Synthesizer (Zero-dependency)
 
 class PizzaAudio {
   constructor() {

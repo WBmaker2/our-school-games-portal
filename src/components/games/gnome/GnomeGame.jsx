@@ -640,7 +640,7 @@ export default function GnomeGame({ onScoreSubmitted }) {
       <div className="gnome-header">
         <div className="gnome-title-wrap">
           <span className="gnome-logo-icon">🌿</span>
-          <h1 className="gnome-main-title">도촌 정원 요정 (Garden Gnomes)</h1>
+          <h1 className="gnome-main-title">우리학교 정원 요정 (Garden Gnomes)</h1>
         </div>
         <div className="gnome-actions">
           <button

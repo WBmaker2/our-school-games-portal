@@ -1,4 +1,4 @@
-// Dochon Bubble Tea Cafe - Web Audio API Synthesizer
+// Our School Bubble Tea Cafe - Web Audio API Synthesizer
 // Clean, low-latency procedural sound effects without external audio files
 
 class BubbleTeaAudioEngine {

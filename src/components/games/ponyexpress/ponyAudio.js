@@ -1,4 +1,4 @@
-// Web Audio API Sound Synthesizer for Dochon Pony Express
+// Web Audio API Sound Synthesizer for Our School Pony Express
 
 class PonyAudio {
   constructor() {

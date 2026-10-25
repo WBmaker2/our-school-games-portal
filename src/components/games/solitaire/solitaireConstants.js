@@ -1,4 +1,4 @@
-// Constants and definitions for Dochon Solitaire (도촌 솔리테어)
+// Constants and definitions for Our School Solitaire (우리학교 솔리테어)
 
 export const SUITS = {
   SPADES: { id: 'spades', symbol: '♠', name: '스페이드', color: 'black' },

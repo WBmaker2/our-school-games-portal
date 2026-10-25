@@ -1,4 +1,4 @@
-// Dochon Games Portal - Dochon Pirate Coin Heist Constants
+// Our School Games Portal - Our School Pirate Coin Heist Constants
 // World dimensions, ship stats, items, physics constants and scoring rules
 
 export const WORLD_WIDTH = 2200;

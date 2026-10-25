@@ -1,4 +1,4 @@
-// Gesture Recognition Engine for Dochon Magic Cat Academy
+// Gesture Recognition Engine for Our School Magic Cat Academy
 // Classifies mouse & touch strokes into 6 Magic Symbols:
 // HORIZONTAL (—), VERTICAL (│), UP_V (∧), DOWN_V (∨), LIGHTNING (⚡), HEART (❤️)
 

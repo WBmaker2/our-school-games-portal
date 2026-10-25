@@ -1,4 +1,4 @@
-// Dochon Pani Puri Master - Web Audio API Synthesizer & Sound Effects
+// Our School Pani Puri Master - Web Audio API Synthesizer & Sound Effects
 
 class PaniPuriAudio {
   constructor() {

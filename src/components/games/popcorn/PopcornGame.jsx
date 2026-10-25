@@ -686,7 +686,7 @@ export default function PopcornGame({ onScoreSubmitted }) {
       {/* Top Toolbar & Header */}
       <div className="popcorn-header">
         <div className="popcorn-title-badge">
-          <span>🍿 도촌 팝콘 서바이벌</span>
+          <span>🍿 우리학교 팝콘 서바이벌</span>
           <span className="text-xs bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-full font-bold">
             STAGE {stageIndex + 1}
           </span>

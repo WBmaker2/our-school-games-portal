@@ -15,7 +15,7 @@ export default function PopcornHowToPlayModal({ isOpen, onClose }) {
             <span className="text-2xl">🍿</span>
             <div>
               <h2 className="text-xl font-black text-amber-400 tracking-tight">
-                도촌 팝콘 서바이벌 게임 방법
+                우리학교 팝콘 서바이벌 게임 방법
               </h2>
               <p className="text-xs text-slate-400">
                 달궈진 프라이팬 위에서 끝까지 튀겨지지 말고 생존하세요!

@@ -1,23 +1,52 @@
-// Chronological Update History & Changelog Data Store for Dochon Games Portal
+// Chronological Update History & Changelog Data Store for Our School Games Portal
 // Automatically maintained with date-by-date release notes
 
 export const CHANGELOG_DATA = [
   {
-    version: 'v1.54.0',
-    date: '2026-10-11',
-    title: '🧱 [도촌 테트리스] 35번째 신작 클래식 아케이드 정식 개장 및 실시간 클라우드 명예의 전당 연동',
+    version: 'v2.0.0',
+    date: '2026-10-25',
+    title: '🏫 [우리 학교 게임 포털] 전면 리브랜딩, 서버리스 로컬 스토리지 명예의 전당 전환 및 100% 독립 P2P 멀티플레이어 구축',
     badge: 'LATEST',
     badgeColor: 'emerald',
     items: [
       {
+        tag: 'REBRANDING',
+        tagColor: 'amber',
+        text: '[우리 학교 게임 포털 전면 리브랜딩] 포털 메인 타이틀, 35종 전체 게임 및 게임 모달 안내 문구를 \'우리 학교 게임 포털\'로 일괄 개편하여 어디서든 범용적으로 활용할 수 있도록 브랜드 현대화'
+      },
+      {
+        tag: 'SERVERLESS LEADERBOARD',
+        tagColor: 'emerald',
+        text: '[로컬 스토리지 명예의 전당 전면 전환] 외부 백엔드 서버 의존성을 완전히 배제하고 브라우저 로컬 스토리지 기반의 독립형 순위 시스템으로 전환하여, 백엔드 유지비나 서버 장애 걱정 없이 100% 안전하고 빠른 즉시 기록 지원'
+      },
+      {
+        tag: 'PURE P2P MULTIPLAYER',
+        tagColor: 'blue',
+        text: '[서버를 공유하지 않는 100% P2P 멀티플레이어] 포털 5대 실시간 멀티 게임(영혼 대결, 눈싸움 서바이벌, 야간 학교 숨바꼭질, 마이크로 카트 레이싱, 해적선 코인 쟁탈전)을 외부 서버를 거치지 않는 브라우저 간 직접 P2P WebRTC 통신으로 전면 개편'
+      },
+      {
+        tag: 'STANDALONE READY',
+        tagColor: 'purple',
+        text: '[백엔드 없는 완전 독립형 웹앱 완성] 별도의 백엔드 데이터베이스 구축 없이 정적 웹 호스팅 환경(GitHub Pages, Vercel 등)에 바로 게시하여 누구나 즉시 즐길 수 있도록 완벽 최적화'
+      }
+    ]
+  },
+  {
+    version: 'v1.54.0',
+    date: '2026-10-11',
+    title: '🧱 [우리학교 테트리스] 35번째 신작 클래식 아케이드 정식 개장 및 실시간 클라우드 명예의 전당 연동',
+    badge: 'UPDATE',
+    badgeColor: 'blue',
+    items: [
+      {
         tag: 'NEW RELEASE',
         tagColor: 'emerald',
-        text: '[신규 게임 35호 정식 오픈] 7종의 다채로운 테트로미노 블록을 회전하고 맞춰 가로줄을 삭제하는 전 세계 인기 클래식 퍼즐 \'도촌 테트리스(DOCHON TETRIS)\' 전격 개장'
+        text: '[신규 게임 35호 정식 오픈] 7종의 다채로운 테트로미노 블록을 회전하고 맞춰 가로줄을 삭제하는 전 세계 인기 클래식 퍼즐 \'우리학교 테트리스(OUR SCHOOL TETRIS)\' 전격 개장'
       },
       {
         tag: 'CLOUD LEADERBOARD',
         tagColor: 'amber',
-        text: '[실시간 클라우드 명예의 전당 연동] 100점 초과 달성 시 실시간 학교 명예의 전당에 점수를 등록하고, 등록 즉시 도촌 테트리스 랭킹 탭으로 자동 연결되어 자신의 순위를 실시간 확인 가능'
+        text: '[실시간 클라우드 명예의 전당 연동] 100점 초과 달성 시 실시간 학교 명예의 전당에 점수를 등록하고, 등록 즉시 우리학교 테트리스 랭킹 탭으로 자동 연결되어 자신의 순위를 실시간 확인 가능'
       },
       {
         tag: 'ACCESSIBILITY & AUDIO',
@@ -34,7 +63,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.53.4',
     date: '2026-09-14',
-    title: '🏴‍☠️ [도촌 해적선 코인 쟁탈전] WebRTC P2P + Firebase RTDB 하이브리드 실시간 릴레이 자동 폴백 엔진 탑재 (포털 5대 멀티 100% 구축 완성)',
+    title: '🏴‍☠️ [우리학교 해적선 코인 쟁탈전] WebRTC P2P + Firebase RTDB 하이브리드 실시간 릴레이 자동 폴백 엔진 탑재 (포털 5대 멀티 100% 구축 완성)',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -87,7 +116,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.53.2',
     date: '2026-09-14',
-    title: '☃️ [도촌 눈싸움 서바이벌] 교사용 PC ↔ 학생용 크롬북 100% 접속 보장 WebRTC P2P + Firebase RTDB 하이브리드 릴레이 폴백 엔진 구축',
+    title: '☃️ [우리학교 눈싸움 서바이벌] 교사용 PC ↔ 학생용 크롬북 100% 접속 보장 WebRTC P2P + Firebase RTDB 하이브리드 릴레이 폴백 엔진 구축',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
@@ -111,7 +140,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.53.1',
     date: '2026-09-14',
-    title: '👻 [도촌 영혼 대결] 교사용 업무망 ↔ 학생용 학생망 크롬북 100% 접속 보장 하이브리드 릴레이 폴백 엔진 구축',
+    title: '👻 [우리학교 영혼 대결] 교사용 업무망 ↔ 학생용 학생망 크롬북 100% 접속 보장 하이브리드 릴레이 폴백 엔진 구축',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -140,19 +169,19 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.53.0',
     date: '2026-09-10',
-    title: '🏴‍☠️ [도촌 해적선 코인 쟁탈전] 34번째 공식 플레이어블 게임 정식 개장 & Firebase RTDB WebRTC P2P 배틀 탑재',
+    title: '🏴‍☠️ [우리학교 해적선 코인 쟁탈전] 34번째 공식 플레이어블 게임 정식 개장 & Firebase RTDB WebRTC P2P 배틀 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME RELEASE',
         tagColor: 'amber',
-        text: '[34번째 공식 게임 오픈] 황금 보물섬에 쏟아지는 금화를 모아 자신의 해적선으로 안전하게 수송하고, 전속력으로 상대를 들이받아 코인을 털어내는 실시간 4인 코인 쟁탈 아케이드 배틀 [도촌 해적선 코인 쟁탈전] 정식 출시'
+        text: '[34번째 공식 게임 오픈] 황금 보물섬에 쏟아지는 금화를 모아 자신의 해적선으로 안전하게 수송하고, 전속력으로 상대를 들이받아 코인을 털어내는 실시간 4인 코인 쟁탈 아케이드 배틀 [우리학교 해적선 코인 쟁탈전] 정식 출시'
       },
       {
         tag: 'HYBRID P2P SIGNALING',
         tagColor: 'emerald',
-        text: '[전용 하이브리드 시그널링 브로커 탑재] 외부 공개 시그널링 서버 의존성을 완전히 배제하고, 도촌초 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크 전용 브로커로 사용하여 네트워크 연결 안정성 및 접속 성공률 99.9% 달성'
+        text: '[전용 하이브리드 시그널링 브로커 탑재] 외부 공개 시그널링 서버 의존성을 완전히 배제하고, 우리학교 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크 전용 브로커로 사용하여 네트워크 연결 안정성 및 접속 성공률 99.9% 달성'
       },
       {
         tag: 'IN-GAME BATTLE MECHANICS',
@@ -162,21 +191,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD INTEGRATION',
         tagColor: 'blue',
-        text: '[명예의 전당 점수 등록 연동] 100점 초과 달성 시 해적선 선장 랭킹 등록 지원 및 점수 제출 즉시 도촌 해적선 코인 쟁탈전 명예의 전당 탭 자동 동기화'
+        text: '[명예의 전당 점수 등록 연동] 100점 초과 달성 시 해적선 선장 랭킹 등록 지원 및 점수 제출 즉시 우리학교 해적선 코인 쟁탈전 명예의 전당 탭 자동 동기화'
       }
     ]
   },
   {
     version: 'v1.52.3',
     date: '2026-09-10',
-    title: '🏎️ [도촌 마이크로 카트 레이싱] Firebase RTDB 기반 WebRTC 하이브리드 P2P 시그널링 전면 전환',
+    title: '🏎️ [우리학교 마이크로 카트 레이싱] Firebase RTDB 기반 WebRTC 하이브리드 P2P 시그널링 전면 전환',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'FIREBASE SIGNALING',
         tagColor: 'emerald',
-        text: '[전용 하이브리드 시그널링 브로커 전환] 외부 공개 시그널링 서버(0.peerjs.com) 의존성을 완전히 제거하고, 도촌초 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크(SDP 교환) 전용 브로커로 전면 교체하여 네트워크 연결 안정성 및 접속 성공률 99.9% 달성'
+        text: '[전용 하이브리드 시그널링 브로커 전환] 외부 공개 시그널링 서버(0.peerjs.com) 의존성을 완전히 제거하고, 우리학교 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크(SDP 교환) 전용 브로커로 전면 교체하여 네트워크 연결 안정성 및 접속 성공률 99.9% 달성'
       },
       {
         tag: 'ZERO BYTES & ZERO COST',
@@ -193,14 +222,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.52.2',
     date: '2026-09-10',
-    title: '🔦 [도촌 야간 학교 숨바꼭질] Firebase RTDB 기반 WebRTC 하이브리드 P2P 시그널링 전면 전환',
+    title: '🔦 [우리학교 야간 학교 숨바꼭질] Firebase RTDB 기반 WebRTC 하이브리드 P2P 시그널링 전면 전환',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
       {
         tag: 'FIREBASE SIGNALING',
         tagColor: 'emerald',
-        text: '[전용 하이브리드 시그널링 브로커 전환] 외부 공개 시그널링 서버 의존성을 완전히 제거하고, 도촌초 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크(SDP 교환) 전용 브로커로 전면 교체하여 네트워크 연결 안정성 및 접속 성공률 99.9% 달성'
+        text: '[전용 하이브리드 시그널링 브로커 전환] 외부 공개 시그널링 서버 의존성을 완전히 제거하고, 우리학교 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크(SDP 교환) 전용 브로커로 전면 교체하여 네트워크 연결 안정성 및 접속 성공률 99.9% 달성'
       },
       {
         tag: 'ZERO BYTES & ZERO COST',
@@ -217,14 +246,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.52.1',
     date: '2026-09-10',
-    title: '☃️ [도촌 눈싸움 서바이벌] Firebase RTDB 기반 WebRTC 하이브리드 P2P 시그널링 전면 전환 & W3C 네이티브 엔진 탑재',
+    title: '☃️ [우리학교 눈싸움 서바이벌] Firebase RTDB 기반 WebRTC 하이브리드 P2P 시그널링 전면 전환 & W3C 네이티브 엔진 탑재',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
       {
         tag: 'FIREBASE SIGNALING',
         tagColor: 'emerald',
-        text: '[전용 하이브리드 시그널링 브로커 전환] 외부 공개 시그널링 서버 의존성을 완전히 제거하고, 도촌초 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크(SDP 교환) 전용 브로커로 전면 교체하여 다양한 접속 환경 지원 및 연결 안정성 극대화'
+        text: '[전용 하이브리드 시그널링 브로커 전환] 외부 공개 시그널링 서버 의존성을 완전히 제거하고, 우리학교 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크(SDP 교환) 전용 브로커로 전면 교체하여 다양한 접속 환경 지원 및 연결 안정성 극대화'
       },
       {
         tag: 'ZERO COST & ZERO LATENCY',
@@ -241,14 +270,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.52.0',
     date: '2026-09-10',
-    title: '👻 [도촌 영혼 대결] Firebase RTDB 기반 WebRTC 하이브리드 P2P 시그널링 엔진 탑재 & 외부 서버 의존성 완전 배제',
+    title: '👻 [우리학교 영혼 대결] Firebase RTDB 기반 WebRTC 하이브리드 P2P 시그널링 엔진 탑재 & 외부 서버 의존성 완전 배제',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'FIREBASE SIGNALING',
         tagColor: 'emerald',
-        text: '[전용 하이브리드 시그널링 브로커 전환] 기존 외부 공개 시그널링 서버(0.peerjs.com) 의존성을 완전히 제거하고, 도촌초 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크(SDP 교환) 전용 브로커로 전면 교체하여 접속 성공률 99.9% 달성'
+        text: '[전용 하이브리드 시그널링 브로커 전환] 기존 외부 공개 시그널링 서버(0.peerjs.com) 의존성을 완전히 제거하고, 우리학교 전용 Firebase Realtime Database를 4자리 룸코드 검색 및 WebRTC 핸드셰이크(SDP 교환) 전용 브로커로 전면 교체하여 접속 성공률 99.9% 달성'
       },
       {
         tag: 'ZERO COST & ZERO LATENCY',
@@ -270,7 +299,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.51.0',
     date: '2026-09-04',
-    title: '🏎️ [도촌 마이크로 카트 레이싱] 3대 서킷 그랑프리 시스템 & P2P 실시간 맵 선택 기능 대규모 업데이트',
+    title: '🏎️ [우리학교 마이크로 카트 레이싱] 3대 서킷 그랑프리 시스템 & P2P 실시간 맵 선택 기능 대규모 업데이트',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -299,7 +328,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.50.2',
     date: '2026-09-04',
-    title: '🏁 [도촌 마이크로 카트 레이싱] 3바퀴 완주 체크포인트 판정 및 결승선 통과 감지 엔진 긴급 패치',
+    title: '🏁 [우리학교 마이크로 카트 레이싱] 3바퀴 완주 체크포인트 판정 및 결승선 통과 감지 엔진 긴급 패치',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -323,7 +352,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.50.1',
     date: '2026-09-04',
-    title: '🏎️ [도촌 마이크로 카트 레이싱] P2P 멀티플레이 연결 안정성 강화 & 크롬북 30FPS 스마트 렌더링 최적화',
+    title: '🏎️ [우리학교 마이크로 카트 레이싱] P2P 멀티플레이 연결 안정성 강화 & 크롬북 30FPS 스마트 렌더링 최적화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -342,14 +371,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.50.0',
     date: '2026-09-04',
-    title: '🏎️ [도촌 마이크로 카트 레이싱] 33호 신작 정식 오픈! 학용품 책상 서킷 & 실시간 P2P 아이템 카트 배틀',
+    title: '🏎️ [우리학교 마이크로 카트 레이싱] 33호 신작 정식 오픈! 학용품 책상 서킷 & 실시간 P2P 아이템 카트 배틀',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW RELEASE',
         tagColor: 'rose',
-        text: '[33번째 공식 플레이어블 게임 정식 오픈] 교실 책상과 학용품(연필, 지우개, 자, 모눈종이, 물감 등)을 서킷으로 활용한 실시간 탑뷰(Top-Down) 아케이드 카트 레이싱 게임 《도촌 마이크로 카트 레이싱》 정식 출시'
+        text: '[33번째 공식 플레이어블 게임 정식 오픈] 교실 책상과 학용품(연필, 지우개, 자, 모눈종이, 물감 등)을 서킷으로 활용한 실시간 탑뷰(Top-Down) 아케이드 카트 레이싱 게임 《우리학교 마이크로 카트 레이싱》 정식 출시'
       },
       {
         tag: 'P2P MULTIPLAYER',
@@ -405,7 +434,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.22',
     date: '2026-09-03',
-    title: '🐎 [도촌 포니 익스프레스] 캔버스 그래픽 렌더링 엔진 오류 해결 & 화면 미노출 긴급 핫픽스',
+    title: '🐎 [우리학교 포니 익스프레스] 캔버스 그래픽 렌더링 엔진 오류 해결 & 화면 미노출 긴급 핫픽스',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -477,7 +506,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.19',
     date: '2026-09-03',
-    title: '⚡ [도촌 눈싸움 서바이벌] 저사양 크롬북 특화 스마트 30FPS 프레임 리미터 탑재 (GPU 부하 50% 절감)',
+    title: '⚡ [우리학교 눈싸움 서바이벌] 저사양 크롬북 특화 스마트 30FPS 프레임 리미터 탑재 (GPU 부하 50% 절감)',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -496,7 +525,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.18',
     date: '2026-09-03',
-    title: '👻 [도촌 영혼 대결] P2P 실시간 좌표 동기화, 영혼 수집/본진 수확 판정 강화 & 크롬북 60FPS 최적화',
+    title: '👻 [우리학교 영혼 대결] P2P 실시간 좌표 동기화, 영혼 수집/본진 수확 판정 강화 & 크롬북 60FPS 최적화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -525,7 +554,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.17',
     date: '2026-09-03',
-    title: '⚡ [도촌 눈싸움 & 멀티] 크롬북 60FPS 최적화, 게임 멈춤 방어 루프 및 P2P 다중 백업망 패치',
+    title: '⚡ [우리학교 눈싸움 & 멀티] 크롬북 60FPS 최적화, 게임 멈춤 방어 루프 및 P2P 다중 백업망 패치',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -549,7 +578,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.16',
     date: '2026-08-31',
-    title: '🔦 [도촌 야간 학교 숨바꼭질] AI 당직선생님 맵 전역 26개 노드 연속 순찰 & 실시간 스턱 탈출 엔진 탑재',
+    title: '🔦 [우리학교 야간 학교 숨바꼭질] AI 당직선생님 맵 전역 26개 노드 연속 순찰 & 실시간 스턱 탈출 엔진 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -573,7 +602,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.15',
     date: '2026-08-31',
-    title: '🔦 [도촌 야간 학교 숨바꼭질] 황금 열쇠 맵 전역 균등 분산 & 충돌 배제 동적 랜덤 스폰 엔진 구축',
+    title: '🔦 [우리학교 야간 학교 숨바꼭질] 황금 열쇠 맵 전역 균등 분산 & 충돌 배제 동적 랜덤 스폰 엔진 구축',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -604,22 +633,22 @@ export const CHANGELOG_DATA = [
       {
         tag: 'BASEBALL OVERHAUL',
         tagColor: 'amber',
-        text: '[도촌 홈런왕 야구] 800ms 도달 시간 하한선 해제 및 최대 320ms 광속 피칭 가속화, 폭포수 포크볼·너클볼·하이퍼 광속구 등 신규 마구 추가, 5단계 스타디움 테마(낮/노을/나이트/스톰/챔피언) 적용'
+        text: '[우리학교 홈런왕 야구] 800ms 도달 시간 하한선 해제 및 최대 320ms 광속 피칭 가속화, 폭포수 포크볼·너클볼·하이퍼 광속구 등 신규 마구 추가, 5단계 스타디움 테마(낮/노을/나이트/스톰/챔피언) 적용'
       },
       {
         tag: 'CRICKET ACCELERATION',
         tagColor: 'blue',
-        text: '[도촌 크리켓] 1.55배 구속 상한 해제 및 점수 비례 연속 가속, 너클 지그재그·슈퍼바운서·하이퍼 썬더 요커 신규 투구 추가, 배팅 스위트스팟 정밀화 및 5단계 경기장 테마 연동'
+        text: '[우리학교 크리켓] 1.55배 구속 상한 해제 및 점수 비례 연속 가속, 너클 지그재그·슈퍼바운서·하이퍼 썬더 요커 신규 투구 추가, 배팅 스위트스팟 정밀화 및 5단계 경기장 테마 연동'
       },
       {
         tag: 'SKY JUMPER COSMIC',
         tagColor: 'purple',
-        text: '[도촌 하늘 점퍼] 고도 상승에 따른 발판 가로폭 축소(76px ➔ 44px) 및 수직 간격 확장, 고고도 유성우(Meteor) 장애물 패턴 추가, 파워업 지속시간 튜닝 및 5단계 우주 고도 테마 개편'
+        text: '[우리학교 하늘 점퍼] 고도 상승에 따른 발판 가로폭 축소(76px ➔ 44px) 및 수직 간격 확장, 고고도 유성우(Meteor) 장애물 패턴 추가, 파워업 지속시간 튜닝 및 5단계 우주 고도 테마 개편'
       },
       {
         tag: 'SNAKE HYPER DRIVE',
         tagColor: 'emerald',
-        text: '[도촌 스네이크 마스터] 65ms 속도 캡을 28ms 하이퍼 드라이브(초당 35칸+)로 대폭 확장, 사과 7개 단위로 피해야 하는 암석 장애물(Rock) 실시간 스폰, 5단계 네온 사이버 테마 렌더링 적용'
+        text: '[우리학교 스네이크 마스터] 65ms 속도 캡을 28ms 하이퍼 드라이브(초당 35칸+)로 대폭 확장, 사과 7개 단위로 피해야 하는 암석 장애물(Rock) 실시간 스폰, 5단계 네온 사이버 테마 렌더링 적용'
       }
     ]
   },
@@ -650,7 +679,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.12',
     date: '2026-08-31',
-    title: '☃️ [도촌 눈싸움 서바이벌] P2P 대기실 초대 방 번호 52px 대형 골든 히어로 카드 UI 개편',
+    title: '☃️ [우리학교 눈싸움 서바이벌] P2P 대기실 초대 방 번호 52px 대형 골든 히어로 카드 UI 개편',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
@@ -669,7 +698,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.11',
     date: '2026-08-31',
-    title: '🔦 [도촌 야간 학교 숨바꼭질] P2P 대기실 초대 방 번호 거대 네온 디지털 카드 UI 개편',
+    title: '🔦 [우리학교 야간 학교 숨바꼭질] P2P 대기실 초대 방 번호 거대 네온 디지털 카드 UI 개편',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -688,7 +717,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.10',
     date: '2026-08-31',
-    title: '🌐 [도촌 P2P 멀티플레이] 고가용성 TURN 릴레이 지원 & WebSocket 하트비트 유지 및 자동 재연결 패치',
+    title: '🌐 [우리학교 P2P 멀티플레이] 고가용성 TURN 릴레이 지원 & WebSocket 하트비트 유지 및 자동 재연결 패치',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
@@ -712,7 +741,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.9',
     date: '2026-08-31',
-    title: '👻 [도촌 영혼 대결] P2P 대기실 초대 룸코드 대형 히어로 카드 UI 개편',
+    title: '👻 [우리학교 영혼 대결] P2P 대기실 초대 룸코드 대형 히어로 카드 UI 개편',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -731,7 +760,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.8',
     date: '2026-08-31',
-    title: '👻 [도촌 영혼 대결] 3-Way Handshake 자동 재시도 프로토콜 & 방 번호 자동 정제 시스템 도입',
+    title: '👻 [우리학교 영혼 대결] 3-Way Handshake 자동 재시도 프로토콜 & 방 번호 자동 정제 시스템 도입',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
@@ -755,7 +784,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.7',
     date: '2026-08-31',
-    title: '🔦 [도촌 야간 학교 숨바꼭질] P2P 멀티플레이 TURN 릴레이 탑재 및 3-Way 핸드셰이크 접속 안정화 패치',
+    title: '🔦 [우리학교 야간 학교 숨바꼭질] P2P 멀티플레이 TURN 릴레이 탑재 및 3-Way 핸드셰이크 접속 안정화 패치',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
@@ -784,7 +813,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.6',
     date: '2026-08-31',
-    title: '☃️ [도촌 눈싸움 서바이벌] P2P 멀티플레이 TURN 릴레이 탑재 및 접속 안정화 패치',
+    title: '☃️ [우리학교 눈싸움 서바이벌] P2P 멀티플레이 TURN 릴레이 탑재 및 접속 안정화 패치',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
@@ -813,7 +842,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.5',
     date: '2026-08-31',
-    title: '👻 [도촌 영혼 대결] P2P 실시간 대전 연결 안정성 대폭 강화',
+    title: '👻 [우리학교 영혼 대결] P2P 실시간 대전 연결 안정성 대폭 강화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -842,7 +871,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.4',
     date: '2026-08-28',
-    title: '🔦 [도촌 야간 학교 숨바꼭질] 손전등 지향형 스티어링(전진/후진 및 좌우 회전) 조작 엔진 도입',
+    title: '🔦 [우리학교 야간 학교 숨바꼭질] 손전등 지향형 스티어링(전진/후진 및 좌우 회전) 조작 엔진 도입',
     items: [
       {
         tag: 'STEERING CONTROLS',
@@ -864,7 +893,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.3',
     date: '2026-08-28',
-    title: '🕹️ [도촌 야간 학교 숨바꼭질] 애니메이션 루프 불변 제어 & 한/영 IME 및 화살표 조작 엔진 완전화',
+    title: '🕹️ [우리학교 야간 학교 숨바꼭질] 애니메이션 루프 불변 제어 & 한/영 IME 및 화살표 조작 엔진 완전화',
     badge: 'UPDATE',
     badgeColor: 'slate',
     items: [
@@ -888,7 +917,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.2',
     date: '2026-08-28',
-    title: '🔦 [도촌 야간 학교 숨바꼭질] 2D Fog of War 레이캐스팅 조명 엔진 전면 개편 & 손전등 시야 복구 긴급 패치',
+    title: '🔦 [우리학교 야간 학교 숨바꼭질] 2D Fog of War 레이캐스팅 조명 엔진 전면 개편 & 손전등 시야 복구 긴급 패치',
     badge: 'UPDATE',
     badgeColor: 'slate',
     items: [
@@ -917,14 +946,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.48.1',
     date: '2026-08-28',
-    title: '☃️ [도촌 눈싸움 서바이벌] 실시간 P2P 전용 명예의 전당 등록 & 전체 참가자 성적표 및 1등 MVP 특별 연출 시스템',
+    title: '☃️ [우리학교 눈싸움 서바이벌] 실시간 P2P 전용 명예의 전당 등록 & 전체 참가자 성적표 및 1등 MVP 특별 연출 시스템',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
       {
         tag: 'P2P LEADERBOARD',
         tagColor: 'blue',
-        text: '[실시간 P2P 멀티플레이 전용 점수 등록] 도촌초 명예의 전당의 공정성과 경쟁의 묘미를 위해, 명예의 전당 점수 등록을 친구들과 직접 대결하는 실시간 P2P 경기에서만 가능하도록 규칙 개편'
+        text: '[실시간 P2P 멀티플레이 전용 점수 등록] 우리학교 명예의 전당의 공정성과 경쟁의 묘미를 위해, 명예의 전당 점수 등록을 친구들과 직접 대결하는 실시간 P2P 경기에서만 가능하도록 규칙 개편'
       },
       {
         tag: 'GOLDEN MVP',
@@ -939,21 +968,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'INDIVIDUAL SUBMISSION',
         tagColor: 'emerald',
-        text: '[개인별 점수 확인 후 제출 플로우] 전체 플레이어 성적표에서 자신의 활약과 점수를 확인한 뒤, P2P 모드 플레이어가 자신의 닉네임으로 도촌초 명예의 전당에 직접 점수를 등록할 수 있는 직관적인 알고리즘 구축'
+        text: '[개인별 점수 확인 후 제출 플로우] 전체 플레이어 성적표에서 자신의 활약과 점수를 확인한 뒤, P2P 모드 플레이어가 자신의 닉네임으로 우리학교 명예의 전당에 직접 점수를 등록할 수 있는 직관적인 알고리즘 구축'
       }
     ]
   },
   {
     version: 'v1.48.0',
     date: '2026-08-28',
-    title: '🔦 [도촌 야간 학교 숨바꼭질] 정식 오픈 (Fog of War 비대칭 서바이벌)',
+    title: '🔦 [우리학교 야간 학교 숨바꼭질] 정식 오픈 (Fog of War 비대칭 서바이벌)',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'blue',
-        text: '[도촌 야간 학교 숨바꼭질 정식 오픈] 불 꺼진 도촌초등학교 교실과 복도를 무대로, 손전등 시야와 발자국 소리만 감지하며 황금 열쇠 3개를 찾아 탈출하는 2D 탑다운 비대칭 술래잡기 게임 출시 (포털 32번째 정식 게임)'
+        text: '[우리학교 야간 학교 숨바꼭질 정식 오픈] 불 꺼진 우리학교 교실과 복도를 무대로, 손전등 시야와 발자국 소리만 감지하며 황금 열쇠 3개를 찾아 탈출하는 2D 탑다운 비대칭 술래잡기 게임 출시 (포털 32번째 정식 게임)'
       },
       {
         tag: '2D FOG OF WAR',
@@ -980,7 +1009,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.47.1',
     date: '2026-08-28',
-    title: '☃️ [도촌 눈싸움 서바이벌] 이동 속도·키보드 조작 민감도 완화 및 다층 전술 AI 고도화 밸런스 패치',
+    title: '☃️ [우리학교 눈싸움 서바이벌] 이동 속도·키보드 조작 민감도 완화 및 다층 전술 AI 고도화 밸런스 패치',
     badge: 'UPDATE',
     badgeColor: 'emerald',
     items: [
@@ -1004,14 +1033,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.47.0',
     date: '2026-08-28',
-    title: '☃️ [도촌 눈싸움 서바이벌] 정식 개장 (Snowball.io / 팽이 스모 모티브)',
+    title: '☃️ [우리학교 눈싸움 서바이벌] 정식 개장 (Snowball.io / 팽이 스모 모티브)',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW MULTIPLAYER',
         tagColor: 'blue',
-        text: '[도촌 눈싸움 서바이벌 정식 개장] 눈덩이를 굴려 거대하게 키운 뒤 팽이처럼 상대를 밀쳐내고, 얼음이 깨지는 링 밖으로 날려버리는 캐주얼 배틀로얄 게임 오픈 (포털 31번째 게임)'
+        text: '[우리학교 눈싸움 서바이벌 정식 개장] 눈덩이를 굴려 거대하게 키운 뒤 팽이처럼 상대를 밀쳐내고, 얼음이 깨지는 링 밖으로 날려버리는 캐주얼 배틀로얄 게임 오픈 (포털 31번째 게임)'
       },
       {
         tag: 'P2P MULTIPLAYER',
@@ -1069,22 +1098,22 @@ export const CHANGELOG_DATA = [
       {
         tag: 'P2P MULTIPLAYER',
         tagColor: 'amber',
-        text: '[도촌 눈싸움 서바이벌 (Snowball.io 모티브)] 거대 눈덩이를 굴려 팽이처럼 상대를 튕겨내고 얼음 링 밖으로 날려버리는 실시간 P2P 스모 서바이벌 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 눈싸움 서바이벌 (Snowball.io 모티브)] 거대 눈덩이를 굴려 팽이처럼 상대를 튕겨내고 얼음 링 밖으로 날려버리는 실시간 P2P 스모 서바이벌 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'P2P MULTIPLAYER',
         tagColor: 'purple',
-        text: '[도촌 야간 학교 숨바꼭질 (Fog of War 모티브)] 불 꺼진 학교 복도에서 손전등 시야만 의지해 열쇠를 찾아 탈출하거나 친구들을 잡는 P2P 야간 술래잡기 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 야간 학교 숨바꼭질 (Fog of War 모티브)] 불 꺼진 학교 복도에서 손전등 시야만 의지해 열쇠를 찾아 탈출하거나 친구들을 잡는 P2P 야간 술래잡기 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'P2P MULTIPLAYER',
         tagColor: 'blue',
-        text: '[도촌 마이크로 카트 레이싱 (탑뷰 카트 모티브)] 학용품과 책상 트랙에서 바나나와 물풍선 아이템을 쏘며 치열하게 순위를 다투는 P2P 데스크탑 카트 배틀 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 마이크로 카트 레이싱 (탑뷰 카트 모티브)] 학용품과 책상 트랙에서 바나나와 물풍선 아이템을 쏘며 치열하게 순위를 다투는 P2P 데스크탑 카트 배틀 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'P2P MULTIPLAYER',
         tagColor: 'emerald',
-        text: '[도촌 해적선 코인 쟁탈전 (코인 쟁탈 배틀 모티브)] 쏟아지는 금화를 몸에 가득 달고 자기 해적선으로 나르며 상대를 들이받아 코인을 털어내는 P2P 보물선 쟁탈전 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 해적선 코인 쟁탈전 (코인 쟁탈 배틀 모티브)] 쏟아지는 금화를 몸에 가득 달고 자기 해적선으로 나르며 상대를 들이받아 코인을 털어내는 P2P 보물선 쟁탈전 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       }
     ]
   },
@@ -1110,7 +1139,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.45.3',
     date: '2026-08-28',
-    title: '👻 [도촌 영혼 대결] 경기 결과 대시보드 리뉴얼 & 실시간 P2P 명예의 전당 등록 알고리즘 탑재',
+    title: '👻 [우리학교 영혼 대결] 경기 결과 대시보드 리뉴얼 & 실시간 P2P 명예의 전당 등록 알고리즘 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1182,7 +1211,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.45.0',
     date: '2026-08-25',
-    title: '🌐 [도촌 영혼 대결] 4자리 숫자 룸코드 실시간 P2P WebRTC 멀티플레이어 모드 전격 오픈',
+    title: '🌐 [우리학교 영혼 대결] 4자리 숫자 룸코드 실시간 P2P WebRTC 멀티플레이어 모드 전격 오픈',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1269,14 +1298,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.44.0',
     date: '2026-08-23',
-    title: '👻 [신규 정식 게임] 30번째 실시간 팀 액션 배틀 「도촌 영혼 대결」 4 vs 4 그랜드 오픈',
+    title: '👻 [신규 정식 게임] 30번째 실시간 팀 액션 배틀 「우리학교 영혼 대결」 4 vs 4 그랜드 오픈',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: '4 VS 4 TEAM BATTLE',
         tagColor: 'emerald',
-        text: '[도촌 영혼 대결 정식 출시] 초록 영혼팀 vs 보라 유령팀 8인 팀 대항전! 7마리의 스마트 AI 봇(FSM 및 자율 길찾기) 탑재로 대기 시간 없이 0초 만에 즐기는 실시간 액션 배틀'
+        text: '[우리학교 영혼 대결 정식 출시] 초록 영혼팀 vs 보라 유령팀 8인 팀 대항전! 7마리의 스마트 AI 봇(FSM 및 자율 길찾기) 탑재로 대기 시간 없이 0초 만에 즐기는 실시간 액션 배틀'
       },
       {
         tag: 'TAIL STEAL PHYSICS',
@@ -1296,21 +1325,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'emerald',
-        text: '[도촌초 명예의 전당 연동] 100점 초과 달성 시 학교 실시간 랭킹 등록 및 도촌 영혼 대결 전용 리더보드 탭 자동 연동 지원'
+        text: '[우리학교 명예의 전당 연동] 100점 초과 달성 시 학교 실시간 랭킹 등록 및 우리학교 영혼 대결 전용 리더보드 탭 자동 연동 지원'
       }
     ]
   },
   {
     version: 'v1.43.0',
     date: '2026-08-23',
-    title: '🧠 [신규 정식 게임] 29번째 두뇌 트레이닝 아케이드 「도촌 기억력 마스터」 그랜드 오픈',
+    title: '🧠 [신규 정식 게임] 29번째 두뇌 트레이닝 아케이드 「우리학교 기억력 마스터」 그랜드 오픈',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[도촌 기억력 마스터 정식 출시] 3D 카드 짝 맞추기(Card Match)와 구글 두들 스타일 멜로디 & 순서 기억(Simon Rhythm) 듀얼 모드를 지원하는 신규 두뇌 트레이닝 퍼즐 게임 전격 개장'
+        text: '[우리학교 기억력 마스터 정식 출시] 3D 카드 짝 맞추기(Card Match)와 구글 두들 스타일 멜로디 & 순서 기억(Simon Rhythm) 듀얼 모드를 지원하는 신규 두뇌 트레이닝 퍼즐 게임 전격 개장'
       },
       {
         tag: 'DUAL MODE',
@@ -1325,14 +1354,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'amber',
-        text: '[도촌초 명예의 전당 연동] 100점 초과 달성 시 학교 실시간 랭킹 등록 및 도촌 기억력 마스터 전용 리더보드 탭 자동 연동 지원'
+        text: '[우리학교 명예의 전당 연동] 100점 초과 달성 시 학교 실시간 랭킹 등록 및 우리학교 기억력 마스터 전용 리더보드 탭 자동 연동 지원'
       }
     ]
   },
   {
     version: 'v1.42.1',
     date: '2026-08-23',
-    title: '[도촌 페탕크 마스터] AI 턴 투구 상태 머신 락 강화 및 공 중복 발사 버그 근절',
+    title: '[우리학교 페탕크 마스터] AI 턴 투구 상태 머신 락 강화 및 공 중복 발사 버그 근절',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1358,44 +1387,44 @@ export const CHANGELOG_DATA = [
       {
         tag: 'COMING SOON',
         tagColor: 'amber',
-        text: '[도촌 영혼 대결 (The Great Ghoul Duel 모티브)] 영혼 불꽃을 모으고 꼬리를 가로채는 스릴 만점의 4:4 유령 팀 태그 배틀 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 영혼 대결 (The Great Ghoul Duel 모티브)] 영혼 불꽃을 모으고 꼬리를 가로채는 스릴 만점의 4:4 유령 팀 태그 배틀 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'blue',
-        text: '[도촌 바흐 AI 작곡기 (Celebrating J.S. Bach 모티브)] 멜로디 음표를 입력하면 머신러닝 AI가 4성부 클래식 하모니를 자동 작곡하는 음악 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 바흐 AI 작곡기 (Celebrating J.S. Bach 모티브)] 멜로디 음표를 입력하면 머신러닝 AI가 4성부 클래식 하모니를 자동 작곡하는 음악 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'purple',
-        text: '[도촌 레트로 신디사이저 (Bob Moog Synth 모티브)] 오실레이터와 필터 노브를 돌려 전자음을 디자인하고 4트랙으로 녹음하는 아날로그 사운드 스튜디오 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 레트로 신디사이저 (Bob Moog Synth 모티브)] 오실레이터와 필터 노브를 돌려 전자음을 디자인하고 4트랙으로 녹음하는 아날로그 사운드 스튜디오 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'emerald',
-        text: '[도촌 3D 루빅스 큐브 (Rubik\'s Cube 40th 모티브)] 브라우저에서 3차원 입체 큐브를 직접 회전시키고 맞춰 나가는 공간지각 3D 두뇌 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 3D 루빅스 큐브 (Rubik\'s Cube 40th 모티브)] 브라우저에서 3차원 입체 큐브를 직접 회전시키고 맞춰 나가는 공간지각 3D 두뇌 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'teal',
-        text: '[도촌 타디스 탈출작전 (Doctor Who 50th 모티브)] 외계 악당들의 시야를 피해 시공간 미로에서 부품을 모아 타디스로 탈출하는 레트로 잠입 어드벤처 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 타디스 탈출작전 (Doctor Who 50th 모티브)] 외계 악당들의 시야를 피해 시공간 미로에서 부품을 모아 타디스로 탈출하는 레트로 잠입 어드벤처 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'blue',
-        text: '[도촌 튜링 암호 머신 (Alan Turing 100th 모티브)] 0과 1 테이프와 비트 논리 명령어를 프로그래밍하여 암호를 해독하는 컴퓨터 과학 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 튜링 암호 머신 (Alan Turing 100th 모티브)] 0과 1 테이프와 비트 논리 명령어를 프로그래밍하여 암호를 해독하는 컴퓨터 과학 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'amber',
-        text: '[도촌 로봇 사이버 어드벤처 (Stanisław Lem 60th 모티브)] 신비로운 로봇 행성을 탐험하며 사물을 조작하고 수수께끼를 푸는 포인트 앤 클릭 어드벤처 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 로봇 사이버 어드벤처 (Stanisław Lem 60th 모티브)] 신비로운 로봇 행성을 탐험하며 사물을 조작하고 수수께끼를 푸는 포인트 앤 클릭 어드벤처 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       }
     ]
   },
   {
     version: 'v1.41.1',
     date: '2026-08-23',
-    title: '[도촌 페탕크 마스터] 조준 각도 범위 30°~150°(좌우 ±60° 폭) 대폭 확장 및 사이드 쿠션 샷 지원',
+    title: '[우리학교 페탕크 마스터] 조준 각도 범위 30°~150°(좌우 ±60° 폭) 대폭 확장 및 사이드 쿠션 샷 지원',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1441,14 +1470,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'HALL OF FAME',
         tagColor: 'purple',
-        text: '[명예의 전당 연동] 100점 초과 달성 시 도촌초등학교 실시간 클라우드 랭킹에 즉시 점수 등록 및 자동 탭 연동'
+        text: '[명예의 전당 연동] 100점 초과 달성 시 우리학교 실시간 클라우드 랭킹에 즉시 점수 등록 및 자동 탭 연동'
       }
     ]
   },
   {
     version: 'v1.40.2',
     date: '2026-08-23',
-    title: '[도촌 페탕크 마스터] 상/하 화살표 및 WASD 파워·각도 키보드 컨트롤 & Enter 투구 발사 지원',
+    title: '[우리학교 페탕크 마스터] 상/하 화살표 및 WASD 파워·각도 키보드 컨트롤 & Enter 투구 발사 지원',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1467,7 +1496,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.40.1',
     date: '2026-08-23',
-    title: '[도촌 페탕크 마스터] 쇠구슬 투구 방향 및 조준 가이드라인 전방(위쪽) 물리 좌표계 정상화',
+    title: '[우리학교 페탕크 마스터] 쇠구슬 투구 방향 및 조준 가이드라인 전방(위쪽) 물리 좌표계 정상화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1539,7 +1568,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.39.7',
     date: '2026-08-23',
-    title: '[도촌 페탕크 마스터] 경기 시작하기 클릭 시 라운드 진입 정상화 및 햅틱 엔진 안전성 강화',
+    title: '[우리학교 페탕크 마스터] 경기 시작하기 클릭 시 라운드 진입 정상화 및 햅틱 엔진 안전성 강화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1558,7 +1587,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.39.6',
     date: '2026-08-23',
-    title: '[도촌 UFO 탈출작전] 엔딩 화면 리더보드 점수 등록 입력창 다크 에메랄드 네온 디자인 개편',
+    title: '[우리학교 UFO 탈출작전] 엔딩 화면 리더보드 점수 등록 입력창 다크 에메랄드 네온 디자인 개편',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1577,7 +1606,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.39.5',
     date: '2026-08-22',
-    title: '[도촌 천산갑의 모험] 스테이지 클리어 버튼 텍스트 및 [Space / Enter] 단축키 뱃지 1줄 정렬 최적화',
+    title: '[우리학교 천산갑의 모험] 스테이지 클리어 버튼 텍스트 및 [Space / Enter] 단축키 뱃지 1줄 정렬 최적화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1591,7 +1620,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.39.4',
     date: '2026-08-22',
-    title: '[도촌 페탕크 마스터] 프리미엄 아케이드 디자인 버튼 전면 개편 및 태블릿/모바일 전용 하단 조작 패널 탑재',
+    title: '[우리학교 페탕크 마스터] 프리미엄 아케이드 디자인 버튼 전면 개편 및 태블릿/모바일 전용 하단 조작 패널 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1622,14 +1651,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'THEME BUTTONS',
         tagColor: 'amber',
-        text: '[게임별 전용 디자인 버튼 탑재] 도촌 UFO 탈출작전(작전 시작하기, 게임 방법, 등록, 다시하기) 및 도촌 페탕크 마스터 등 신작 게임 내 모든 액션 버튼을 테마 컬러 그라디언트 + 네온 글로우 + 마이크로 인터랙션 버튼으로 전면 교체'
+        text: '[게임별 전용 디자인 버튼 탑재] 우리학교 UFO 탈출작전(작전 시작하기, 게임 방법, 등록, 다시하기) 및 우리학교 페탕크 마스터 등 신작 게임 내 모든 액션 버튼을 테마 컬러 그라디언트 + 네온 글로우 + 마이크로 인터랙션 버튼으로 전면 교체'
       }
     ]
   },
   {
     version: 'v1.39.2',
     date: '2026-08-22',
-    title: '[도촌 천산갑의 모험] 스테이지 클리어 시 스페이스바 / 엔터 키로 다음 스테이지 즉시 이동 기능 지원',
+    title: '[우리학교 천산갑의 모험] 스테이지 클리어 시 스페이스바 / 엔터 키로 다음 스테이지 즉시 이동 기능 지원',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1648,7 +1677,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.39.1',
     date: '2026-08-22',
-    title: '[도촌 UFO 탈출작전] 3번째 씬 헛간 인터랙션 버그 수정 & 상단 액션 버튼 네온 디자인 개선',
+    title: '[우리학교 UFO 탈출작전] 3번째 씬 헛간 인터랙션 버그 수정 & 상단 액션 버튼 네온 디자인 개선',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1677,14 +1706,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.39.0',
     date: '2026-08-22',
-    title: '[도촌 페탕크 마스터] 26번째 공식 신작 정식 개장! 프랑스 전통 구기 스포츠 2.5D 물리 챌린지 탑재',
+    title: '[우리학교 페탕크 마스터] 26번째 공식 신작 정식 개장! 프랑스 전통 구기 스포츠 2.5D 물리 챌린지 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[26번째 공식 신작 게임 개장] 2022년 구글 두들 인터랙티브 기념작을 모티브로 한 프랑스 전통 구기 레저 스포츠 "도촌 페탕크 마스터" 정식 런칭'
+        text: '[26번째 공식 신작 게임 개장] 2022년 구글 두들 인터랙티브 기념작을 모티브로 한 프랑스 전통 구기 레저 스포츠 "우리학교 페탕크 마스터" 정식 런칭'
       },
       {
         tag: '2.5D PHYSICS',
@@ -1709,14 +1738,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'rose',
-        text: '[도촌초 명예의 전당 연동] 3엔드 매치 후 정밀도/불스아이/승리 보너스 합산 점수 산출 및 점수 등록 후 페탕크 랭킹 탭 자동 동기화'
+        text: '[우리학교 명예의 전당 연동] 3엔드 매치 후 정밀도/불스아이/승리 보너스 합산 점수 산출 및 점수 등록 후 페탕크 랭킹 탭 자동 동기화'
       }
     ]
   },
   {
     version: 'v1.38.1',
     date: '2026-08-22',
-    title: '[도촌 천산갑의 모험] 아케이드 툴바 디자인 전면 개편, 태블릿 게임패드 조작계 탑재 및 진행도 HUD 상단 재배치',
+    title: '[우리학교 천산갑의 모험] 아케이드 툴바 디자인 전면 개편, 태블릿 게임패드 조작계 탑재 및 진행도 HUD 상단 재배치',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1740,14 +1769,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.38.0',
     date: '2026-08-22',
-    title: '[도촌 UFO 탈출작전] 25번째 공식 신작 정식 개장! 구글 두들 로즈웰 모티브 포인트 앤 클릭 어드벤처 탑재',
+    title: '[우리학교 UFO 탈출작전] 25번째 공식 신작 정식 개장! 구글 두들 로즈웰 모티브 포인트 앤 클릭 어드벤처 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[25번째 공식 신작 게임 개장] 2013년 구글 두들 명작 "로즈웰 66주년 인터랙티브 기념작"을 모티브로 한 포인트 앤 클릭 어드벤처 퍼즐 "도촌 UFO 탈출작전" 정식 런칭'
+        text: '[25번째 공식 신작 게임 개장] 2013년 구글 두들 명작 "로즈웰 66주년 인터랙티브 기념작"을 모티브로 한 포인트 앤 클릭 어드벤처 퍼즐 "우리학교 UFO 탈출작전" 정식 런칭'
       },
       {
         tag: 'ADVENTURE ENGINE',
@@ -1767,21 +1796,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'teal',
-        text: '[도촌초 명예의 전당 연동] 3대 부품 회수 및 탈출 성공 시 시간 비례 고득점 보너스 산출 및 점수 등록 후 UFO 랭킹 탭 자동 동기화'
+        text: '[우리학교 명예의 전당 연동] 3대 부품 회수 및 탈출 성공 시 시간 비례 고득점 보너스 산출 및 점수 등록 후 UFO 랭킹 탭 자동 동기화'
       }
     ]
   },
   {
     version: 'v1.37.0',
     date: '2026-08-22',
-    title: '[도촌 천산갑의 모험] 24번째 신작 정식 개장! 구글 두들 모티브 횡스크롤 플랫폼 액션 독립 컴포넌트 탑재',
+    title: '[우리학교 천산갑의 모험] 24번째 신작 정식 개장! 구글 두들 모티브 횡스크롤 플랫폼 액션 독립 컴포넌트 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[24번째 공식 신작 게임 개장] 2017 발렌타인데이 구글 두들 명작 "천산갑의 사랑(Pangolin Love)"을 모티브로 한 힐링 횡스크롤 플랫폼 어드벤처 "도촌 천산갑의 모험" 정식 런칭'
+        text: '[24번째 공식 신작 게임 개장] 2017 발렌타인데이 구글 두들 명작 "천산갑의 사랑(Pangolin Love)"을 모티브로 한 힐링 횡스크롤 플랫폼 어드벤처 "우리학교 천산갑의 모험" 정식 런칭'
       },
       {
         tag: 'PHYSICS & CONTROLS',
@@ -1801,14 +1830,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'teal',
-        text: '[도촌초 명예의 전당 연동] 100점 초과 달성 시 랭킹 등록 폼 활성화 및 등록 완료 시 천산갑 리더보드 탭 자동 연동'
+        text: '[우리학교 명예의 전당 연동] 100점 초과 달성 시 랭킹 등록 폼 활성화 및 등록 완료 시 천산갑 리더보드 탭 자동 연동'
       }
     ]
   },
   {
     version: 'v1.36.8',
     date: '2026-08-22',
-    title: '[도촌 피자 마스터] 명예의 전당 점수 등록 API 응답 처리 버그 수정 및 실시간 랭킹 연동 정상화',
+    title: '[우리학교 피자 마스터] 명예의 전당 점수 등록 API 응답 처리 버그 수정 및 실시간 랭킹 연동 정상화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1820,14 +1849,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD SYNC',
         tagColor: 'blue',
-        text: '[실시간 랭킹 모달 자동 전환] 점수 등록 완료 후 성공 사운드 재생 및 0.7초 후 도촌 명예의 전당 리더보드 모달이 자동으로 열려 방금 등록한 순위를 바로 확인할 수 있도록 개선'
+        text: '[실시간 랭킹 모달 자동 전환] 점수 등록 완료 후 성공 사운드 재생 및 0.7초 후 우리학교 명예의 전당 리더보드 모달이 자동으로 열려 방금 등록한 순위를 바로 확인할 수 있도록 개선'
       }
     ]
   },
   {
     version: 'v1.36.7',
     date: '2026-08-22',
-    title: '[도촌 피자 마스터] 결과 & 명예의 전당 등록 화면 반응형 오버레이 팝업 모달 전면 개편 및 고대비 디자인 적용',
+    title: '[우리학교 피자 마스터] 결과 & 명예의 전당 등록 화면 반응형 오버레이 팝업 모달 전면 개편 및 고대비 디자인 적용',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1851,7 +1880,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.36.6',
     date: '2026-08-22',
-    title: '[도촌 피자 마스터] 10단계 정규 코스 완주 엔딩 시스템 & 플레이 타임 2~3분 밸런싱 적용',
+    title: '[우리학교 피자 마스터] 10단계 정규 코스 완주 엔딩 시스템 & 플레이 타임 2~3분 밸런싱 적용',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1875,14 +1904,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.36.5',
     date: '2026-08-22',
-    title: '[도촌 꿀벌의 비행] 60송이 일몰 완성 클리어 엔딩 & 최대 45초 시간 상한 캡 및 점진 감쇠 밸런싱',
+    title: '[우리학교 꿀벌의 비행] 60송이 일몰 완성 클리어 엔딩 & 최대 45초 시간 상한 캡 및 점진 감쇠 밸런싱',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'SUNSET ENDING',
         tagColor: 'amber',
-        text: '[도촌 생태계 완성 일몰 엔딩 & +1,000점 완벽 보너스] Lv.5에서 총 60송이의 꽃을 피워 도촌초 정원을 완성하면 아름다운 황금빛 노을 연출과 함께 꿀벌의 하루 비행 성공 클리어 모달 출력'
+        text: '[우리학교 생태계 완성 일몰 엔딩 & +1,000점 완벽 보너스] Lv.5에서 총 60송이의 꽃을 피워 우리학교 정원을 완성하면 아름다운 황금빛 노을 연출과 함께 꿀벌의 하루 비행 성공 클리어 모달 출력'
       },
       {
         tag: 'TIME BALANCING',
@@ -1894,7 +1923,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.36.4',
     date: '2026-08-22',
-    title: '[도촌 꿀벌의 비행] 꽃가루 게이지 소비·채취 루프 정상화 및 황금빛 개화 이펙트 강화',
+    title: '[우리학교 꿀벌의 비행] 꽃가루 게이지 소비·채취 루프 정상화 및 황금빛 개화 이펙트 강화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1913,7 +1942,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.36.3',
     date: '2026-08-22',
-    title: '[도촌 미니 올림픽] 카누 슬라럼 코스 대폭 확장 (2,400m 롱코스) & 체크포인트 세로 간격 2.2배 확대',
+    title: '[우리학교 미니 올림픽] 카누 슬라럼 코스 대폭 확장 (2,400m 롱코스) & 체크포인트 세로 간격 2.2배 확대',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1932,7 +1961,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.36.2',
     date: '2026-08-22',
-    title: '[도촌 미니 올림픽] 카누 슬라럼 물살 정방향 물리 개편 & 플레이 타임 밸런싱(1,200m/10발) & 수평 1줄 조작계 적용',
+    title: '[우리학교 미니 올림픽] 카누 슬라럼 물살 정방향 물리 개편 & 플레이 타임 밸런싱(1,200m/10발) & 수평 1줄 조작계 적용',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1956,7 +1985,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.36.1',
     date: '2026-08-22',
-    title: '[도촌 미니 올림픽] 가상 게임패드 수평 1줄 듀얼 클러스터(왼쪽: 달리기 / 오른쪽: 점프) 레이아웃 개편',
+    title: '[우리학교 미니 올림픽] 가상 게임패드 수평 1줄 듀얼 클러스터(왼쪽: 달리기 / 오른쪽: 점프) 레이아웃 개편',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -1977,7 +2006,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'UI & CONTRAST',
         tagColor: 'amber',
-        text: '[주문서 & 텍스트 시인성 대폭 강화] 도촌 피자 마스터의 손님 주문 대사, 토핑 요구조건 뱃지, 분할 정확도(%) 및 결과 팝업 폰트를 고대비 순백색 볼드 타이포그래피로 전면 개편하여 한눈에 명확히 읽히도록 개선'
+        text: '[주문서 & 텍스트 시인성 대폭 강화] 우리학교 피자 마스터의 손님 주문 대사, 토핑 요구조건 뱃지, 분할 정확도(%) 및 결과 팝업 폰트를 고대비 순백색 볼드 타이포그래피로 전면 개편하여 한눈에 명확히 읽히도록 개선'
       },
       {
         tag: 'TACTILE BUTTONS',
@@ -1994,7 +2023,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.35.4',
     date: '2026-08-22',
-    title: '[도촌 피자 마스터] 선분 기반 정밀 컷팅 엔진 개편 & 3등분(Y자 커팅) 완벽 지원',
+    title: '[우리학교 피자 마스터] 선분 기반 정밀 컷팅 엔진 개편 & 3등분(Y자 커팅) 완벽 지원',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2013,7 +2042,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.35.3',
     date: '2026-08-22',
-    title: '[도촌 미니 올림픽] 컨트롤 버튼 가독성 전면 개편 & 경기장 고화질 벡터 그래픽 및 HUD 업그레이드',
+    title: '[우리학교 미니 올림픽] 컨트롤 버튼 가독성 전면 개편 & 경기장 고화질 벡터 그래픽 및 HUD 업그레이드',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2037,7 +2066,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.35.2',
     date: '2026-08-22',
-    title: '[도촌 꿀벌의 비행] 키보드 방향키(↑ ↓ ← → / WASD) 직접 조향 물리 엔진 개편 및 터치 D-Pad 추가',
+    title: '[우리학교 꿀벌의 비행] 키보드 방향키(↑ ↓ ← → / WASD) 직접 조향 물리 엔진 개편 및 터치 D-Pad 추가',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2056,7 +2085,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.35.1',
     date: '2026-08-22',
-    title: '[도촌 피자 마스터] 3단계 반반 피자 분할 판정 조건 알고리즘 긴급 패치',
+    title: '[우리학교 피자 마스터] 3단계 반반 피자 분할 판정 조건 알고리즘 긴급 패치',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2070,14 +2099,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.35.0',
     date: '2026-08-21',
-    title: '제23탄 신규 게임 [도촌 미니 올림픽 (3대 릴레이 스포츠 챔피언십)] 정식 개장',
+    title: '제23탄 신규 게임 [우리학교 미니 올림픽 (3대 릴레이 스포츠 챔피언십)] 정식 개장',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[도촌 미니 올림픽 정식 개장] Google 올림픽 기념 인터랙티브 스포츠 아케이드를 모티브로 한 3대 종목(100m 허들 달리기, 3점 슛 챌린지, 급류 카누 슬라럼) 릴레이 챔피언십 정식 오픈'
+        text: '[우리학교 미니 올림픽 정식 개장] Google 올림픽 기념 인터랙티브 스포츠 아케이드를 모티브로 한 3대 종목(100m 허들 달리기, 3점 슛 챌린지, 급류 카누 슬라럼) 릴레이 챔피언십 정식 오픈'
       },
       {
         tag: 'PURE CODE ENGINE',
@@ -2092,26 +2121,26 @@ export const CHANGELOG_DATA = [
       {
         tag: 'TEAM & MULTI-EVENT',
         tagColor: 'teal',
-        text: '[4개 참가팀 선택 & 3종목 종합 채점 시스템] 도촌 불꽃·푸른·에메랄드·번개팀 유니폼 선택, 종목별 기록 합산 올림픽 종합 점수 및 금/은/동 메달 수여식 지원'
+        text: '[4개 참가팀 선택 & 3종목 종합 채점 시스템] 우리학교 불꽃·푸른·에메랄드·번개팀 유니폼 선택, 종목별 기록 합산 올림픽 종합 점수 및 금/은/동 메달 수여식 지원'
       },
       {
         tag: 'LEADERBOARD',
         tagColor: 'purple',
-        text: '[도촌초 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 점수 등록 지원 및 점수 등록 후 미니 올림픽 리더보드 탭 자동 동기화'
+        text: '[우리학교 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 점수 등록 지원 및 점수 등록 후 미니 올림픽 리더보드 탭 자동 동기화'
       }
     ]
   },
   {
     version: 'v1.34.0',
     date: '2026-08-21',
-    title: '제22탄 신규 게임 [도촌 꿀벌의 비행 (Earth Day Bee 모티브)] 정식 개장 & 힐링 비행 액션 오픈',
+    title: '제22탄 신규 게임 [우리학교 꿀벌의 비행 (Earth Day Bee 모티브)] 정식 개장 & 힐링 비행 액션 오픈',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[도촌 꿀벌의 비행 정식 개장] 2020년 지구의 날(Earth Day 50주년) 구글 두들을 모티브로 한 꽃가루 수분 & 도촌초 생태계 가꾸기 힐링 비행 액션 정식 오픈'
+        text: '[우리학교 꿀벌의 비행 정식 개장] 2020년 지구의 날(Earth Day 50주년) 구글 두들을 모티브로 한 꽃가루 수분 & 우리학교 생태계 가꾸기 힐링 비행 액션 정식 오픈'
       },
       {
         tag: 'FLIGHT PHYSICS',
@@ -2126,26 +2155,26 @@ export const CHANGELOG_DATA = [
       {
         tag: 'ECOFACTS & COMBO',
         tagColor: 'teal',
-        text: '[도촌 생태계 레벨 & 환경 꿀벌 상식] 단계별 화단 번성 시스템, 연속 개화 콤보(최대 x5) 및 생태계 보호 교육 팩트 토스트 제공'
+        text: '[우리학교 생태계 레벨 & 환경 꿀벌 상식] 단계별 화단 번성 시스템, 연속 개화 콤보(최대 x5) 및 생태계 보호 교육 팩트 토스트 제공'
       },
       {
         tag: 'LEADERBOARD',
         tagColor: 'purple',
-        text: '[도촌초 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 점수 등록 지원 및 점수 등록 후 꿀벌의 비행 리더보드 탭 자동 동기화'
+        text: '[우리학교 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 점수 등록 지원 및 점수 등록 후 꿀벌의 비행 리더보드 탭 자동 동기화'
       }
     ]
   },
   {
     version: 'v1.33.0',
     date: '2026-08-21',
-    title: '제21탄 신규 게임 [도촌 피자 마스터 (Celebrating Pizza 모티브)] 정식 개장 & 수학 분수 퍼즐 오픈',
+    title: '제21탄 신규 게임 [우리학교 피자 마스터 (Celebrating Pizza 모티브)] 정식 개장 & 수학 분수 퍼즐 오픈',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[도촌 피자 마스터 정식 개장] 구글 두들 명작 Celebrating Pizza를 모티브로 한 토핑 분배 & 기하학 분수 커팅 퍼즐 정식 오픈 (1/2, 1/4, 1/3, 1/6, 1/8 등분 단계별 미션 및 무한 셰프 챌린지 모드)'
+        text: '[우리학교 피자 마스터 정식 개장] 구글 두들 명작 Celebrating Pizza를 모티브로 한 토핑 분배 & 기하학 분수 커팅 퍼즐 정식 오픈 (1/2, 1/4, 1/3, 1/6, 1/8 등분 단계별 미션 및 무한 셰프 챌린지 모드)'
       },
       {
         tag: 'GEOMETRIC ENGINE',
@@ -2165,7 +2194,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'purple',
-        text: '[도촌초 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 점수 등록 지원 및 점수 등록 후 피자 마스터 리더보드 탭 자동 동기화'
+        text: '[우리학교 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 점수 등록 지원 및 점수 등록 후 피자 마스터 리더보드 탭 자동 동기화'
       }
     ]
   },
@@ -2196,14 +2225,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.31.0',
     date: '2026-08-21',
-    title: '제20탄 신규 게임 [도촌 버블티 카페 (Bubble Tea 모티브)] 정식 개장 & 힐링 타이쿤 오픈',
+    title: '제20탄 신규 게임 [우리학교 버블티 카페 (Bubble Tea 모티브)] 정식 개장 & 힐링 타이쿤 오픈',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[도촌 버블티 카페 정식 개장] 구글 두들 글로벌 명작 Celebrating Bubble Tea를 모티브로 한 3단계 정량 맞추기 타이밍 힐링 아케이드 정식 오픈 (펄 투입, 밀크티 붓기, 시럽 토핑 단계별 구현)'
+        text: '[우리학교 버블티 카페 정식 개장] 구글 두들 글로벌 명작 Celebrating Bubble Tea를 모티브로 한 3단계 정량 맞추기 타이밍 힐링 아케이드 정식 오픈 (펄 투입, 밀크티 붓기, 시럽 토핑 단계별 구현)'
       },
       {
         tag: 'PHYSICS & VISUAL',
@@ -2218,14 +2247,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'purple',
-        text: '[도촌초 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 점수 등록 지원 및 점수 등록 후 버블티 카페 리더보드 탭 자동 동기화'
+        text: '[우리학교 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 점수 등록 지원 및 점수 등록 후 버블티 카페 리더보드 탭 자동 동기화'
       }
     ]
   },
   {
     version: 'v1.30.1',
     date: '2026-08-21',
-    title: '[도촌 매직 캣 아카데미] 유령 충돌 시 하트 감소 판정 정상화 및 피격 시각 피드백 강화',
+    title: '[우리학교 매직 캣 아카데미] 유령 충돌 시 하트 감소 판정 정상화 및 피격 시각 피드백 강화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2244,7 +2273,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.30.0',
     date: '2026-08-19',
-    title: '[도촌 스카이 점퍼] 3·2·1 카운트다운 시스템 도입 및 키보드 조작감(마우스 간섭 방지) 개선',
+    title: '[우리학교 스카이 점퍼] 3·2·1 카운트다운 시스템 도입 및 키보드 조작감(마우스 간섭 방지) 개선',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2263,14 +2292,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.29.0',
     date: '2026-08-19',
-    title: '제19탄 신규 게임 [도촌 코딩 토끼 (Kids Coding 모티브)] 정식 개장 & 알고리즘 퍼즐 탑재',
+    title: '제19탄 신규 게임 [우리학교 코딩 토끼 (Kids Coding 모티브)] 정식 개장 & 알고리즘 퍼즐 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[도촌 코딩 토끼 정식 개장] 구글 어린이 코딩 50주년 기념작을 모티브로 한 8단계 점진적 알고리즘 교육 퍼즐 정식 오픈 (전진, 좌/우 회전, 반복 루프 블록 시스템 탑재)'
+        text: '[우리학교 코딩 토끼 정식 개장] 구글 어린이 코딩 50주년 기념작을 모티브로 한 8단계 점진적 알고리즘 교육 퍼즐 정식 오픈 (전진, 좌/우 회전, 반복 루프 블록 시스템 탑재)'
       },
       {
         tag: 'OPTIMIZATION',
@@ -2285,21 +2314,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'purple',
-        text: '[실시간 명예의 전당 랭킹 연동] 100점 초과 달성 시 실시간 도촌초등학교 랭킹 등록 지원 및 제출 후 코딩 토끼 리더보드 탭 자동 선택'
+        text: '[실시간 명예의 전당 랭킹 연동] 100점 초과 달성 시 실시간 우리학교 랭킹 등록 지원 및 제출 후 코딩 토끼 리더보드 탭 자동 선택'
       }
     ]
   },
   {
     version: 'v1.28.0',
     date: '2026-08-19',
-    title: '제18탄 신규 게임 [도촌 스카이 점퍼 (두들 점프 모티브)] 정식 개장 & 명예의 전당 연동',
+    title: '제18탄 신규 게임 [우리학교 스카이 점퍼 (두들 점프 모티브)] 정식 개장 & 명예의 전당 연동',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[도촌 스카이 점퍼 정식 개장] 수직 무한 점프 물리 엔진, 6종 특수 발판(이동/부서짐/유령/1회용/수직), 5종 파워업 아이템(스프링/트램펄린/프로펠러/로켓/보호막) 및 공중 몬스터 슈팅 격파 시스템 탑재'
+        text: '[우리학교 스카이 점퍼 정식 개장] 수직 무한 점프 물리 엔진, 6종 특수 발판(이동/부서짐/유령/1회용/수직), 5종 파워업 아이템(스프링/트램펄린/프로펠러/로켓/보호막) 및 공중 몬스터 슈팅 격파 시스템 탑재'
       },
       {
         tag: 'VISUAL & AUDIO',
@@ -2309,21 +2338,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'purple',
-        text: '[도촌초 실시간 명예의 전당 연동] 최고 달성 고도 점수(100m 초과) 클라우드 랭킹 등록 및 점수 제출 시 스카이 점퍼 랭킹 탭 자동 동기화'
+        text: '[우리학교 실시간 명예의 전당 연동] 최고 달성 고도 점수(100m 초과) 클라우드 랭킹 등록 및 점수 제출 시 스카이 점퍼 랭킹 탭 자동 동기화'
       }
     ]
   },
   {
     version: 'v1.27.0',
     date: '2026-08-18',
-    title: '신규 순차 개장 준비(Coming Soon) [도촌 스카이 점퍼 (두들 점프 모티브)] 등록 & 3D 썸네일 탑재',
+    title: '신규 순차 개장 준비(Coming Soon) [우리학교 스카이 점퍼 (두들 점프 모티브)] 등록 & 3D 썸네일 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'COMING SOON',
         tagColor: 'amber',
-        text: '[도촌 스카이 점퍼 (Doodle Jump 모티브) 등록] 발판을 밟고 우주 끝까지 무한 점프 상승하는 국민 아케이드 게임 개장 준비 라인업 등록 및 나노바나나 고화질 3D 썸네일 탑재'
+        text: '[우리학교 스카이 점퍼 (Doodle Jump 모티브) 등록] 발판을 밟고 우주 끝까지 무한 점프 상승하는 국민 아케이드 게임 개장 준비 라인업 등록 및 나노바나나 고화질 3D 썸네일 탑재'
       }
     ]
   },
@@ -2337,51 +2366,51 @@ export const CHANGELOG_DATA = [
       {
         tag: 'COMING SOON',
         tagColor: 'amber',
-        text: '[도촌 코딩 토끼 (Kids Coding 모티브)] 블록 코딩으로 당근을 수확하는 어린이 코딩 50주년 기념 교육 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 코딩 토끼 (Kids Coding 모티브)] 블록 코딩으로 당근을 수확하는 어린이 코딩 50주년 기념 교육 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'blue',
-        text: '[도촌 버블티 카페 (Bubble Tea 모티브)] 귀여운 동물 손님들의 주문에 맞춰 펄과 밀크티를 정량 채우는 힐링 타이쿤 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 버블티 카페 (Bubble Tea 모티브)] 귀여운 동물 손님들의 주문에 맞춰 펄과 밀크티를 정량 채우는 힐링 타이쿤 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'purple',
-        text: '[도촌 피자 마스터 (Pizza 모티브)] 토핑 조건에 맞게 피자를 등분하여 분수와 기하학을 배우는 수학 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 피자 마스터 (Pizza 모티브)] 토핑 조건에 맞게 피자를 등분하여 분수와 기하학을 배우는 수학 퍼즐 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'emerald',
-        text: '[도촌 꿀벌의 비행 (Earth Day Bee 모티브)] 꽃가루를 묻혀 꽃을 피우고 생태계를 가꾸는 힐링 비행 액션 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 꿀벌의 비행 (Earth Day Bee 모티브)] 꽃가루를 묻혀 꽃을 피우고 생태계를 가꾸는 힐링 비행 액션 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'amber',
-        text: '[도촌 미니 올림픽 (London 2012 Games 모티브)] 허들 달리기, 농구 3점슛, 축구 골키퍼 등 스릴 넘치는 미니 스포츠 아케이드 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 미니 올림픽 (London 2012 Games 모티브)] 허들 달리기, 농구 3점슛, 축구 골키퍼 등 스릴 넘치는 미니 스포츠 아케이드 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'teal',
-        text: '[도촌 천산갑의 모험 (Pangolin Love 모티브)] 몸을 둥글게 말아 데굴데굴 구르고 점프하는 횡스크롤 플랫폼 액션 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 천산갑의 모험 (Pangolin Love 모티브)] 몸을 둥글게 말아 데굴데굴 구르고 점프하는 횡스크롤 플랫폼 액션 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'blue',
-        text: '[도촌 UFO 탈출작전 (Roswell Incident 모티브)] 불시착한 외계인을 도와 부품을 찾아 우주로 탈출하는 포인트 앤 클릭 어드벤처 개장 준비 라인업 등록 및 3D 썸네일 탑재'
+        text: '[우리학교 UFO 탈출작전 (Roswell Incident 모티브)] 불시착한 외계인을 도와 부품을 찾아 우주로 탈출하는 포인트 앤 클릭 어드벤처 개장 준비 라인업 등록 및 3D 썸네일 탑재'
       }
     ]
   },
   {
     version: 'v1.25.0',
     date: '2026-08-17',
-    title: '도촌초 게임 이용 및 안전 수칙 반응형 팝업 모달 신설 (필수 실천 서약 & 오늘 하루 보지 않기)',
+    title: '우리학교 게임 이용 및 안전 수칙 반응형 팝업 모달 신설 (필수 실천 서약 & 오늘 하루 보지 않기)',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'SAFETY RULES',
         tagColor: 'amber',
-        text: '[도촌초 게임 이용 및 안전 수칙 팝업 신설] 학생들의 올바른 게임 이용 문화 조성을 위해 4대 핵심 수칙(선생님 허락 후 플레이, 바른 말 고운 말 사용, 친구와 사이좋게 경쟁, 스스로 정해진 시간 지키기) 안내 팝업 탑재'
+        text: '[우리학교 게임 이용 및 안전 수칙 팝업 신설] 학생들의 올바른 게임 이용 문화 조성을 위해 4대 핵심 수칙(선생님 허락 후 플레이, 바른 말 고운 말 사용, 친구와 사이좋게 경쟁, 스스로 정해진 시간 지키기) 안내 팝업 탑재'
       },
       {
         tag: 'MANDATORY AGREEMENT',
@@ -2398,7 +2427,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.24.0',
     date: '2026-08-17',
-    title: '도촌 팩맨 상단 점수/목숨 HUD 한 줄 레이아웃 개편 및 전용 스타일 분리',
+    title: '우리학교 팩맨 상단 점수/목숨 HUD 한 줄 레이아웃 개편 및 전용 스타일 분리',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2446,7 +2475,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.22.1',
     date: '2026-08-17',
-    title: '도촌 크리켓 모바일/태블릿 전용 하단 대형 스윙 버튼 컨트롤러 탑재',
+    title: '우리학교 크리켓 모바일/태블릿 전용 하단 대형 스윙 버튼 컨트롤러 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2460,7 +2489,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.22.0',
     date: '2026-08-17',
-    title: '[도촌 게임 포털 이용안내] 전용 모달 신설 및 모바일·태블릿 가로모드 권장 가이드 탑재',
+    title: '[우리학교 게임 포털 이용안내] 전용 모달 신설 및 모바일·태블릿 가로모드 권장 가이드 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2479,19 +2508,19 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.21.0',
     date: '2026-08-17',
-    title: '신규 17호 블록 격파 아케이드 [도촌 벽돌 격파왕] 공식 출시 & 전교 랭킹 오픈',
+    title: '신규 17호 블록 격파 아케이드 [우리학교 벽돌 격파왕] 공식 출시 & 전교 랭킹 오픈',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'amber',
-        text: '[신규 17호 게임 도촌 벽돌 격파왕 정식 오픈] 패들을 조작하여 공을 튕겨내고 다채로운 블록을 격파하는 클래식 아케이드 블록 브레이커 정식 개장'
+        text: '[신규 17호 게임 우리학교 벽돌 격파왕 정식 오픈] 패들을 조작하여 공을 튕겨내고 다채로운 블록을 격파하는 클래식 아케이드 블록 브레이커 정식 개장'
       },
       {
         tag: '5 STAGES',
         tagColor: 'blue',
-        text: '[5단계 유니크 스테이지 맵] 도촌 클래식 무지개, 도촌 사랑의 하트, 다이아몬드 요새, 우주 침공 인베이더, 대마왕 관문 등 개성 넘치는 스테이지 맵 구성'
+        text: '[5단계 유니크 스테이지 맵] 우리학교 클래식 무지개, 우리학교 사랑의 하트, 다이아몬드 요새, 우주 침공 인베이더, 대마왕 관문 등 개성 넘치는 스테이지 맵 구성'
       },
       {
         tag: 'SPECIAL BRICKS',
@@ -2511,14 +2540,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'amber',
-        text: '[도촌초 실시간 명예의 전당 연동] 100점 초과 달성 시 전교 랭킹 등록 및 점수 등록 후 벽돌 격파왕 탭 자동 선택 지원'
+        text: '[우리학교 실시간 명예의 전당 연동] 100점 초과 달성 시 전교 랭킹 등록 및 점수 등록 후 벽돌 격파왕 탭 자동 선택 지원'
       }
     ]
   },
   {
     version: 'v1.20.4',
     date: '2026-08-17',
-    title: '도촌 과일 합치기 모바일/터치 전용 디자인 버튼 컨트롤러 탑재',
+    title: '우리학교 과일 합치기 모바일/터치 전용 디자인 버튼 컨트롤러 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2537,7 +2566,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.20.3',
     date: '2026-08-17',
-    title: '도촌 과일 합치기 키보드 전용 조작계(화살표·스페이스바·단축키) 전격 탑재',
+    title: '우리학교 과일 합치기 키보드 전용 조작계(화살표·스페이스바·단축키) 전격 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2570,28 +2599,28 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.20.1',
     date: '2026-08-17',
-    title: '순차 개장 라인업 타이틀 표준화 [도촌 벽돌 격파왕]',
+    title: '순차 개장 라인업 타이틀 표준화 [우리학교 벽돌 격파왕]',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'TITLE UPDATE',
         tagColor: 'blue',
-        text: '[게임 타이틀 명칭 표준화] 순차 개장 준비 라인업 액션 아케이드 게임 명칭을 \'도촌 벽돌 격파왕\'으로 공식 수정 및 포털 데이터 동기화'
+        text: '[게임 타이틀 명칭 표준화] 순차 개장 준비 라인업 액션 아케이드 게임 명칭을 \'우리학교 벽돌 격파왕\'으로 공식 수정 및 포털 데이터 동기화'
       }
     ]
   },
   {
     version: 'v1.20.0',
     date: '2026-08-17',
-    title: '신규 16호 2D 물리 합성 퍼즐 [도촌 과일 합치기 (수박게임)] 정식 출시 & 왕수박 대합성',
+    title: '신규 16호 2D 물리 합성 퍼즐 [우리학교 과일 합치기 (수박게임)] 정식 출시 & 왕수박 대합성',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'amber',
-        text: '[신규 16호 게임 도촌 과일 합치기 정식 오픈] 작은 체리부터 거대한 왕 수박까지 11단계 과일을 떨어뜨리고 합쳐 나가는 초인기 2D 물리 합성 캐주얼 퍼즐 게임 그랜드 오픈'
+        text: '[신규 16호 게임 우리학교 과일 합치기 정식 오픈] 작은 체리부터 거대한 왕 수박까지 11단계 과일을 떨어뜨리고 합쳐 나가는 초인기 2D 물리 합성 캐주얼 퍼즐 게임 그랜드 오픈'
       },
       {
         tag: 'PHYSICS ENGINE',
@@ -2616,40 +2645,40 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'amber',
-        text: '[도촌초 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 등록 및 점수 등록 후 과일 합치기 탭 자동 선택 지원'
+        text: '[우리학교 실시간 명예의 전당 연동] 100점 초과 달성 시 실시간 전교 랭킹 등록 및 점수 등록 후 과일 합치기 탭 자동 선택 지원'
       }
     ]
   },
   {
     version: 'v1.19.0',
     date: '2026-08-17',
-    title: '신규 순차 개장 준비(Coming Soon) 라인업 2종 [도촌 과일 합치기 & 도촌 벽돌격파왕] 등록',
+    title: '신규 순차 개장 준비(Coming Soon) 라인업 2종 [우리학교 과일 합치기 & 우리학교 벽돌격파왕] 등록',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'COMING SOON',
         tagColor: 'amber',
-        text: '[도촌 과일 합치기 (수박게임 모티브) 등록] 떨어지는 과일을 합쳐 거대한 도촌 수박을 만드는 초인기 2D 물리 합성 퍼즐 게임 개장 준비 라인업 등록 및 나노바나나 고화질 3D 썸네일 탑재'
+        text: '[우리학교 과일 합치기 (수박게임 모티브) 등록] 떨어지는 과일을 합쳐 거대한 우리학교 수박을 만드는 초인기 2D 물리 합성 퍼즐 게임 개장 준비 라인업 등록 및 나노바나나 고화질 3D 썸네일 탑재'
       },
       {
         tag: 'COMING SOON',
         tagColor: 'blue',
-        text: '[도촌 벽돌격파왕 (알카노이드 / BB-TAN 모티브) 등록] 반사되는 공과 화려한 파워업 아이템으로 형형색색의 블록을 격파하는 클래식 아케이드 게임 개장 준비 라인업 등록 및 고화질 3D 썸네일 탑재'
+        text: '[우리학교 벽돌격파왕 (알카노이드 / BB-TAN 모티브) 등록] 반사되는 공과 화려한 파워업 아이템으로 형형색색의 블록을 격파하는 클래식 아케이드 게임 개장 준비 라인업 등록 및 고화질 3D 썸네일 탑재'
       }
     ]
   },
   {
     version: 'v1.18.0',
     date: '2026-08-17',
-    title: '신규 15호 드로잉 마법 액션 [도촌 매직 캣 아카데미] 공식 출시 & 대마법서 탈환 작전',
+    title: '신규 15호 드로잉 마법 액션 [우리학교 매직 캣 아카데미] 공식 출시 & 대마법서 탈환 작전',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'amber',
-        text: '[신규 15호 게임 도촌 매직 캣 아카데미 정식 오픈] 마법학교 신입생 고양이 모모와 함께 마우스 드래그 & 터치로 마법 문양을 그려 침공한 유령 군단을 물리치고 대마법서를 탈환하는 드로잉 제스처 액션 아케이드 출시'
+        text: '[신규 15호 게임 우리학교 매직 캣 아카데미 정식 오픈] 마법학교 신입생 고양이 모모와 함께 마우스 드래그 & 터치로 마법 문양을 그려 침공한 유령 군단을 물리치고 대마법서를 탈환하는 드로잉 제스처 액션 아케이드 출시'
       },
       {
         tag: 'GESTURE ENGINE',
@@ -2669,7 +2698,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'amber',
-        text: '[도촌초 실시간 명예의 전당 연동] 100점 초과 득점 시 실시간 전교 랭킹 등록 및 점수 등록 후 해당 게임 리더보드 자동 탭 선택 지원'
+        text: '[우리학교 실시간 명예의 전당 연동] 100점 초과 득점 시 실시간 전교 랭킹 등록 및 점수 등록 후 해당 게임 리더보드 자동 탭 선택 지원'
       },
       {
         tag: 'UI & HUD',
@@ -2693,21 +2722,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'UI & LEADERBOARD',
         tagColor: 'amber',
-        text: '[도촌초 명예의 전당 즉시 연동] 포니 익스프레스, 제리 로슨, 크리켓 등 전 게임에서 100점 초과 달성 시 랭킹 등록 완료 후 해당 게임 리더보드 모달이 안정적으로 자동 노출되도록 개선'
+        text: '[우리학교 명예의 전당 즉시 연동] 포니 익스프레스, 제리 로슨, 크리켓 등 전 게임에서 100점 초과 달성 시 랭킹 등록 완료 후 해당 게임 리더보드 모달이 안정적으로 자동 노출되도록 개선'
       }
     ]
   },
   {
     version: 'v1.17.0',
     date: '2026-08-17',
-    title: '신규 14호 8비트 아케이드 [도촌 제리 로슨] 공식 출시 & 나만의 게임 제작기 오픈',
+    title: '신규 14호 8비트 아케이드 [우리학교 제리 로슨] 공식 출시 & 나만의 게임 제작기 오픈',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'amber',
-        text: '[신규 14호 게임 도촌 제리 로슨 정식 오픈] 비디오 게임 롬 카트리지의 아버지 제럴드 "제리" 로슨의 업적을 기리는 8비트 레트로 플랫포머 & 인터랙티브 게임 메이커 정식 출시'
+        text: '[신규 14호 게임 우리학교 제리 로슨 정식 오픈] 비디오 게임 롬 카트리지의 아버지 제럴드 "제리" 로슨의 업적을 기리는 8비트 레트로 플랫포머 & 인터랙티브 게임 메이커 정식 출시'
       },
       {
         tag: 'LEVEL MAKER',
@@ -2727,21 +2756,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'amber',
-        text: '[도촌초 실시간 명예의 전당 연동] 100점 초과 득점 시 실시간 전교 랭킹 등록 및 점수 등록 후 해당 게임 리더보드 자동 탭 선택 지원'
+        text: '[우리학교 실시간 명예의 전당 연동] 100점 초과 득점 시 실시간 전교 랭킹 등록 및 점수 등록 후 해당 게임 리더보드 자동 탭 선택 지원'
       }
     ]
   },
   {
     version: 'v1.16.0',
     date: '2026-08-17',
-    title: '신규 13호 액션 아케이드 [도촌 포니 익스프레스] 공식 출시 & 100통 편지 배달 대작전',
+    title: '신규 13호 액션 아케이드 [우리학교 포니 익스프레스] 공식 출시 & 100통 편지 배달 대작전',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'amber',
-        text: '[신규 13호 게임 도촌 포니 익스프레스 정식 오픈] 서부 개척 시대의 전설적인 우편 배달원이 되어 3개 레인을 질주하며 100통의 편지를 수집하여 마을에 배달하는 횡스크롤 액션 러닝 아케이드 게임 출시'
+        text: '[신규 13호 게임 우리학교 포니 익스프레스 정식 오픈] 서부 개척 시대의 전설적인 우편 배달원이 되어 3개 레인을 질주하며 100통의 편지를 수집하여 마을에 배달하는 횡스크롤 액션 러닝 아케이드 게임 출시'
       },
       {
         tag: '3 STAGES',
@@ -2756,7 +2785,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'purple',
-        text: '[도촌초 실시간 명예의 전당 연동] 100점 초과 득점 시 실시간 전교 랭킹 등록 및 점수 등록 후 해당 게임 리더보드 자동 탭 선택 지원'
+        text: '[우리학교 실시간 명예의 전당 연동] 100점 초과 득점 시 실시간 전교 랭킹 등록 및 점수 등록 후 해당 게임 리더보드 자동 탭 선택 지원'
       }
     ]
   },
@@ -2782,14 +2811,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.15.0',
     date: '2026-08-17',
-    title: '신규 12호 원버튼 스포츠 [도촌 크리켓] 공식 출시 & 서든데스 타격 배틀 오픈',
+    title: '신규 12호 원버튼 스포츠 [우리학교 크리켓] 공식 출시 & 서든데스 타격 배틀 오픈',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'amber',
-        text: '[신규 게임 도촌 크리켓(Cricket) 정식 출시] 귀뚜라미 타자가 되어 달팽이 볼러가 던지는 마구를 쳐내고 통쾌한 6점 홈런을 날리는 서든데스 스포츠 타격 아케이드 게임 오픈'
+        text: '[신규 게임 우리학교 크리켓(Cricket) 정식 출시] 귀뚜라미 타자가 되어 달팽이 볼러가 던지는 마구를 쳐내고 통쾌한 6점 홈런을 날리는 서든데스 스포츠 타격 아케이드 게임 오픈'
       },
       {
         tag: 'ASSETS & ENGINE',
@@ -2804,14 +2833,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'RULES & LEADERBOARD',
         tagColor: 'teal',
-        text: '[크리켓 득점 룰 및 도촌초 실시간 명예의 전당 연동] 6점 홈런·4점 바운더리·1~2점 주루 점수 시스템 및 100점 초과 달성 시 실시간 랭킹 등록 지원'
+        text: '[크리켓 득점 룰 및 우리학교 실시간 명예의 전당 연동] 6점 홈런·4점 바운더리·1~2점 주루 점수 시스템 및 100점 초과 달성 시 실시간 랭킹 등록 지원'
       }
     ]
   },
   {
     version: 'v1.14.0',
     date: '2026-08-16',
-    title: '신규 11호 대작 RPG 스포츠 [도촌 챔피언 아일랜드] 공식 출시 & 4대 경기장 완비',
+    title: '신규 11호 대작 RPG 스포츠 [우리학교 챔피언 아일랜드] 공식 출시 & 4대 경기장 완비',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2850,7 +2879,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.13.0',
     date: '2026-08-16',
-    title: '신규 10호 두뇌 퍼즐 [도촌 도넛 틱택토] 공식 출시 & 도넛 토러스 룰 탑재',
+    title: '신규 10호 두뇌 퍼즐 [우리학교 도넛 틱택토] 공식 출시 & 도넛 토러스 룰 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2877,14 +2906,14 @@ export const CHANGELOG_DATA = [
       {
         tag: 'HALL OF FAME',
         tagColor: 'teal',
-        text: '[명예의 전당 랭킹 연동] 연승 콤보 및 마스터 보너스로 100점 초과 달성 시 실시간 도촌초 명예의 전당 점수 등록 지원'
+        text: '[명예의 전당 랭킹 연동] 연승 콤보 및 마스터 보너스로 100점 초과 달성 시 실시간 우리학교 명예의 전당 점수 등록 지원'
       }
     ]
   },
   {
     version: 'v1.12.0',
     date: '2026-08-16',
-    title: '신규 9호 아케이드 [도촌 팝콘 서바이벌] 공식 오픈 & 3종 알갱이 클래스 탑재',
+    title: '신규 9호 아케이드 [우리학교 팝콘 서바이벌] 공식 오픈 & 3종 알갱이 클래스 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2937,7 +2966,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.10.2',
     date: '2026-08-16',
-    title: '[도촌 솔리테어] 카드 유실/증발 버그 긴급 핫픽스 & [🔍 52장 카드 탐색기] 신설',
+    title: '[우리학교 솔리테어] 카드 유실/증발 버그 긴급 핫픽스 & [🔍 52장 카드 탐색기] 신설',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2971,7 +3000,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.10.1',
     date: '2026-08-16',
-    title: '[도촌 컬러 타일] 타일 재배치 무한 반복 오류 긴급 핫픽스 & 종료 정산 최적화',
+    title: '[우리학교 컬러 타일] 타일 재배치 무한 반복 오류 긴급 핫픽스 & 종료 정산 최적화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -2990,14 +3019,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.10.0',
     date: '2026-08-16',
-    title: '신규 8번째 게임 [도촌 컬러 타일 (Color Tile)] 정식 출시 & 교차 매칭 엔진 탑재',
+    title: '신규 8번째 게임 [우리학교 컬러 타일 (Color Tile)] 정식 출시 & 교차 매칭 엔진 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[도촌 컬러 타일 정식 출시] 빈 공간을 클릭하여 상·하·좌·우 십자 방향에서 마주치는 동일한 색상의 타일들을 파괴하는 클래식 명작 교차 매칭 퍼즐 게임 신규 오픈'
+        text: '[우리학교 컬러 타일 정식 출시] 빈 공간을 클릭하여 상·하·좌·우 십자 방향에서 마주치는 동일한 색상의 타일들을 파괴하는 클래식 명작 교차 매칭 퍼즐 게임 신규 오픈'
       },
       {
         tag: 'GAMEPLAY ENGINE',
@@ -3029,7 +3058,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.9.0',
     date: '2026-08-16',
-    title: '신규 7번째 게임 [도촌 정원 요정 (Garden Gnomes)] 정식 출시 & 물리 엔진 탑재',
+    title: '신규 7번째 게임 [우리학교 정원 요정 (Garden Gnomes)] 정식 출시 & 물리 엔진 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -3061,7 +3090,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '[도촌 정원 요정 정식 출시] 2018년 구글 두들 명작을 계승한 투석기 발사 & 거리 달성 물리 액션 캐주얼 게임 정식 오픈'
+        text: '[우리학교 정원 요정 정식 출시] 2018년 구글 두들 명작을 계승한 투석기 발사 & 거리 달성 물리 액션 캐주얼 게임 정식 오픈'
       },
       {
         tag: 'CHARACTERS',
@@ -3095,7 +3124,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'COMPACT',
         tagColor: 'teal',
-        text: '[게임 이름 도촌 접두사 축약] 탭 버튼 텍스트에서 "도촌 "을 제외하고 팩맨, 공룡 달리기, 스네이크, 솔리테어, 지뢰찾기, 야구왕으로 컴팩트화하여 가독성 및 클릭 편의성 극대화'
+        text: '[게임 이름 우리학교 접두사 축약] 탭 버튼 텍스트에서 "우리학교 "을 제외하고 팩맨, 공룡 달리기, 스네이크, 솔리테어, 지뢰찾기, 야구왕으로 컴팩트화하여 가독성 및 클릭 편의성 극대화'
       },
       {
         tag: 'DESIGN',
@@ -3107,7 +3136,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.8.0',
     date: '2026-08-16',
-    title: '도촌 야구왕 [긴장감 극대화 난이도 밸런스 대패치 (플라이/땅볼 아웃 & 선구안 시스템)]',
+    title: '우리학교 야구왕 [긴장감 극대화 난이도 밸런스 대패치 (플라이/땅볼 아웃 & 선구안 시스템)]',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -3136,7 +3165,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.7.7',
     date: '2026-08-16',
-    title: '도촌 야구왕 [400점 스피드 레벨업 시 발생하던 투구 정지 버그 긴급 해결]',
+    title: '우리학교 야구왕 [400점 스피드 레벨업 시 발생하던 투구 정지 버그 긴급 해결]',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -3155,7 +3184,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.7.6',
     date: '2026-08-16',
-    title: '도촌 야구왕 [점수 비례 점진적 투구 속도 가속 엔진 & SPEED Lv.1~MAX 시스템] 탑재',
+    title: '우리학교 야구왕 [점수 비례 점진적 투구 속도 가속 엔진 & SPEED Lv.1~MAX 시스템] 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -3179,7 +3208,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.7.5',
     date: '2026-08-16',
-    title: '도촌 야구왕 [유령 마구 투구 프리징 근본 해결 & 캔버스 무중단 렌더 루프 보장]',
+    title: '우리학교 야구왕 [유령 마구 투구 프리징 근본 해결 & 캔버스 무중단 렌더 루프 보장]',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -3191,7 +3220,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'GHOST BALL',
         tagColor: 'purple',
-        text: '[도촌 유령 마구 가시성 & 투명도 개선] 완전 투명화로 인한 시야 상실 및 타격 불능을 방지하고 멋진 반투명 고스트 구체(최저 투명도 25%)로 렌더링되도록 밸런스 개선'
+        text: '[우리학교 유령 마구 가시성 & 투명도 개선] 완전 투명화로 인한 시야 상실 및 타격 불능을 방지하고 멋진 반투명 고스트 구체(최저 투명도 25%)로 렌더링되도록 밸런스 개선'
       },
       {
         tag: 'PARAM SAFETY',
@@ -3203,7 +3232,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.7.4',
     date: '2026-08-16',
-    title: '도촌 야구왕 [타자 타석 위치 최적화 & 캐릭터 바지/눈/글러브 색상 복원 & 타이밍 판정 개선]',
+    title: '우리학교 야구왕 [타자 타석 위치 최적화 & 캐릭터 바지/눈/글러브 색상 복원 & 타이밍 판정 개선]',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -3227,14 +3256,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.7.3',
     date: '2026-08-16',
-    title: '도촌 야구왕 [3D 원근 야구장 배경 & 우측 조준 좌타자 에셋] 전면 리뉴얼',
+    title: '우리학교 야구왕 [3D 원근 야구장 배경 & 우측 조준 좌타자 에셋] 전면 리뉴얼',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW 3D BG',
         tagColor: 'blue',
-        text: '[3D 원근 야구 경기장 배경 교체] 도촌초 교사, 관중석, 잔디 다이아몬드가 완벽한 3D 하향 시점으로 펼쳐지는 신규 전용 배경화면 탑재'
+        text: '[3D 원근 야구 경기장 배경 교체] 우리학교 교사, 관중석, 잔디 다이아몬드가 완벽한 3D 하향 시점으로 펼쳐지는 신규 전용 배경화면 탑재'
       },
       {
         tag: 'BATTER SPRITE',
@@ -3251,7 +3280,7 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.7.2',
     date: '2026-08-16',
-    title: '도촌 야구왕 [5콤보 이상 고득점 체인지업 프리징 버그 완벽 해결] & 상태 머신 안정화',
+    title: '우리학교 야구왕 [5콤보 이상 고득점 체인지업 프리징 버그 완벽 해결] & 상태 머신 안정화',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
@@ -3304,14 +3333,14 @@ export const CHANGELOG_DATA = [
   {
     version: 'v1.7.0',
     date: '2026-08-16',
-    title: 'Google 두들 스타일 캐주얼 스포츠 [도촌 야구왕] 정식 출시 & 타이밍 배팅 시스템',
+    title: 'Google 두들 스타일 캐주얼 스포츠 [우리학교 야구왕] 정식 출시 & 타이밍 배팅 시스템',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'amber',
-        text: '도촌초등학교 6번째 즉시 플레이 가능 게임 [도촌 야구왕 (Dochon Baseball)] 신규 출시 및 전용 독립 모듈(src/components/games/baseball/) 구축'
+        text: '우리학교 6번째 즉시 플레이 가능 게임 [우리학교 야구왕 (Our School Baseball)] 신규 출시 및 전용 독립 모듈(src/components/games/baseball/) 구축'
       },
       {
         tag: 'ONE-BUTTON',
@@ -3331,7 +3360,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'VISUAL ASSETS',
         tagColor: 'teal',
-        text: '[도촌초 전용 에셋 & 인메모리 알파 크로마키] 도촌 야구장 배경, 치비 타자 준비/스윙 스프라이트, 투수 스프라이트, 홈런 배지 고품질 합성'
+        text: '[우리학교 전용 에셋 & 인메모리 알파 크로마키] 우리학교 야구장 배경, 치비 타자 준비/스윙 스프라이트, 투수 스프라이트, 홈런 배지 고품질 합성'
       },
       {
         tag: 'WEB AUDIO',
@@ -3341,21 +3370,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'amber',
-        text: '실시간 클라우드 DB [도촌 명예의 전당] 야구 탭 자동 연동 및 100점 룰 / 홍길동 플레이스홀더 표준 100% 준수'
+        text: '실시간 클라우드 DB [우리학교 명예의 전당] 야구 탭 자동 연동 및 100점 룰 / 홍길동 플레이스홀더 표준 100% 준수'
       }
     ]
   },
   {
     version: 'v1.6.0',
     date: '2026-08-16',
-    title: 'Google 스타일 클래식 퍼즐 [도촌 지뢰찾기] 정식 출시 & 안심 보호막 시스템 탑재',
+    title: 'Google 스타일 클래식 퍼즐 [우리학교 지뢰찾기] 정식 출시 & 안심 보호막 시스템 탑재',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'amber',
-        text: '도촌초등학교 5번째 즉시 플레이 가능 게임 [도촌 지뢰찾기 (Dochon Minesweeper)] 신규 출시 및 독립 모듈(src/components/games/minesweeper/) 구축'
+        text: '우리학교 5번째 즉시 플레이 가능 게임 [우리학교 지뢰찾기 (Our School Minesweeper)] 신규 출시 및 독립 모듈(src/components/games/minesweeper/) 구축'
       },
       {
         tag: 'SAFE FIRST',
@@ -3385,21 +3414,21 @@ export const CHANGELOG_DATA = [
       {
         tag: 'LEADERBOARD',
         tagColor: 'amber',
-        text: '실시간 클라우드 DB 연동 [도촌 명예의 전당] 5번째 지뢰찾기 탭 신설 및 100점 룰 / 홍길동 플레이스홀더 표준 준수'
+        text: '실시간 클라우드 DB 연동 [우리학교 명예의 전당] 5번째 지뢰찾기 탭 신설 및 100점 룰 / 홍길동 플레이스홀더 표준 준수'
       }
     ]
   },
   {
     version: 'v1.5.0',
     date: '2026-08-16',
-    title: '초등학생 맞춤형 카드 퍼즐 [도촌 솔리테어] 정식 출시 & 스마트 코칭 시스템 신설',
+    title: '초등학생 맞춤형 카드 퍼즐 [우리학교 솔리테어] 정식 출시 & 스마트 코칭 시스템 신설',
     badge: 'UPDATE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'NEW GAME',
         tagColor: 'amber',
-        text: '초등학생 눈높이에 맞춘 클래식 카드 퍼즐 [도촌 솔리테어 (Dochon Solitaire)] 정식 출시 및 독립 모듈(src/components/games/solitaire/) 구축'
+        text: '초등학생 눈높이에 맞춘 클래식 카드 퍼즐 [우리학교 솔리테어 (Our School Solitaire)] 정식 출시 및 독립 모듈(src/components/games/solitaire/) 구축'
       },
       {
         tag: 'COACH',
@@ -3473,7 +3502,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'UI/UX',
         tagColor: 'teal',
-        text: '헤더 타이틀 아이콘(🎮, ✨)을 DOCHON GAMES PORTAL 좌우 1열(줄바꿈 방지)로 완벽 고정 및 검색창 최대 너비 600px 황금비율 적용'
+        text: '헤더 타이틀 아이콘(🎮, ✨)을 OUR SCHOOL GAMES PORTAL 좌우 1열(줄바꿈 방지)로 완벽 고정 및 검색창 최대 너비 600px 황금비율 적용'
       },
       {
         tag: 'HERO',
@@ -3493,7 +3522,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'IMPROVE',
         tagColor: 'teal',
-        text: '도촌 스네이크(Snake Master) 모바일 터치 컨트롤러를 팩맨 스타일의 고품격 3D 아케이드 D-Pad 패널로 통합 업그레이드'
+        text: '우리학교 스네이크(Snake Master) 모바일 터치 컨트롤러를 팩맨 스타일의 고품격 3D 아케이드 D-Pad 패널로 통합 업그레이드'
       },
       {
         tag: 'LAYOUT',
@@ -3522,7 +3551,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'NEW GAME',
         tagColor: 'emerald',
-        text: '신규 아케이드 게임 [도촌 스네이크 마스터 (Dochon Snake Master)] 정식 출시 및 랭킹 연동'
+        text: '신규 아케이드 게임 [우리학교 스네이크 마스터 (Our School Snake Master)] 정식 출시 및 랭킹 연동'
       },
       {
         tag: 'UI/UX',
@@ -3532,7 +3561,7 @@ export const CHANGELOG_DATA = [
       {
         tag: 'HERO',
         tagColor: 'amber',
-        text: '포털 상단 [오늘의 도촌 명예의 전당 1위 챔피언] 실시간 하이라이트 배너 신설'
+        text: '포털 상단 [오늘의 우리학교 명예의 전당 1위 챔피언] 실시간 하이라이트 배너 신설'
       },
       {
         tag: 'FEATURE',
@@ -3557,26 +3586,26 @@ export const CHANGELOG_DATA = [
       {
         tag: 'DINO',
         tagColor: 'teal',
-        text: '도촌 공룡 달리기 고화질 그래픽 에셋 적용 및 독립 모듈 폴더(src/components/games/dino/) 분리'
+        text: '우리학교 공룡 달리기 고화질 그래픽 에셋 적용 및 독립 모듈 폴더(src/components/games/dino/) 분리'
       }
     ]
   },
   {
     version: 'v1.0.0',
     date: '2026-08-13',
-    title: '도촌초등학교 게임 포털 최초 런칭 & 팩맨 게임 정식 출시',
+    title: '우리학교 게임 포털 최초 런칭 & 팩맨 게임 정식 출시',
     badge: 'RELEASE',
     badgeColor: 'blue',
     items: [
       {
         tag: 'PORTAL',
         tagColor: 'amber',
-        text: 'Google Games 타일 방식 모방 비영리 도촌초등학교 게임 포털 최초 런칭'
+        text: 'Google Games 타일 방식 모방 비영리 우리학교 게임 포털 최초 런칭'
       },
       {
         tag: 'PAC-MAN',
         tagColor: 'amber',
-        text: 'D-O-C-H-O-N 알파벳 커스텀 미로 맵 기반 [도촌 팩맨 (Dochon Pac-Man)] 개발 및 정식 출시'
+        text: 'D-O-C-H-O-N 알파벳 커스텀 미로 맵 기반 [우리학교 팩맨 (Our School Pac-Man)] 개발 및 정식 출시'
       },
       {
         tag: 'DATABASE',

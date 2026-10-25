@@ -1,4 +1,4 @@
-// Pure Physics, Ball Trajectory, Timing Judgment & Particle Engine for Dochon Cricket
+// Pure Physics, Ball Trajectory, Timing Judgment & Particle Engine for Our School Cricket
 
 import {
   CANVAS_WIDTH,

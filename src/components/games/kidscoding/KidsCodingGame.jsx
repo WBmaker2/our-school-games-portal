@@ -44,7 +44,7 @@ export default function KidsCodingGame({ onScoreSubmitted }) {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(() => {
     try {
-      const saved = localStorage.getItem('dochon_kidscoding_best');
+      const saved = localStorage.getItem('school_kidscoding_best');
       return saved ? parseInt(saved, 10) || 0 : 0;
     } catch (e) {
       return 0;
@@ -300,7 +300,7 @@ export default function KidsCodingGame({ onScoreSubmitted }) {
     if (newScore > bestScore) {
       setBestScore(newScore);
       try {
-        localStorage.setItem('dochon_kidscoding_best', String(newScore));
+        localStorage.setItem('school_kidscoding_best', String(newScore));
       } catch (e) {}
     }
 
@@ -916,7 +916,7 @@ export default function KidsCodingGame({ onScoreSubmitted }) {
           <div className="kc-minimized-content">
             <span style={{ fontSize: '1.2rem' }}>🎉</span>
             <span style={{ fontWeight: 800, fontSize: '0.85rem', color: '#FBBF24' }}>
-              {gameState === 'ALL_CLEAR' ? '도촌 코딩 마스터 등극!' : '스테이지 클리어! 토끼의 수확 성공'}
+              {gameState === 'ALL_CLEAR' ? '우리학교 코딩 마스터 등극!' : '스테이지 클리어! 토끼의 수확 성공'}
             </span>
             <span style={{ fontSize: '0.75rem', color: '#CBD5E1' }}>
               (사용한 블록: {totalBlocksUsed}개 / 점수: {score}점)
@@ -1005,7 +1005,7 @@ export default function KidsCodingGame({ onScoreSubmitted }) {
           <div className="kc-modal-card">
             <div style={{ fontSize: '3rem', marginBottom: '8px' }}>🏆</div>
             <h3 style={{ fontSize: '1.35rem', fontWeight: 900, color: '#FBBF24', margin: 0 }}>
-              도촌 코딩 마스터 등극!
+              우리학교 코딩 마스터 등극!
             </h3>
             <p style={{ fontSize: '0.85rem', color: '#E2E8F0', marginTop: '6px' }}>
               모든 8개 스테이지를 정복하고 당근을 모두 수확했습니다!
@@ -1041,7 +1041,7 @@ export default function KidsCodingGame({ onScoreSubmitted }) {
               <div className="kc-leaderboard-form">
                 <div className="kc-leaderboard-title">
                   <Trophy size={15} />
-                  <span>도촌초등학교 명예의 전당 등록</span>
+                  <span>우리학교 명예의 전당 등록</span>
                 </div>
                 {hasSubmitted ? (
                   <div style={{ color: '#10B981', fontSize: '0.82rem', fontWeight: 800, marginTop: '8px' }}>

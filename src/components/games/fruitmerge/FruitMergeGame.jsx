@@ -39,7 +39,7 @@ export default function FruitMergeGame({ onScoreSubmitted }) {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(() => {
     try {
-      const saved = localStorage.getItem('dochon_fruitmerge_best');
+      const saved = localStorage.getItem('school_fruitmerge_best');
       return saved ? Number(saved) : 0;
     } catch (e) {
       return 0;
@@ -194,7 +194,7 @@ export default function FruitMergeGame({ onScoreSubmitted }) {
       setBestScore(oldBest => {
         if (updated > oldBest) {
           try {
-            localStorage.setItem('dochon_fruitmerge_best', String(updated));
+            localStorage.setItem('school_fruitmerge_best', String(updated));
           } catch (e) {}
           return updated;
         }
@@ -377,7 +377,7 @@ export default function FruitMergeGame({ onScoreSubmitted }) {
     e.preventDefault();
     if (score <= 100 || isSubmitting) return;
 
-    const cleanName = playerName.trim() || '도촌 학생';
+    const cleanName = playerName.trim() || '우리 학교 학생';
     setIsSubmitting(true);
 
     try {
@@ -499,7 +499,7 @@ export default function FruitMergeGame({ onScoreSubmitted }) {
                 <div className="fruit-leaderboard-box">
                   <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-amber-400 mb-2">
                     <Trophy className="w-4 h-4" />
-                    도촌초 명예의 전당 등록
+                    우리학교 명예의 전당 등록
                   </div>
 
                   {!submitSuccess ? (

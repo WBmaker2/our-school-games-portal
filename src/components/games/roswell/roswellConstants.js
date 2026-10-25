@@ -1,4 +1,4 @@
-// Game Constants & Configuration for Dochon Roswell UFO Escape Adventure
+// Game Constants & Configuration for Our School Roswell UFO Escape Adventure
 export const CANVAS_WIDTH = 800;
 export const CANVAS_HEIGHT = 450;
 
@@ -19,7 +19,7 @@ export const REQUIRED_PARTS = [
 
 // Interactive Items
 export const ITEMS = {
-  CARROT: { id: 'carrot', name: '유기농 당근', icon: '🥕', desc: '도촌 들판에서 갓 뽑은 당근' },
+  CARROT: { id: 'carrot', name: '유기농 당근', icon: '🥕', desc: '우리학교 들판에서 갓 뽑은 당근' },
   ROPE: { id: 'rope', name: '튼튼한 밧줄', icon: '🪢', desc: '도르래나 높은 곳을 연결할 수 있는 밧줄' },
   KEY: { id: 'key', name: '헛간 열쇠', icon: '🗝️', desc: '녹슨 헛간 보관함을 열 수 있는 열쇠' },
   BONE: { id: 'bone', name: '맛있는 뼈다귀', icon: '🦴', desc: '강아지의 주의를 끌 수 있는 간식' },

@@ -1,4 +1,4 @@
-// Dochon Bubble Tea Cafe - 2D Canvas Procedural Rendering & Physics Engine
+// Our School Bubble Tea Cafe - 2D Canvas Procedural Rendering & Physics Engine
 import { CUP_CONFIG, RATING_CONFIG, STEP_PEARLS, STEP_TEA, STEP_SYRUP, STEP_SERVE } from './bubbleTeaConstants';
 
 export class BubbleTeaEngine {
@@ -681,7 +681,7 @@ export class BubbleTeaEngine {
     ctx.fillStyle = '#FFFFFF';
     ctx.font = 'bold 9px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('도촌', bx, by + 43 + bob);
+    ctx.fillText('우리학교', bx, by + 43 + bob);
 
     // Cute Bear Head
     ctx.fillStyle = '#78350F';

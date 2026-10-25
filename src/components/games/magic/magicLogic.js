@@ -1,4 +1,4 @@
-// Core Game Physics, Entity Management & Canvas 2D Renderer for Dochon Magic Cat Academy
+// Core Game Physics, Entity Management & Canvas 2D Renderer for Our School Magic Cat Academy
 
 import {
   CANVAS_WIDTH,

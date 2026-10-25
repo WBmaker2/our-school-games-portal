@@ -1,4 +1,4 @@
-// Snake Game Constants & Configurations for Dochon Games Portal
+// Snake Game Constants & Configurations for Our School Games Portal
 
 export const GRID_COLS = 22;
 export const GRID_ROWS = 16;
@@ -39,7 +39,7 @@ export const SNAKE_THEMES = [
   {
     id: 'CLASSIC',
     minApples: 0,
-    name: '도촌 클래식 그린 ☀️',
+    name: '우리학교 클래식 그린 ☀️',
     boardBg: '#0F172A',
     gridColor: 'rgba(30, 41, 59, 0.6)',
     snakeHead: '#22C55E',

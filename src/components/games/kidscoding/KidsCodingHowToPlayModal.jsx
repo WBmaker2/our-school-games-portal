@@ -13,7 +13,7 @@ export default function KidsCodingHowToPlayModal({ isOpen, onClose }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontSize: '1.4rem' }}>🐰</span>
             <div>
-              <h2 className="kc-modal-title">도촌 코딩 토끼 게임 방법</h2>
+              <h2 className="kc-modal-title">우리학교 코딩 토끼 게임 방법</h2>
               <p className="kc-modal-subtitle">블록 코딩으로 당근을 수확하는 컴퓨팅 사고력 가이드</p>
             </div>
           </div>
@@ -104,12 +104,12 @@ export default function KidsCodingHowToPlayModal({ isOpen, onClose }) {
           <div className="kc-guide-section">
             <h3 className="kc-section-title">
               <Trophy style={{ width: '16px', height: '16px', color: '#34D399' }} />
-              도촌초등학교 명예의 전당 점수 등록
+              우리학교 명예의 전당 점수 등록
             </h3>
             <div className="kc-guide-box">
               <p>
                 모든 스테이지를 통과하거나 게임 종료 시 획득 점수가 <strong>100점을 초과</strong>하면,
-                이름을 입력하여 실시간 도촌초등학교 랭킹에 자랑스럽게 이름을 올릴 수 있습니다!
+                이름을 입력하여 실시간 우리학교 랭킹에 자랑스럽게 이름을 올릴 수 있습니다!
               </p>
             </div>
           </div>

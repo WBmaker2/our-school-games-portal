@@ -1,5 +1,5 @@
-// Dochon Minesweeper Constants & Presets
-// Scalable for Dochon Elementary School Students
+// Our School Minesweeper Constants & Presets
+// Scalable for Our School Elementary School Students
 
 export const DIFFICULTIES = {
   easy: {

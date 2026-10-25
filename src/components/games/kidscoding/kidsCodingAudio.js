@@ -1,5 +1,5 @@
 /**
- * Dochon Kids Coding - Web Audio API Sound Synthesizer
+ * Our School Kids Coding - Web Audio API Sound Synthesizer
  * Zero external audio files, ultra-low latency procedural sound effects
  */
 

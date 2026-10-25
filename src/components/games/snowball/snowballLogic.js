@@ -1,4 +1,4 @@
-// Dochon Games Portal - Snowball Survival Core Physics, AI & Render Engine
+// Our School Games Portal - Snowball Survival Core Physics, AI & Render Engine
 // 100% Canvas 2D Procedural Art & Zero-Latency Local/P2P Physics
 
 import {
@@ -14,7 +14,7 @@ import { snowballAudio } from './snowballAudio';
 import { snowballNet } from './snowballNetwork';
 
 const BOT_NAMES = [
-  '눈폭풍도촌', '빙판의제왕', '스모팽이', '얼음썰매',
+  '눈폭풍우리학교', '빙판의제왕', '스모팽이', '얼음썰매',
   '눈사람장인', '북극곰대장', '칼바람질주', '겨울방학'
 ];
 
@@ -1358,7 +1358,7 @@ export class SnowballLogic {
       ctx.arc(r * 0.4, 6, 2.5, 0, Math.PI * 2);
       ctx.fill();
     } else {
-      // Dochon Student (Padding Jacket & Earmuffs)
+      // Our School Student (Padding Jacket & Earmuffs)
       ctx.beginPath();
       ctx.arc(0, 0, r, 0, Math.PI * 2);
       ctx.fillStyle = '#3B82F6';

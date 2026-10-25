@@ -1,4 +1,4 @@
-// Fruit Merge Constants - Dochon Elementary School Game Portal
+// Fruit Merge Constants - Our School Elementary School Game Portal
 // 11 Fruit Evolution Tiers & Physics World Dimensions
 
 export const CANVAS_WIDTH = 460;

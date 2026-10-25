@@ -1,5 +1,5 @@
 /**
- * Dochon Kids Coding - Pure Logic Interpreter & VM Engine
+ * Our School Kids Coding - Pure Logic Interpreter & VM Engine
  * Handles block parsing, nested loop unrolling, step-by-step execution, and validation
  */
 

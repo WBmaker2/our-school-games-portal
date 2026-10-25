@@ -1,4 +1,4 @@
-// Dochon Pétanque Master How-to-Play Modal
+// Our School Pétanque Master How-to-Play Modal
 
 import React from 'react';
 import { X, Target, Crosshair, Sparkles } from 'lucide-react';
@@ -17,7 +17,7 @@ export default function PetanqueHowToPlayModal({ isOpen, onClose }) {
         <div className="petanque-modal-header">
           <div className="petanque-modal-title">
             <span>🇫🇷 🎯</span>
-            <span>도촌 페탕크 마스터 게임 방법</span>
+            <span>우리학교 페탕크 마스터 게임 방법</span>
           </div>
           <button
             onClick={onClose}
@@ -37,7 +37,7 @@ export default function PetanqueHowToPlayModal({ isOpen, onClose }) {
               <span>1. 페탕크 기본 룰</span>
             </div>
             <p className="petanque-info-desc">
-              목표 공인 <strong style={{ color: '#fde047' }}>⭐ 뷔슈(Cochonnet)</strong>에 내 쇠구슬(도촌 청팀 🔵)을 상대(AI 백팀 🔴)보다 더 가깝게 붙여 점수를 획득하는 프랑스 전통 레저 스포츠입니다!
+              목표 공인 <strong style={{ color: '#fde047' }}>⭐ 뷔슈(Cochonnet)</strong>에 내 쇠구슬(우리학교 청팀 🔵)을 상대(AI 백팀 🔴)보다 더 가깝게 붙여 점수를 획득하는 프랑스 전통 레저 스포츠입니다!
             </p>
           </div>
 

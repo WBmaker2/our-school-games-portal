@@ -1,4 +1,4 @@
-// Dochon Bubble Tea Cafe - Game Constants & Recipe Definitions
+// Our School Bubble Tea Cafe - Game Constants & Recipe Definitions
 
 export const CANVAS_WIDTH = 800;
 export const CANVAS_HEIGHT = 600;

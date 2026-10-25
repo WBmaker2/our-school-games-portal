@@ -1,4 +1,4 @@
-// Dochon Pétanque Master Physics & 2.5D Perspective Canvas Render Engine
+// Our School Pétanque Master Physics & 2.5D Perspective Canvas Render Engine
 
 import {
   FIELD_CONFIG,
@@ -650,7 +650,7 @@ export class PetanqueEngine {
     ctx.font = `bold ${Math.max(9, Math.round(11 * scale))}px sans-serif`;
     ctx.fillStyle = isPlayer ? '#93c5fd' : '#fca5a5';
     ctx.textAlign = 'center';
-    ctx.fillText(isPlayer ? '🔵 도촌' : '🔴 AI', boule.x, renderY - r - 3);
+    ctx.fillText(isPlayer ? '🔵 우리학교' : '🔴 AI', boule.x, renderY - r - 3);
 
     ctx.restore();
   }

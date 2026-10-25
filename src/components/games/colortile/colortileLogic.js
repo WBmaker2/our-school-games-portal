@@ -1,4 +1,4 @@
-// Dochon Color Tile Game Engine & Logic
+// Our School Color Tile Game Engine & Logic
 import { GRID_SIZE, DEFAULT_SPAWN_RATE, TILE_COLORS } from './colortileConstants';
 
 /**

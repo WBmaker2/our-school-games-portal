@@ -1,4 +1,4 @@
-// Dochon Half Moon (Rise of the Half Moon) Main Game Component
+// Our School Half Moon (Rise of the Half Moon) Main Game Component
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
@@ -485,7 +485,7 @@ export default function HalfMoonGame({ onScoreSubmitted }) {
           <div className="halfmoon-result-overlay animate-fade-in">
             <div className="halfmoon-result-card">
               <div className="result-crown-glow">👑</div>
-              <h3 className="text-2xl font-black text-amber-400">최종 대승리! 도촌 천문 마스터</h3>
+              <h3 className="text-2xl font-black text-amber-400">최종 대승리! 우리학교 천문 마스터</h3>
               <p className="text-xs text-slate-300 mt-1">
                 모든 스테이지를 통과하고 우주의 균형을 되찾았습니다!
               </p>

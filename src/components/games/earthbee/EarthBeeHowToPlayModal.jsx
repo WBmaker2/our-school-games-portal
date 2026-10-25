@@ -12,7 +12,7 @@ export default function EarthBeeHowToPlayModal({ isOpen, onClose }) {
           <div className="flex items-center gap-2">
             <span className="text-2xl">🐝</span>
             <h3 className="text-lg font-black text-amber-300">
-              도촌 꿀벌의 비행 — 게임 방법
+              우리학교 꿀벌의 비행 — 게임 방법
             </h3>
           </div>
           <button onClick={onClose} className="earthbee-modal-close" title="닫기">
@@ -69,7 +69,7 @@ export default function EarthBeeHowToPlayModal({ isOpen, onClose }) {
             <div>
               <h4 className="font-bold text-purple-200 mb-1">4. 생태계 레벨업 & 60송이 일몰 완성</h4>
               <p className="text-xs text-slate-300 leading-relaxed">
-                꽃을 피워 <strong className="text-purple-300">총 60송이 개화 완성</strong> 시 황금빛 노을과 함께 <strong className="text-yellow-300">완벽 개화 보너스(+1,000점)</strong>를 획득하며 승리합니다! <strong className="text-amber-300">100점을 초과</strong>하면 도촌초 명예의 전당에 이름을 남길 수 있습니다.
+                꽃을 피워 <strong className="text-purple-300">총 60송이 개화 완성</strong> 시 황금빛 노을과 함께 <strong className="text-yellow-300">완벽 개화 보너스(+1,000점)</strong>를 획득하며 승리합니다! <strong className="text-amber-300">100점을 초과</strong>하면 우리학교 명예의 전당에 이름을 남길 수 있습니다.
               </p>
             </div>
           </div>

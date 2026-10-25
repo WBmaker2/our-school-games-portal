@@ -29,7 +29,7 @@ export default function SkyJumperGame({ onScoreSubmitted }) {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(() => {
     try {
-      const saved = localStorage.getItem('dochon_skyjumper_best');
+      const saved = localStorage.getItem('school_skyjumper_best');
       return saved ? parseInt(saved, 10) || 0 : 0;
     } catch (e) {
       return 0;
@@ -70,7 +70,7 @@ export default function SkyJumperGame({ onScoreSubmitted }) {
           setBestScore(prev => {
             if (engine.score > prev) {
               try {
-                localStorage.setItem('dochon_skyjumper_best', String(engine.score));
+                localStorage.setItem('school_skyjumper_best', String(engine.score));
               } catch (e) {}
               return engine.score;
             }
@@ -406,7 +406,7 @@ export default function SkyJumperGame({ onScoreSubmitted }) {
         {gameState === 'READY' && (
           <div className="sj-overlay-screen">
             <div className="sj-overlay-icon">🚀</div>
-            <h2 className="sj-overlay-title">도촌 스카이 점퍼</h2>
+            <h2 className="sj-overlay-title">우리학교 스카이 점퍼</h2>
             <p className="sj-overlay-desc">
               발판을 딛고 하늘과 우주 끝까지 무한 점프!<br />
               스프링과 제트팩을 타고 최고 고도를 경신하세요.
@@ -477,7 +477,7 @@ export default function SkyJumperGame({ onScoreSubmitted }) {
             {score > 100 && !hasSubmitted && (
               <form onSubmit={handleScoreSubmit} className="sj-submit-form">
                 <span style={{ fontSize: '12px', color: '#FDE047', fontWeight: 800 }}>
-                  🏆 도촌초 실시간 명예의 전당 랭킹 등록
+                  🏆 우리학교 실시간 명예의 전당 랭킹 등록
                 </span>
                 <div className="sj-input-row">
                   <input

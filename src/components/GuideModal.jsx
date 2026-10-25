@@ -50,7 +50,7 @@ export default function GuideModal({ isOpen, onClose }) {
             <div className="flex flex-col text-left">
               <div className="flex items-center gap-2">
                 <h2 className="text-lg sm:text-xl font-black text-white tracking-tight">
-                  도촌 게임 포털 이용안내
+                  우리 학교 게임 포털 이용안내
                 </h2>
                 <span className="bg-cyan-400/20 text-cyan-300 border border-cyan-400/50 text-[10px] font-black px-2 py-0.5 rounded-full">
                   USER GUIDE
@@ -80,7 +80,7 @@ export default function GuideModal({ isOpen, onClose }) {
                 </h3>
               </div>
               <p className="text-xs text-slate-200 leading-relaxed">
-                도촌 게임 포털의 모든 아케이드 게임은 <strong>가로형 디스플레이에 최적화</strong>되어 있습니다.
+                우리 학교 게임 포털의 모든 아케이드 게임은 <strong>가로형 디스플레이에 최적화</strong>되어 있습니다.
                 스마트폰이나 태블릿(iPad, 갤럭시탭 등)에서 <strong>화면 자동 회전을 켠 후 기기를 가로로 돌려(Landscape Mode)</strong> 플레이하시면 훨씬 더 넓고 시원한 시야와 편리한 조작 버튼으로 쾌적하게 즐기실 수 있습니다!
               </p>
             </div>
@@ -96,11 +96,11 @@ export default function GuideModal({ isOpen, onClose }) {
                 </div>
                 <div>
                   <h4 className="text-sm font-black text-amber-300 mb-1 flex items-center gap-1.5">
-                    <span>🏆 실시간 도촌 명예의 전당 랭킹 등록</span>
+                    <span>🏆 실시간 명예의 전당 랭킹 등록</span>
                   </h4>
                   <p className="text-xs text-slate-300 leading-relaxed">
                     게임을 플레이하여 <strong>100점을 초과 달성</strong>하면 게임 종료 시 랭킹 등록 폼이 나타납니다.
-                    이름(예: 홍길동 또는 개성 있는 닉네임)을 입력하고 등록 버튼을 누르면 <strong>도촌초 전교 실시간 랭킹</strong>에 바로 기록됩니다!
+                    이름(예: 홍길동 또는 개성 있는 닉네임)을 입력하고 등록 버튼을 누르면 <strong>우리 학교 실시간 랭킹</strong>에 바로 기록됩니다!
                   </p>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function GuideModal({ isOpen, onClose }) {
         <div className="guide-modal-footer">
           <div className="flex items-center gap-1.5 text-xs text-slate-400">
             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>도촌초등학교 학생들을 위한 안전하고 건전한 교육용 비영리 게임 포털입니다.</span>
+            <span>우리 학교 학생들을 위한 안전하고 건전한 교육용 비영리 게임 포털입니다.</span>
           </div>
           <button
             onClick={onClose}

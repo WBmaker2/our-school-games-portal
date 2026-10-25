@@ -14,8 +14,8 @@ export default function BaseballHowToPlayModal({ isOpen, onClose }) {
               <span style={{ fontSize: '24px' }}>⚾</span>
             </div>
             <div>
-              <h2 className="baseball-modal-title">도촌 야구왕 플레이 가이드</h2>
-              <p className="baseball-modal-subtitle">홈런왕이 되어 도촌초 명예의 전당에 이름을 새겨보세요!</p>
+              <h2 className="baseball-modal-title">우리학교 야구왕 플레이 가이드</h2>
+              <p className="baseball-modal-subtitle">홈런왕이 되어 우리학교 명예의 전당에 이름을 새겨보세요!</p>
             </div>
           </div>
           <button className="baseball-modal-close-btn" onClick={onClose} title="가이드 닫기">
@@ -155,7 +155,7 @@ export default function BaseballHowToPlayModal({ isOpen, onClose }) {
               </div>
               <div className="tip-item">
                 <CheckCircle2 style={{ width: '16px', height: '16px', color: '#10B981', flexShrink: 0 }} />
-                <span><strong>명예의 전당 등록:</strong> 최종 점수가 <strong>100점을 초과</strong>하면 도촌초 실시간 랭킹에 이름을 남길 수 있습니다!</span>
+                <span><strong>명예의 전당 등록:</strong> 최종 점수가 <strong>100점을 초과</strong>하면 우리학교 실시간 랭킹에 이름을 남길 수 있습니다!</span>
               </div>
             </div>
           </div>

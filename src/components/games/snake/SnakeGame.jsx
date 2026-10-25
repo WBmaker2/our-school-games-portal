@@ -377,7 +377,7 @@ export default function SnakeGame({ onScoreSubmitted }) {
 
         triggerBadge(
           item.type === ITEM_TYPES.ACORN
-            ? `🌰 도촌 황금 도토리 획득! (+${pts}점)`
+            ? `🌰 우리학교 황금 도토리 획득! (+${pts}점)`
             : `🍇 비타민 포도 획득! (+${pts}점)`
         );
 
@@ -781,8 +781,8 @@ export default function SnakeGame({ onScoreSubmitted }) {
       {/* Header Bar */}
       <div className="snake-header">
         <div className="snake-title-wrap">
-          <span className="snake-title">🐍 Dochon Snake Master</span>
-          <span className="snake-badge">도촌초 꿈나무 스네이크</span>
+          <span className="snake-title">🐍 Our School Snake Master</span>
+          <span className="snake-badge">우리학교 꿈나무 스네이크</span>
         </div>
         <div className="snake-score-wrap">
           {(() => {
@@ -828,10 +828,10 @@ export default function SnakeGame({ onScoreSubmitted }) {
         {/* Overlay States */}
         {gameState === 'IDLE' && (
           <div className="snake-overlay">
-            <h3 className="snake-overlay-title">도촌 스네이크 시작!</h3>
+            <h3 className="snake-overlay-title">우리학교 스네이크 시작!</h3>
             <p className="snake-overlay-desc">
               <span style={{ color: '#34D399', fontWeight: 900 }}>방향키(↑↓←→) / WASD</span> 키 또는 <span style={{ color: '#FBBF24', fontWeight: 900 }}>아래 십자키</span>로 뱀을 조종하여<br />
-              맛있는 <span style={{ color: '#EF4444', fontWeight: 900 }}>도촌 사과 🍎</span>와 <span style={{ color: '#FBBF24', fontWeight: 900 }}>황금 도토리 🌰</span>를 먹어보세요!<br />
+              맛있는 <span style={{ color: '#EF4444', fontWeight: 900 }}>우리학교 사과 🍎</span>와 <span style={{ color: '#FBBF24', fontWeight: 900 }}>황금 도토리 🌰</span>를 먹어보세요!<br />
               <span style={{ color: '#F87171', fontWeight: 800 }}>벽이나 자신의 몸통에 부딪히면 게임이 종료됩니다.</span>
             </p>
             <button onClick={restartGame} className="btn-gold text-base md:text-lg px-8 py-3 animate-pulse shadow-2xl">
@@ -865,7 +865,7 @@ export default function SnakeGame({ onScoreSubmitted }) {
               !submitted ? (
                 <form onSubmit={handleScoreSubmit} className="snake-score-form">
                   <label style={{ fontSize: '12px', color: '#34D399', fontWeight: 900, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
-                    <Sparkles style={{ width: '14px', height: '14px' }} /> 도촌 명예의 전당 점수 등록
+                    <Sparkles style={{ width: '14px', height: '14px' }} /> 우리학교 명예의 전당 점수 등록
                   </label>
                   <input
                     type="text"
@@ -882,7 +882,7 @@ export default function SnakeGame({ onScoreSubmitted }) {
                 </form>
               ) : (
                 <p style={{ color: '#34D399', fontWeight: 900, background: 'rgba(6, 78, 59, 0.8)', border: '1.5px solid #10B981', padding: '8px 18px', borderRadius: '12px' }}>
-                  ✅ 도촌 명예의 전당에 성공적으로 등록되었습니다!
+                  ✅ 우리학교 명예의 전당에 성공적으로 등록되었습니다!
                 </p>
               )
             ) : (
@@ -903,7 +903,7 @@ export default function SnakeGame({ onScoreSubmitted }) {
         )}
       </div>
 
-      {/* Cute Arcade Action Bar & Large 3-Row Touch D-Pad (Dochon Pac-Man Style) */}
+      {/* Cute Arcade Action Bar & Large 3-Row Touch D-Pad (Our School Pac-Man Style) */}
       <div className="flex flex-col items-center justify-center w-full mt-3 px-2">
 
         {/* 1. Cute Action Pill Buttons Row */}
@@ -933,7 +933,7 @@ export default function SnakeGame({ onScoreSubmitted }) {
         {/* 2. Large & Cute 3-Row D-Pad Controller for Mobile, Tablet & Desktop */}
         <div className="dpad-panel">
           <div className="dpad-title">
-            <span>🕹️ DOCHON TOUCH CONTROLLER</span>
+            <span>🕹️ OUR SCHOOL TOUCH CONTROLLER</span>
           </div>
 
           {/* 3x3 Grid Layout for D-Pad */}
@@ -959,7 +959,7 @@ export default function SnakeGame({ onScoreSubmitted }) {
             </button>
 
             {/* Row 2: Center = Joystick Pivot Dot */}
-            <div className="dpad-btn-center select-none" title="도촌 아케이드 조이스틱 코어">
+            <div className="dpad-btn-center select-none" title="우리학교 아케이드 조이스틱 코어">
               <div className="dpad-center-core" />
             </div>
 

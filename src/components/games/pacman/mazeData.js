@@ -1,12 +1,12 @@
-// Dochon Pac-Man Maze Data - Spells out "DOCHON" in maze wall tiles
+// Our School Pac-Man Maze Data - Spells out "OUR SCHOOL" in maze wall tiles
 // Tile values:
 // 1 = Wall (Forms D-O-C-H-O-N letters and borders)
 // 2 = Dot / Cookie (Gold Star)
-// 3 = Power Pellet (Dochon School Lunch Burger)
+// 3 = Power Pellet (Our School School Lunch Burger)
 // 0 = Empty Corridor / Teleport Portal (Walkable, no dot)
 // 9 = Ghost House Interior
 
-export const DOCHON_MAZE_GRID = [
+export const PACMAN_MAZE_GRID = [
   // Row 0: Top outer wall (33 tiles)
   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 

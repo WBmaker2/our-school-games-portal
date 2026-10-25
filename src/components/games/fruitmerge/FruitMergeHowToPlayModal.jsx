@@ -16,7 +16,7 @@ export default function FruitMergeHowToPlayModal({ isOpen, onClose }) {
             </div>
             <div>
               <h2 className="text-xl font-black text-white flex items-center gap-1.5">
-                도촌 과일 합치기 <span className="text-amber-400 text-sm font-normal">게임 설명서</span>
+                우리학교 과일 합치기 <span className="text-amber-400 text-sm font-normal">게임 설명서</span>
               </h2>
               <p className="text-xs text-emerald-200/80">같은 과일을 합쳐서 거대한 왕 수박을 완성하세요!</p>
             </div>
@@ -115,7 +115,7 @@ export default function FruitMergeHowToPlayModal({ isOpen, onClose }) {
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-amber-400" />
               <span className="text-xs text-slate-300">
-                <strong className="text-amber-300">100점 초과 달성 시</strong> 도촌초 명예의 전당에 이름을 등록할 수 있습니다!
+                <strong className="text-amber-300">100점 초과 달성 시</strong> 우리학교 명예의 전당에 이름을 등록할 수 있습니다!
               </span>
             </div>
           </div>

@@ -1,6 +1,6 @@
-# 🔦 도촌 야간 학교 숨바꼭질 (School Tag)
+# 🔦 우리학교 야간 학교 숨바꼭질 (School Tag)
 
-불 꺼진 야간 도촌초등학교 본관/신관을 무대로 펼쳐지는 **2D 탑다운 비대칭 실시간 술래잡기(Asymmetric Survival Tag)** 게임입니다.
+불 꺼진 야간 우리학교 본관/신관을 무대로 펼쳐지는 **2D 탑다운 비대칭 실시간 술래잡기(Asymmetric Survival Tag)** 게임입니다.
 
 ---
 
@@ -24,7 +24,7 @@
 - `SchoolTagHowToPlayModal.jsx`: 조작법 및 생존 수칙 안내 모달
 - `schoolTagConstants.js`: 타일 크기, 시야각/거리, 스태미너, 점수 산출 상수, P2P 설정
 - `schoolTagAudio.js`: Web Audio API 신디사이저 엔진
-- `schoolTagMap.js`: 도촌초 교실/복도 그리드 맵 및 벽 세그먼트 생성기
+- `schoolTagMap.js`: 우리학교 교실/복도 그리드 맵 및 벽 세그먼트 생성기
 - `schoolTagLogic.js`: 2D 레이캐스팅 광선 계산, 벽 충돌, 스마트 AI 상태머신, 점수 산출 로직
 - `schoolTagNetwork.js`: PeerJS P2P 룸 생성 및 데이터 동기화 매니저
 - `schooltag.css`: 다크 호러 아케이드 네온 테마 및 반응형 레이아웃

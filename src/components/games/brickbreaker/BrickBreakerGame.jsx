@@ -31,7 +31,7 @@ export default function BrickBreakerGame({ onScoreSubmitted }) {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(() => {
     try {
-      const saved = localStorage.getItem('dochon_brickbreaker_best');
+      const saved = localStorage.getItem('school_brickbreaker_best');
       return saved ? parseInt(saved, 10) || 0 : 0;
     } catch (e) {
       return 0;
@@ -72,7 +72,7 @@ export default function BrickBreakerGame({ onScoreSubmitted }) {
       setBestScore(best => {
         if (updated > best) {
           try {
-            localStorage.setItem('dochon_brickbreaker_best', String(updated));
+            localStorage.setItem('school_brickbreaker_best', String(updated));
           } catch (e) {}
           return updated;
         }
@@ -393,7 +393,7 @@ export default function BrickBreakerGame({ onScoreSubmitted }) {
         {gameState === 'READY' && (
           <div className="bb-overlay-screen">
             <div className="bb-overlay-icon">🧱</div>
-            <h2 className="bb-overlay-title">도촌 벽돌 격파왕</h2>
+            <h2 className="bb-overlay-title">우리학교 벽돌 격파왕</h2>
             <p className="bb-overlay-desc">
               마우스 / 터치 드래그로 패들을 움직이고<br />
               화면을 클릭하거나 <strong>[스페이스바]</strong>를 눌러 공을 발사하세요!
@@ -448,8 +448,8 @@ export default function BrickBreakerGame({ onScoreSubmitted }) {
         {gameState === 'ALL_CLEAR' && (
           <div className="bb-overlay-screen">
             <div className="bb-overlay-icon">👑</div>
-            <h2 className="bb-overlay-title">전설의 도촌 격파왕 등극!</h2>
-            <p className="bb-overlay-desc">모든 관문을 뚫고 도촌초등학교 최고의 블록 격파 마스터가 되었습니다!</p>
+            <h2 className="bb-overlay-title">전설의 우리학교 격파왕 등극!</h2>
+            <p className="bb-overlay-desc">모든 관문을 뚫고 우리학교 최고의 블록 격파 마스터가 되었습니다!</p>
 
             <div className="bb-score-card">
               <div className="bb-score-col">
@@ -462,7 +462,7 @@ export default function BrickBreakerGame({ onScoreSubmitted }) {
             {score > 100 && !hasSubmitted && (
               <form onSubmit={handleScoreSubmit} className="bb-submit-form">
                 <span style={{ fontSize: '12px', color: '#FDE047', fontWeight: 800 }}>
-                  🏆 도촌초 실시간 명예의 전당 랭킹 등록
+                  🏆 우리학교 실시간 명예의 전당 랭킹 등록
                 </span>
                 <div className="bb-input-row">
                   <input
@@ -517,7 +517,7 @@ export default function BrickBreakerGame({ onScoreSubmitted }) {
             {score > 100 && !hasSubmitted && (
               <form onSubmit={handleScoreSubmit} className="bb-submit-form">
                 <span style={{ fontSize: '12px', color: '#FDE047', fontWeight: 800 }}>
-                  🏆 도촌초 실시간 명예의 전당 랭킹 등록
+                  🏆 우리학교 실시간 명예의 전당 랭킹 등록
                 </span>
                 <div className="bb-input-row">
                   <input

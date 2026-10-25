@@ -522,7 +522,7 @@ export default function MinesweeperGame({ onScoreSubmitted }) {
               <Crown className="w-14 h-14 text-amber-400 fill-amber-400 animate-bounce" />
               <h2 className="ms-result-title">🎉 지뢰찾기 클리어 성공! 🎉</h2>
               <p style={{ fontSize: '13px', color: '#CBD5E1', margin: 0 }}>
-                도촌초등학교 최고의 추리 마스터로 인정합니다! 🌿
+                우리학교 최고의 추리 마스터로 인정합니다! 🌿
               </p>
 
               <div className="ms-stats-grid">
@@ -551,7 +551,7 @@ export default function MinesweeperGame({ onScoreSubmitted }) {
                 !submitted ? (
                   <form onSubmit={handleScoreSubmit} className="ms-score-form">
                     <label style={{ fontSize: '11px', fontWeight: 900, color: '#34D399', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
-                      <Sparkles className="w-3.5 h-3.5 text-amber-400" /> 도촌 명예의 전당 점수 등록
+                      <Sparkles className="w-3.5 h-3.5 text-amber-400" /> 우리학교 명예의 전당 점수 등록
                     </label>
                     <input
                       type="text"
@@ -568,7 +568,7 @@ export default function MinesweeperGame({ onScoreSubmitted }) {
                   </form>
                 ) : (
                   <div style={{ backgroundColor: 'rgba(6, 78, 59, 0.8)', border: '1px solid #10B981', color: '#6EE7B7', padding: '10px 16px', borderRadius: '10px', fontSize: '12px', fontWeight: 800 }}>
-                    ✅ 도촌 명예의 전당에 랭킹이 성공적으로 등록되었습니다!
+                    ✅ 우리학교 명예의 전당에 랭킹이 성공적으로 등록되었습니다!
                   </div>
                 )
               ) : (
@@ -620,7 +620,7 @@ export default function MinesweeperGame({ onScoreSubmitted }) {
                 !submitted ? (
                   <form onSubmit={handleScoreSubmit} className="ms-score-form">
                     <label style={{ fontSize: '11px', fontWeight: 900, color: '#34D399', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
-                      <Sparkles className="w-3.5 h-3.5 text-amber-400" /> 도촌 명예의 전당 점수 등록
+                      <Sparkles className="w-3.5 h-3.5 text-amber-400" /> 우리학교 명예의 전당 점수 등록
                     </label>
                     <input
                       type="text"
@@ -637,7 +637,7 @@ export default function MinesweeperGame({ onScoreSubmitted }) {
                   </form>
                 ) : (
                   <div style={{ backgroundColor: 'rgba(6, 78, 59, 0.8)', border: '1px solid #10B981', color: '#6EE7B7', padding: '10px 16px', borderRadius: '10px', fontSize: '12px', fontWeight: 800 }}>
-                    ✅ 도촌 명예의 전당에 랭킹이 성공적으로 등록되었습니다!
+                    ✅ 우리학교 명예의 전당에 랭킹이 성공적으로 등록되었습니다!
                   </div>
                 )
               ) : null}

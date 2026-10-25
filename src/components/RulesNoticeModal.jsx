@@ -30,7 +30,7 @@ export default function RulesNoticeModal({ isOpen, onClose }) {
       const d = new Date();
       const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
       try {
-        localStorage.setItem('dochon_rules_hide_today', today);
+        localStorage.setItem('school_rules_hide_today', today);
       } catch (e) {}
     }
 
@@ -51,7 +51,7 @@ export default function RulesNoticeModal({ isOpen, onClose }) {
           <div className="flex flex-col text-left">
             <div className="flex items-center gap-2">
               <h2 className="text-lg sm:text-xl font-black text-white tracking-tight">
-                도촌초 게임 포털 이용 및 안전 수칙
+                우리 학교 게임 포털 이용 및 안전 수칙
               </h2>
               <span className="bg-amber-400/20 text-amber-300 border border-amber-400/50 text-[10px] font-black px-2 py-0.5 rounded-full">
                 필수 확인
@@ -68,7 +68,7 @@ export default function RulesNoticeModal({ isOpen, onClose }) {
           {/* Intro Notice */}
           <div className="rules-intro-card">
             <p className="text-xs text-amber-200/90 leading-relaxed font-semibold">
-              🌟 <strong>도촌초 게임 포털</strong>은 학생들이 공부 후 잠시 쉴 때 재미있게 즐길 수 있는 <strong>건전하고 안전한 교육용 미니 게임</strong>을 모아두었습니다.
+              🌟 <strong>우리 학교 게임 포털</strong>은 학생들이 공부 후 잠시 쉴 때 재미있게 즐길 수 있는 <strong>건전하고 안전한 교육용 미니 게임</strong>을 모아두었습니다.
             </p>
           </div>
 

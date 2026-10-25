@@ -1,6 +1,6 @@
-# 도촌 미니 올림픽 (Dochon Mini Olympics)
+# 우리학교 미니 올림픽 (Our School Mini Olympics)
 
-도촌초등학교 게임 포털을 위해 개발된 **100% 순수 코드 렌더링(HTML5 Canvas 2D + Web Audio API) 3대 릴레이 스포츠 아케이드 게임** 모듈입니다.
+우리학교 게임 포털을 위해 개발된 **100% 순수 코드 렌더링(HTML5 Canvas 2D + Web Audio API) 3대 릴레이 스포츠 아케이드 게임** 모듈입니다.
 
 ## 📂 파일 구조 및 역할
 

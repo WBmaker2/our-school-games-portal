@@ -1,51 +1,81 @@
-// Dochon Games Portal - The Great Ghoul Duel WebRTC P2P & Firebase Relay Hybrid Network Manager
-// Dual-Path Architecture: 0ms Ultra-Low Latency Direct P2P + 100% Reliable Firebase RTDB Relay Fallback
-// Guarantees 100% connection success even across isolated administrative (업무망) and student (학생망) networks
-// v6: Native W3C RTCPeerConnection with Automatic Seamless HTTPS/WSS Relay Fallback
+// Our School Games Portal - The Great Ghoul Duel WebRTC P2P Network Manager (Zero-Cost PeerJS)
+// 4-Digit Numeric Room Code (e.g. '1234', '7788') to 'school-ghoul-XXXX' Peer ID
+// v4: High-Reliability P2P Connection (Keep-Alive, Zero-Loss Data Listener, Fallback TURN/STUN, Position Sync)
 
-import { FirebaseSignaling } from '../../../utils/firebaseSignaling';
+import { Peer } from 'peerjs';
 
-// Robust Multi-tier ICE Servers: High-availability STUN
+const PEER_PREFIX = 'school-ghoul-';
+
+// Robust Multi-tier ICE Servers: Google, Cloudflare, Twilio STUN + Metered Ports 80/443 TURN
 const ICE_SERVERS = [
+  // Fast Global STUN servers for direct NAT traversal
   { urls: 'stun:stun.l.google.com:19302' },
   { urls: 'stun:stun1.l.google.com:19302' },
   { urls: 'stun:stun2.l.google.com:19302' },
-  { urls: 'stun:stun3.l.google.com:19302' },
-  { urls: 'stun:stun4.l.google.com:19302' },
-  { urls: 'stun:stun.cloudflare.com:3478' }
+  { urls: 'stun:stun.cloudflare.com:3478' },
+  { urls: 'stun:global.stun.twilio.com:3478' },
+  { urls: 'stun:stun.relay.metered.ca:80' },
+  // Primary Metered TURN relay servers (ports 80/443 HTTP/HTTPS bypass)
+  {
+    urls: 'turn:global.relay.metered.ca:80',
+    username: 'e8dd65b92f3b1e1ae3a37c20',
+    credential: 'gVNgSOl87pwvCYLu'
+  },
+  {
+    urls: 'turn:global.relay.metered.ca:80?transport=tcp',
+    username: 'e8dd65b92f3b1e1ae3a37c20',
+    credential: 'gVNgSOl87pwvCYLu'
+  },
+  {
+    urls: 'turn:global.relay.metered.ca:443',
+    username: 'e8dd65b92f3b1e1ae3a37c20',
+    credential: 'gVNgSOl87pwvCYLu'
+  },
+  {
+    urls: 'turns:global.relay.metered.ca:443?transport=tcp',
+    username: 'e8dd65b92f3b1e1ae3a37c20',
+    credential: 'gVNgSOl87pwvCYLu'
+  },
+  // OpenRelay Public Fallback TURN
+  {
+    urls: 'turn:openrelay.metered.ca:80',
+    username: 'openrelayproject',
+    credential: 'openrelayproject'
+  },
+  {
+    urls: 'turn:openrelay.metered.ca:80?transport=tcp',
+    username: 'openrelayproject',
+    credential: 'openrelayproject'
+  },
+  {
+    urls: 'turn:openrelay.metered.ca:443',
+    username: 'openrelayproject',
+    credential: 'openrelayproject'
+  },
+  {
+    urls: 'turns:openrelay.metered.ca:443?transport=tcp',
+    username: 'openrelayproject',
+    credential: 'openrelayproject'
+  }
 ];
 
-const RTC_CONFIG = {
-  iceServers: ICE_SERVERS,
-  iceCandidatePoolSize: 2
-};
-
-const CONNECTION_TIMEOUT_MS = 14000; // 14s total timeout limit
-const P2P_FALLBACK_TIMEOUT_MS = 3800; // 3.8s before switching to Relay Fallback
-const RELAY_THROTTLE_MS = 100; // 10Hz throttle for relay in-game updates (300KB/match)
+const CONNECTION_TIMEOUT_MS = 18000; // 18 seconds overall connection timeout
+const MAX_CONNECTION_RETRIES = 3;   // Re-attempt connect up to 3 times
+const HANDSHAKE_INTERVAL_MS = 400;  // Re-send JOIN_LOBBY every 400ms
+const MAX_HANDSHAKE_ATTEMPTS = 10;  // Up to 10 handshake attempts (4.0s total)
 
 export class GhoulDuelNetworkManager {
   constructor() {
-    this.signaling = new FirebaseSignaling('ghoulduel');
-
+    this.peer = null;
     this.isHost = false;
     this.roomCode = '';
     this.myPeerId = '';
     this.myName = '';
     this.myTeam = 'green';
-    this.connectionMode = 'p2p'; // 'p2p' | 'relay'
+    this.connections = new Map(); // For host: peerId -> conn
+    this.hostConnection = null;   // For guest: conn to host
 
-    // Host State: Map of guestId -> { mode: 'p2p'|'relay', pc, dc, player, lastRelaySnapshotTs }
-    this.connections = new Map();
-
-    // Guest State: { mode: 'p2p'|'relay', pc, dc }
-    this.hostConnection = null;
-
-    this.lobbyPlayers = []; // [{ id, name, team, isHost, isReady, slotIndex, mode }]
-
-    // Relay Throttling Timers
-    this._lastGuestInputSendTs = 0;
-    this._lastHostSnapshotTs = 0;
+    this.lobbyPlayers = [];       // [{ id, name, team, isHost, isReady, slotIndex }]
 
     // Event Callbacks
     this.onLobbyUpdate = null;
@@ -54,8 +84,12 @@ export class GhoulDuelNetworkManager {
     this.onGameOver = null;
     this.onError = null;
     this.onDisconnect = null;
-    this.onConnectionStatus = null;
+    this.onConnectionStatus = null; // Status messages for UI feedback
     this.onGuestInput = null;
+
+    // Handshake & Keep-Alive internal state
+    this._handshakeInterval = null;
+    this._keepAliveTimer = null;
   }
 
   // Generate a random 4-digit numeric room code (e.g. 1000 ~ 9999)
@@ -75,230 +109,237 @@ export class GhoulDuelNetworkManager {
     if (this.onConnectionStatus) this.onConnectionStatus(message);
   }
 
-  // --- HOST: Create Room via Firebase RTDB Signaling ---
-  async createRoom(numericCode, playerName, team = 'green') {
-    this.disconnect();
+  // Clear active handshake retry interval
+  _clearHandshakeTimer() {
+    if (this._handshakeInterval) {
+      clearInterval(this._handshakeInterval);
+      this._handshakeInterval = null;
+    }
+  }
 
-    const cleanCode = GhoulDuelNetworkManager.sanitizeCode(numericCode);
-    this.roomCode = cleanCode;
-    this.isHost = true;
-    this.myPeerId = 'host';
-    this.myName = (playerName || '방장').trim();
-    this.myTeam = team;
-    this.connectionMode = 'p2p';
-
-    this._emitStatus('🔗 도촌초 전용 시그널링 서버 연결 중...');
-
-    try {
-      // 1. Register room in Firebase RTDB
-      await this.signaling.createRoom(cleanCode, {
-        name: this.myName,
-        team: this.myTeam
-      });
-
-      this.lobbyPlayers = [
-        {
-          id: 'host',
-          name: this.myName,
-          team: this.myTeam,
-          isHost: true,
-          isReady: true,
-          slotIndex: 0,
-          mode: 'host'
+  // Heartbeat keep-alive to keep signaling WebSocket open on Host
+  _startKeepAlive() {
+    this._stopKeepAlive();
+    this._keepAliveTimer = setInterval(() => {
+      if (this.peer && !this.peer.destroyed) {
+        if (this.peer.disconnected) {
+          try {
+            this.peer.reconnect();
+          } catch (e) {
+            console.warn('Keep-alive reconnect attempt failed:', e);
+          }
+        } else if (
+          this.peer.socket &&
+          this.peer.socket._ws &&
+          this.peer.socket._ws.readyState === 1 /* OPEN */
+        ) {
+          try {
+            this.peer.socket._ws.send(JSON.stringify({ type: 'HEARTBEAT' }));
+          } catch (e) {}
         }
-      ];
+      }
+    }, 12000);
+  }
 
-      this._emitStatus('✅ 방이 생성되었습니다! 친구들의 접속을 기다리는 중...');
-      if (this.onLobbyUpdate) this.onLobbyUpdate(this.lobbyPlayers);
+  _stopKeepAlive() {
+    if (this._keepAliveTimer) {
+      clearInterval(this._keepAliveTimer);
+      this._keepAliveTimer = null;
+    }
+  }
 
-      // 2. Channel A: Listen for P2P WebRTC join offers
-      this.signaling.listenForGuests(cleanCode, (guestId, guestData) => {
-        this.handleIncomingP2PGuest(guestId, guestData);
-      });
-
-      // 3. Channel B: Listen for Automatic Relay Fallback joins (Cross-Subnet Traversal)
-      this.signaling.listenAllRelays(cleanCode, (guestId, guestMsg) => {
-        this.handleIncomingRelayGuest(guestId, guestMsg);
-      });
-
-      return cleanCode;
-    } catch (err) {
-      const errorMsg = err.message || '방 생성 중 오류가 발생했습니다.';
-      this._emitStatus(`❌ ${errorMsg}`);
-      if (this.onError) this.onError(errorMsg);
+  // --- HOST: Create a P2P Room ---
+  createRoom(numericCode, playerName, team = 'green') {
+    return new Promise((resolve, reject) => {
       this.disconnect();
-      throw err;
-    }
-  }
 
-  // --- HOST: Handle Incoming P2P Guest (Direct WebRTC) ---
-  async handleIncomingP2PGuest(guestId, guestData) {
-    if (this.connections.has(guestId)) return;
-    if (this.lobbyPlayers.length >= 8) return;
+      const cleanCode = GhoulDuelNetworkManager.sanitizeCode(numericCode);
+      this.roomCode = cleanCode;
+      this.isHost = true;
+      this.myName = (playerName || '방장').trim();
+      this.myTeam = team;
+      const fullPeerId = `${PEER_PREFIX}${cleanCode}`;
 
-    this._emitStatus(`👋 ${guestData.name || '친구'}님이 P2P 직결 접속을 시도합니다...`);
+      this._emitStatus('🔗 시그널링 서버 연결 중...');
 
-    const pc = new RTCPeerConnection(RTC_CONFIG);
-    let dc = null;
-
-    const candidateQueue = [];
-    let isRemoteDescSet = false;
-
-    pc.onicecandidate = (event) => {
-      if (event.candidate) {
-        this.signaling.sendHostCandidate(this.roomCode, guestId, event.candidate);
-      }
-    };
-
-    pc.ondatachannel = (event) => {
-      dc = event.channel;
-      this.setupHostDataChannel(guestId, pc, dc, guestData);
-    };
-
-    try {
-      await pc.setRemoteDescription(new RTCSessionDescription(guestData.offer));
-      isRemoteDescSet = true;
-
-      for (const cand of candidateQueue) {
-        try { await pc.addIceCandidate(new RTCIceCandidate(cand)); } catch (e) {}
-      }
-
-      const answer = await pc.createAnswer();
-      await pc.setLocalDescription(answer);
-      await this.signaling.sendAnswer(this.roomCode, guestId, answer);
-
-      this.signaling.listenForGuestCandidates(this.roomCode, guestId, (cand) => {
-        if (!isRemoteDescSet) candidateQueue.push(cand);
-        else pc.addIceCandidate(new RTCIceCandidate(cand)).catch(() => {});
-      });
-    } catch (err) {
-      console.warn('Host P2P handshake notice (will fallback to relay if needed):', err);
-    }
-  }
-
-  // --- HOST: Setup DataChannel for P2P Guest ---
-  setupHostDataChannel(guestId, pc, dc, guestData) {
-    dc.onopen = () => {
-      // If already connected via relay, promote or replace
-      if (this.connections.has(guestId) && this.connections.get(guestId).mode === 'p2p') return;
-
-      const greenCount = this.lobbyPlayers.filter((p) => p.team === 'green').length;
-      const purpleCount = this.lobbyPlayers.filter((p) => p.team === 'purple').length;
-      const assignedTeam = guestData.team || (greenCount <= purpleCount ? 'green' : 'purple');
-
-      const existingPlayer = this.lobbyPlayers.find((p) => p.id === guestId);
-      let newPlayer = existingPlayer;
-
-      if (!existingPlayer) {
-        newPlayer = {
-          id: guestId,
-          name: (guestData.name || `친구-${this.lobbyPlayers.length + 1}`).trim(),
-          team: assignedTeam,
-          isHost: false,
-          isReady: true,
-          slotIndex: this.lobbyPlayers.length,
-          mode: 'p2p'
-        };
-        this.lobbyPlayers.push(newPlayer);
-      } else {
-        existingPlayer.mode = 'p2p';
-      }
-
-      this.connections.set(guestId, { mode: 'p2p', pc, dc, player: newPlayer });
+      // Timeout for signaling server connection
+      const timeoutId = setTimeout(() => {
+        this._emitStatus('⏰ 시그널링 서버 연결 시간 초과! 네트워크 상태를 확인해 주세요.');
+        const errorMsg = '시그널링 서버 연결 시간 초과 (15초). 인터넷 연결을 확인하고 다시 시도해 주세요.';
+        if (this.onError) this.onError(errorMsg);
+        this.disconnect();
+        reject(new Error(errorMsg));
+      }, CONNECTION_TIMEOUT_MS);
 
       try {
-        dc.send(
-          JSON.stringify({
+        this.peer = new Peer(fullPeerId, {
+          debug: 1,
+          config: {
+            iceServers: ICE_SERVERS,
+            iceCandidatePoolSize: 2 // Lean candidate pool to prevent socket exhaustion on low-spec devices
+          }
+        });
+
+        this.peer.on('open', (id) => {
+          clearTimeout(timeoutId);
+          this.myPeerId = id;
+          this.lobbyPlayers = [
+            {
+              id: 'host',
+              name: this.myName,
+              team: this.myTeam,
+              isHost: true,
+              isReady: true,
+              slotIndex: 0
+            }
+          ];
+          this._startKeepAlive();
+          this._emitStatus('✅ 방이 생성되었습니다! 친구들의 접속을 기다리는 중...');
+          if (this.onLobbyUpdate) this.onLobbyUpdate(this.lobbyPlayers);
+          resolve(cleanCode);
+        });
+
+        this.peer.on('connection', (conn) => {
+          this._emitStatus(`👋 새로운 친구가 연결을 요청했습니다...`);
+          this.handleHostIncomingConnection(conn);
+        });
+
+        this.peer.on('error', (err) => {
+          clearTimeout(timeoutId);
+          console.error('PeerJS Host Error:', err);
+          if (err.type === 'unavailable-id') {
+            const errorMsg = `이미 사용 중인 4자리 방 번호(${cleanCode})입니다. 다른 번호를 입력해주세요.`;
+            this._emitStatus(`❌ ${errorMsg}`);
+            if (this.onError) this.onError(errorMsg);
+            reject(new Error(errorMsg));
+          } else if (err.type === 'network' || err.type === 'server-error') {
+            const errorMsg = '시그널링 서버에 연결할 수 없습니다. 잠시 후 다시 시도해 주세요.';
+            this._emitStatus(`❌ ${errorMsg}`);
+            if (this.onError) this.onError(errorMsg);
+            reject(new Error(errorMsg));
+          } else {
+            const errorMsg = `P2P 네트워크 연결 오류: ${err.type || '알 수 없는 오류'}`;
+            this._emitStatus(`❌ ${errorMsg}`);
+            if (this.onError) this.onError(errorMsg);
+            reject(err);
+          }
+        });
+
+        this.peer.on('disconnected', () => {
+          this._emitStatus('⚠️ 시그널링 서버와 일시적으로 연결이 끊겼습니다. 자동 복구 중...');
+          if (this.peer && !this.peer.destroyed) {
+            try {
+              this.peer.reconnect();
+            } catch (e) {
+              console.error('Host reconnect failed:', e);
+            }
+          }
+        });
+      } catch (err) {
+        clearTimeout(timeoutId);
+        reject(err);
+      }
+    });
+  }
+
+  handleHostIncomingConnection(conn) {
+    const connTimeoutId = setTimeout(() => {
+      console.warn('Incoming connection timed out for peer:', conn.peer);
+    }, CONNECTION_TIMEOUT_MS);
+
+    // CRITICAL: Attach data and close handlers IMMEDIATELY to prevent missed early packets
+    conn.on('data', (data) => {
+      this.handleHostReceiveData(conn.peer, data, conn);
+    });
+
+    conn.on('open', () => {
+      clearTimeout(connTimeoutId);
+      this.connections.set(conn.peer, conn);
+      this._emitStatus(`⚡ 친구와 P2P 터널 연결 수립 완료! 입장 확인 대기 중...`);
+    });
+
+    conn.on('close', () => {
+      clearTimeout(connTimeoutId);
+      this.handlePeerLeave(conn.peer);
+    });
+
+    conn.on('error', (err) => {
+      clearTimeout(connTimeoutId);
+      console.error('Host connection error with peer:', conn.peer, err);
+      this.handlePeerLeave(conn.peer);
+    });
+  }
+
+  handleHostReceiveData(peerId, data, conn) {
+    if (!data || !data.type) return;
+
+    // Handle 3-Way Handshake: JOIN_LOBBY (or legacy JOIN)
+    if (data.type === 'JOIN_LOBBY' || data.type === 'JOIN') {
+      const existingPlayer = this.lobbyPlayers.find((p) => p.id === peerId);
+
+      if (existingPlayer) {
+        // Already registered -> immediately reply with ACK to satisfy retry loop
+        if (conn && conn.open) {
+          conn.send({
             type: 'JOIN_ACK',
             accepted: true,
             players: this.lobbyPlayers,
-            assignedTeam: newPlayer.team,
-            slotIndex: newPlayer.slotIndex,
-            mode: 'p2p'
-          })
-        );
-      } catch (e) {}
+            assignedTeam: existingPlayer.team,
+            slotIndex: existingPlayer.slotIndex
+          });
+        }
+        return;
+      }
 
-      // Clean up signaling node
-      this.signaling.cleanupGuestSignaling(this.roomCode, guestId);
+      // Check max capacity (8 players)
+      if (this.lobbyPlayers.length >= 8) {
+        if (conn && conn.open) {
+          conn.send({
+            type: 'JOIN_ACK',
+            accepted: false,
+            message: '방이 가득 찼습니다. (최대 8명)'
+          });
+        }
+        return;
+      }
 
-      this._emitStatus(`🎉 ${newPlayer.name}님이 P2P 직결로 합류했습니다!`);
-      this.broadcastLobbyUpdate();
-    };
+      // Team balancing
+      const greenCount = this.lobbyPlayers.filter((p) => p.team === 'green').length;
+      const purpleCount = this.lobbyPlayers.filter((p) => p.team === 'purple').length;
+      const assignedTeam = data.team || (greenCount <= purpleCount ? 'green' : 'purple');
 
-    dc.onmessage = (event) => {
-      try {
-        const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
-        this.handleHostReceiveData(guestId, data);
-      } catch (err) {}
-    };
-
-    dc.onclose = () => this.handlePeerLeave(guestId);
-    dc.onerror = () => this.handlePeerLeave(guestId);
-  }
-
-  // --- HOST: Handle Incoming Relay Guest (Fallback for Cross-Subnet/Firewall) ---
-  async handleIncomingRelayGuest(guestId, guestMsg) {
-    if (!guestMsg || guestMsg.type !== 'JOIN_LOBBY') return;
-    if (this.connections.has(guestId) && this.connections.get(guestId).mode === 'p2p') return; // P2P takes priority
-    if (this.lobbyPlayers.length >= 8) return;
-
-    this._emitStatus(`🛡️ ${guestMsg.name || '친구'}님이 안전 릴레이 모드로 접속했습니다.`);
-
-    const greenCount = this.lobbyPlayers.filter((p) => p.team === 'green').length;
-    const purpleCount = this.lobbyPlayers.filter((p) => p.team === 'purple').length;
-    const assignedTeam = guestMsg.team || (greenCount <= purpleCount ? 'green' : 'purple');
-
-    const existingPlayer = this.lobbyPlayers.find((p) => p.id === guestId);
-    let playerObj = existingPlayer;
-
-    if (!existingPlayer) {
-      playerObj = {
-        id: guestId,
-        name: (guestMsg.name || `친구-${this.lobbyPlayers.length + 1}`).trim(),
+      const newPlayer = {
+        id: peerId,
+        name: (data.name || `친구-${this.lobbyPlayers.length + 1}`).trim(),
         team: assignedTeam,
         isHost: false,
         isReady: true,
-        slotIndex: this.lobbyPlayers.length,
-        mode: 'relay'
+        slotIndex: this.lobbyPlayers.length
       };
-      this.lobbyPlayers.push(playerObj);
-    }
 
-    this.connections.set(guestId, {
-      mode: 'relay',
-      player: playerObj,
-      lastRelaySnapshotTs: 0
-    });
+      this.lobbyPlayers.push(newPlayer);
 
-    // Send JOIN_ACK back through Firebase RTDB Relay
-    await this.signaling.sendRelayHostMessage(this.roomCode, guestId, {
-      type: 'JOIN_ACK',
-      accepted: true,
-      players: this.lobbyPlayers,
-      assignedTeam: playerObj.team,
-      slotIndex: playerObj.slotIndex,
-      mode: 'relay'
-    });
+      // Send JOIN_ACK back to the guest
+      if (conn && conn.open) {
+        conn.send({
+          type: 'JOIN_ACK',
+          accepted: true,
+          players: this.lobbyPlayers,
+          assignedTeam: newPlayer.team,
+          slotIndex: newPlayer.slotIndex
+        });
+      }
 
-    // Listen for relay messages from this guest
-    this.signaling.listenRelayGuestMessages(this.roomCode, guestId, (data) => {
-      this.handleHostReceiveData(guestId, data);
-    });
-
-    this.broadcastLobbyUpdate();
-  }
-
-  handleHostReceiveData(peerId, data) {
-    if (!data || !data.type) return;
-
-    if (data.type === 'TOGGLE_TEAM') {
+      this._emitStatus(`🎉 ${newPlayer.name}님이 ${assignedTeam === 'green' ? '초록 영혼팀' : '보라 유령팀'}에 합류!`);
+      this.broadcastLobbyUpdate();
+    } else if (data.type === 'TOGGLE_TEAM') {
       const player = this.lobbyPlayers.find((p) => p.id === peerId);
       if (player) {
         player.team = player.team === 'green' ? 'purple' : 'green';
         this.broadcastLobbyUpdate();
       }
     } else if (data.type === 'INPUT') {
+      // Forward complete input & position packet to host logic engine
       if (this.onGuestInput) {
         this.onGuestInput(peerId, data);
       }
@@ -306,20 +347,9 @@ export class GhoulDuelNetworkManager {
   }
 
   handlePeerLeave(peerId) {
-    const connObj = this.connections.get(peerId);
-    if (connObj) {
-      if (connObj.mode === 'p2p') {
-        try { connObj.dc?.close(); } catch (e) {}
-        try { connObj.pc?.close(); } catch (e) {}
-      } else if (connObj.mode === 'relay') {
-        this.signaling.cleanupRelay(this.roomCode, peerId);
-      }
-      this.connections.delete(peerId);
-    }
-
     const leaving = this.lobbyPlayers.find((p) => p.id === peerId);
+    this.connections.delete(peerId);
     this.lobbyPlayers = this.lobbyPlayers.filter((p) => p.id !== peerId);
-
     if (leaving) {
       this._emitStatus(`👋 ${leaving.name}님이 나갔습니다.`);
     }
@@ -327,186 +357,251 @@ export class GhoulDuelNetworkManager {
     if (this.onPeerLeft) this.onPeerLeft(peerId);
   }
 
-  // --- GUEST: Join Room (With Automatic 3.8s Relay Fallback) ---
+  broadcastLobbyUpdate() {
+    if (!this.isHost) return;
+    const packet = { type: 'LOBBY_UPDATE', players: this.lobbyPlayers };
+    this.connections.forEach((conn) => {
+      if (conn.open) conn.send(packet);
+    });
+    if (this.onLobbyUpdate) this.onLobbyUpdate(this.lobbyPlayers);
+  }
+
+  broadcastGameStart(seed = Date.now()) {
+    if (!this.isHost) return;
+    const packet = {
+      type: 'START_GAME',
+      seed,
+      players: this.lobbyPlayers
+    };
+    this.connections.forEach((conn) => {
+      if (conn.open) conn.send(packet);
+    });
+  }
+
+  broadcastSnapshot(snapshot) {
+    if (!this.isHost) return;
+    const packet = {
+      type: 'SNAPSHOT',
+      snapshot
+    };
+    this.connections.forEach((conn) => {
+      if (conn.open) conn.send(packet);
+    });
+  }
+
+  broadcastGameOver(stats) {
+    if (!this.isHost) return;
+    const packet = {
+      type: 'GAME_OVER',
+      stats
+    };
+    this.connections.forEach((conn) => {
+      if (conn.open) conn.send(packet);
+    });
+  }
+
+  // --- GUEST: Join a P2P Room (with 3-Way Handshake + Auto-Retry) ---
   joinRoom(numericCode, playerName, team = 'green') {
-    return new Promise(async (resolve, reject) => {
-      this.disconnect();
+    return this._joinRoomAttempt(numericCode, playerName, team, 0);
+  }
+
+  _joinRoomAttempt(numericCode, playerName, team, attempt) {
+    return new Promise((resolve, reject) => {
+      this._clearHandshakeTimer();
 
       const cleanCode = GhoulDuelNetworkManager.sanitizeCode(numericCode);
       this.roomCode = cleanCode;
       this.isHost = false;
-      this.myName = (playerName || '도촌 학생').trim();
+      this.myName = (playerName || '우리 학교 학생').trim();
       this.myTeam = team;
-      const guestId = `g_${Math.random().toString(36).slice(2, 9)}`;
-      this.myPeerId = guestId;
-      this.connectionMode = 'p2p'; // Start in P2P attempt
+      const targetHostPeerId = `${PEER_PREFIX}${cleanCode}`;
 
-      this._emitStatus(`🔍 방 찾는 중... (방 번호: [${cleanCode}])`);
+      const attemptLabel = attempt > 0 ? ` (재시도 ${attempt}/${MAX_CONNECTION_RETRIES})` : '';
+      this._emitStatus(`🔗 시그널링 서버 연결 중...${attemptLabel}`);
 
-      let settled = false;
-      let fallbackTriggered = false;
+      let settled = false; // Prevent duplicate resolve/reject
+      let timeoutId = null;
 
-      // Overall Timeout (14s)
-      const overallTimeoutId = setTimeout(() => {
-        if (!settled) {
-          settled = true;
-          this.disconnect();
-          const errorMsg = `방 번호 [${cleanCode}]에 연결할 수 없습니다. 방장이 대기 중인지 확인해 주세요.`;
-          this._emitStatus(`❌ ${errorMsg}`);
-          if (this.onError) this.onError(errorMsg);
-          reject(new Error(errorMsg));
-        }
-      }, CONNECTION_TIMEOUT_MS);
-
-      const settle = (type, val) => {
+      const settle = (type, value) => {
         if (settled) return;
         settled = true;
-        clearTimeout(overallTimeoutId);
-        clearTimeout(fallbackTimerId);
-        if (type === 'resolve') resolve(val);
-        else reject(val);
+        this._clearHandshakeTimer();
+        clearTimeout(timeoutId);
+        if (type === 'resolve') resolve(value);
+        else reject(value);
       };
-
-      // --- Dual-Path: Relay Fallback Trigger ---
-      const triggerRelayFallback = async () => {
-        if (fallbackTriggered || settled) return;
-        fallbackTriggered = true;
-        this.connectionMode = 'relay';
-        this._emitStatus('🛡️ 망 분리 환경 감지: 안전 릴레이 모드로 자동 전환 중...');
-
-        this.hostConnection = { mode: 'relay' };
-
-        // Listen for Host's Relay messages
-        this.signaling.listenRelayHostMessages(cleanCode, guestId, (hostData) => {
-          if (hostData.type === 'JOIN_ACK') {
-            if (hostData.accepted) {
-              this.lobbyPlayers = hostData.players || [];
-              if (hostData.assignedTeam) this.myTeam = hostData.assignedTeam;
-              this._emitStatus('🎉 대기실 입장 완료! (안전 릴레이 모드)');
-              if (this.onLobbyUpdate) this.onLobbyUpdate(this.lobbyPlayers);
-              settle('resolve', cleanCode);
-            } else {
-              const errorMsg = hostData.message || '방 입장이 거부되었습니다.';
-              settle('reject', new Error(errorMsg));
-            }
-            return;
-          }
-          this.handleGuestReceiveData(hostData);
-        });
-
-        // Send JOIN_LOBBY via Relay
-        try {
-          await this.signaling.sendRelayGuestMessage(cleanCode, guestId, {
-            type: 'JOIN_LOBBY',
-            name: this.myName,
-            team: this.myTeam,
-            id: guestId
-          });
-        } catch (e) {}
-      };
-
-      // Automatically switch to Relay Fallback if P2P takes longer than 3.8s
-      const fallbackTimerId = setTimeout(triggerRelayFallback, P2P_FALLBACK_TIMEOUT_MS);
 
       try {
-        // 1. Verify room in Firebase RTDB
-        await this.signaling.checkRoom(cleanCode);
+        // If peer already exists and is open, reuse it instead of reconnecting from scratch!
+        if (!this.peer || this.peer.destroyed) {
+          this.peer = new Peer({
+            debug: 1,
+            config: {
+              iceServers: ICE_SERVERS,
+              iceCandidatePoolSize: 2
+            }
+          });
+        }
 
-        this._emitStatus('⚡ P2P 직결 연결 시도 중...');
+        const initiateConnection = () => {
+          this._emitStatus(`🔍 방장 찾는 중... (방 번호: [${cleanCode}])${attemptLabel}`);
 
-        // 2. Setup WebRTC PeerConnection
-        const pc = new RTCPeerConnection(RTC_CONFIG);
-        const dc = pc.createDataChannel('ghoulGameChannel', { ordered: true });
-        this.hostConnection = { mode: 'p2p', pc, dc };
-
-        pc.oniceconnectionstatechange = () => {
-          if (pc.iceConnectionState === 'failed' || pc.iceConnectionState === 'disconnected') {
-            triggerRelayFallback();
+          // Close any dangling previous connection
+          if (this.hostConnection) {
+            try {
+              this.hostConnection.close();
+            } catch (e) {}
+            this.hostConnection = null;
           }
-        };
 
-        const candidateQueue = [];
-        let isRemoteDescSet = false;
+          const conn = this.peer.connect(targetHostPeerId, { reliable: true });
+          this.hostConnection = conn;
 
-        pc.onicecandidate = (event) => {
-          if (event.candidate) {
-            this.signaling.sendGuestCandidate(cleanCode, guestId, event.candidate);
-          }
-        };
+          // Timeout for handshake completion
+          timeoutId = setTimeout(() => {
+            if (!settled) {
+              this._clearHandshakeTimer();
+              console.warn(`Connection attempt ${attempt + 1} timed out`);
 
-        dc.onopen = () => {
-          clearTimeout(fallbackTimerId);
-          this.connectionMode = 'p2p';
-          this._emitStatus('⚡ P2P 직결 완료! 대기실 입장 확인 중...');
-        };
+              if (attempt < MAX_CONNECTION_RETRIES) {
+                this._emitStatus(`⏰ 연결 시간 초과. 자동으로 재시도합니다... (${attempt + 1}/${MAX_CONNECTION_RETRIES})`);
+                setTimeout(() => {
+                  this._joinRoomAttempt(numericCode, playerName, team, attempt + 1)
+                    .then(resolve)
+                    .catch(reject);
+                }, 1200);
+              } else {
+                const errorMsg = `방 번호 [${cleanCode}]에 연결할 수 없습니다.\n\n💡 해결 방법:\n1. 방장이 방을 열었는지 확인해 주세요\n2. 방 번호(4자리)를 다시 확인해 주세요\n3. 방장에게 방 번호를 확인해 주세요`;
+                this._emitStatus(`❌ 연결 실패. 방 번호와 네트워크를 확인해 주세요.`);
+                if (this.onError) this.onError(errorMsg);
+                settle('reject', new Error(errorMsg));
+              }
+            }
+          }, CONNECTION_TIMEOUT_MS);
 
-        dc.onmessage = (event) => {
-          try {
-            const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+          conn.on('open', () => {
+            this._emitStatus('⚡ P2P 터널 수립 완료! 입장 확인 중...');
 
+            // --- 🤝 3-Way Handshake Auto-Retry Protocol ---
+            let handshakeCount = 0;
+
+            const sendJoinPacket = () => {
+              if (settled || !conn.open) return;
+              handshakeCount++;
+              this._emitStatus(`🤝 방장에게 입장 요청(JOIN_LOBBY) 전송 중... (${handshakeCount}/${MAX_HANDSHAKE_ATTEMPTS})`);
+
+              conn.send({
+                type: 'JOIN_LOBBY',
+                name: this.myName,
+                team: this.myTeam,
+                peerId: this.myPeerId,
+                attempt: handshakeCount
+              });
+
+              if (handshakeCount >= MAX_HANDSHAKE_ATTEMPTS) {
+                this._clearHandshakeTimer();
+              }
+            };
+
+            sendJoinPacket();
+            this._handshakeInterval = setInterval(sendJoinPacket, HANDSHAKE_INTERVAL_MS);
+          });
+
+          conn.on('data', (data) => {
+            if (!data || !data.type) return;
+
+            // Handle 3-Way Handshake ACK from Host
             if (data.type === 'JOIN_ACK') {
+              this._clearHandshakeTimer();
+
               if (data.accepted) {
-                clearTimeout(fallbackTimerId);
-                this.connectionMode = 'p2p';
                 this.lobbyPlayers = data.players || [];
                 if (data.assignedTeam) this.myTeam = data.assignedTeam;
-                this._emitStatus('🎉 대기실 입장 완료! (P2P 직결 모드)');
+                this._emitStatus('🎉 대기실 입장 완료!');
                 if (this.onLobbyUpdate) this.onLobbyUpdate(this.lobbyPlayers);
-
-                this.signaling.cleanupGuestSignaling(cleanCode, guestId);
                 settle('resolve', cleanCode);
               } else {
-                settle('reject', new Error(data.message || '방 입장이 거부되었습니다.'));
+                const errorMsg = data.message || '방 입장이 거부되었습니다.';
+                this._emitStatus(`❌ ${errorMsg}`);
+                if (this.onError) this.onError(errorMsg);
+                settle('reject', new Error(errorMsg));
               }
               return;
             }
 
             this.handleGuestReceiveData(data);
-          } catch (err) {}
-        };
+          });
 
-        dc.onclose = () => {
-          if (!settled) triggerRelayFallback();
-          else if (this.onDisconnect) this.onDisconnect('방장과의 연결이 끊어졌습니다.');
-        };
+          conn.on('close', () => {
+            this._clearHandshakeTimer();
+            const errorMsg = '방장과의 연결이 끊어졌습니다.';
+            this._emitStatus(`⚠️ ${errorMsg}`);
+            if (this.onDisconnect) this.onDisconnect(errorMsg);
+          });
 
-        dc.onerror = () => {
-          if (!settled) triggerRelayFallback();
-        };
-
-        // 3. Create & send SDP Offer
-        const offer = await pc.createOffer();
-        await pc.setLocalDescription(offer);
-
-        await this.signaling.joinRoomWithOffer(
-          cleanCode,
-          guestId,
-          { name: this.myName, team: this.myTeam },
-          offer
-        );
-
-        // 4. Listen for SDP Answer
-        this.signaling.listenForAnswer(cleanCode, guestId, async (answer) => {
-          try {
-            await pc.setRemoteDescription(new RTCSessionDescription(answer));
-            isRemoteDescSet = true;
-            for (const cand of candidateQueue) {
-              try { await pc.addIceCandidate(new RTCIceCandidate(cand)); } catch (e) {}
+          conn.on('error', (err) => {
+            this._clearHandshakeTimer();
+            console.error('Guest Connection Error:', err);
+            if (!settled && attempt < MAX_CONNECTION_RETRIES) {
+              this._emitStatus(`⚠️ 연결 재시도 중... (${attempt + 1}/${MAX_CONNECTION_RETRIES})`);
+              setTimeout(() => {
+                this._joinRoomAttempt(numericCode, playerName, team, attempt + 1)
+                  .then(resolve)
+                  .catch(reject);
+              }, 1200);
+            } else {
+              settle('reject', err);
             }
-          } catch (err) {}
+          });
+        };
+
+        if (this.peer.open) {
+          this.myPeerId = this.peer.id;
+          initiateConnection();
+        } else {
+          this.peer.on('open', (id) => {
+            this.myPeerId = id;
+            initiateConnection();
+          });
+        }
+
+        this.peer.on('error', (err) => {
+          this._clearHandshakeTimer();
+          console.error('PeerJS Guest Error:', err);
+          if (err.type === 'peer-unavailable') {
+            if (!settled && attempt < MAX_CONNECTION_RETRIES) {
+              this._emitStatus(`⚠️ 방을 찾는 중... 재시도 (${attempt + 1}/${MAX_CONNECTION_RETRIES})`);
+              setTimeout(() => {
+                this._joinRoomAttempt(numericCode, playerName, team, attempt + 1)
+                  .then(resolve)
+                  .catch(reject);
+              }, 1500);
+            } else {
+              const errorMsg = `방 번호 [${cleanCode}]을 찾을 수 없습니다. 방장이 방을 열었는지 확인해 주세요.`;
+              this._emitStatus(`❌ ${errorMsg}`);
+              if (this.onError) this.onError(errorMsg);
+              settle('reject', new Error(errorMsg));
+            }
+          } else {
+            const errorMsg = `P2P 네트워크 오류: ${err.type || '알 수 없는 오류'}. 인터넷 연결을 확인해 주세요.`;
+            this._emitStatus(`❌ ${errorMsg}`);
+            if (this.onError) this.onError(errorMsg);
+            settle('reject', new Error(errorMsg));
+          }
         });
 
-        // 5. Listen for Host ICE Candidates
-        this.signaling.listenForHostCandidates(cleanCode, guestId, (cand) => {
-          if (!isRemoteDescSet) candidateQueue.push(cand);
-          else pc.addIceCandidate(new RTCIceCandidate(cand)).catch(() => {});
+        this.peer.on('disconnected', () => {
+          this._emitStatus('⚠️ 시그널링 서버와 일시적으로 연결이 끊겼습니다. 자동 복구 중...');
+          if (this.peer && !this.peer.destroyed) {
+            try {
+              this.peer.reconnect();
+            } catch (e) {
+              console.error('Guest reconnect failed:', e);
+            }
+          }
         });
       } catch (err) {
-        if (err.message && (err.message.includes('찾을 수 없습니다') || err.message.includes('진행 중') || err.message.includes('끊어졌습니다'))) {
-          settle('reject', err);
-        } else {
-          triggerRelayFallback();
-        }
+        settle('reject', err);
       }
     });
   }
@@ -528,29 +623,17 @@ export class GhoulDuelNetworkManager {
     }
   }
 
-  // --- SEND PLAYER INPUT (Hybrid: P2P or Throttled Relay) ---
+  // Send player input & authoritative position from Guest to Host
   sendInput(data) {
-    if (this.isHost) return;
-
-    if (this.connectionMode === 'p2p' && this.hostConnection && this.hostConnection.dc?.readyState === 'open') {
-      // 60Hz Full P2P transmission
-      try {
-        this.hostConnection.dc.send(JSON.stringify({ type: 'INPUT', ...data }));
-      } catch (e) {}
-    } else if (this.connectionMode === 'relay') {
-      // 10Hz Throttled Relay transmission (Conserves free quota: < 100KB per match)
-      const now = Date.now();
-      if (now - this._lastGuestInputSendTs >= RELAY_THROTTLE_MS) {
-        this._lastGuestInputSendTs = now;
-        this.signaling.sendRelayGuestMessage(this.roomCode, this.myPeerId, {
-          type: 'INPUT',
-          ...data
-        });
-      }
+    if (!this.isHost && this.hostConnection && this.hostConnection.open) {
+      this.hostConnection.send({
+        type: 'INPUT',
+        ...data
+      });
     }
   }
 
-  // --- TOGGLE MY TEAM ---
+  // Toggle my team in lobby
   toggleMyTeam() {
     if (this.isHost) {
       const host = this.lobbyPlayers.find((p) => p.isHost);
@@ -559,117 +642,36 @@ export class GhoulDuelNetworkManager {
         this.myTeam = host.team;
         this.broadcastLobbyUpdate();
       }
-    } else if (this.connectionMode === 'p2p' && this.hostConnection?.dc?.readyState === 'open') {
-      try {
-        this.hostConnection.dc.send(JSON.stringify({ type: 'TOGGLE_TEAM' }));
-      } catch (e) {}
-    } else if (this.connectionMode === 'relay') {
-      this.signaling.sendRelayGuestMessage(this.roomCode, this.myPeerId, { type: 'TOGGLE_TEAM' });
+    } else if (this.hostConnection && this.hostConnection.open) {
+      this.hostConnection.send({ type: 'TOGGLE_TEAM' });
     }
   }
 
-  // --- BROADCAST LOBBY UPDATE ---
-  broadcastLobbyUpdate() {
-    if (!this.isHost) return;
-    const packet = { type: 'LOBBY_UPDATE', players: this.lobbyPlayers };
-    const jsonStr = JSON.stringify(packet);
-
-    this.connections.forEach((conn, guestId) => {
-      if (conn.mode === 'p2p' && conn.dc?.readyState === 'open') {
-        try { conn.dc.send(jsonStr); } catch (e) {}
-      } else if (conn.mode === 'relay') {
-        this.signaling.sendRelayHostMessage(this.roomCode, guestId, packet);
-      }
-    });
-
-    if (this.onLobbyUpdate) this.onLobbyUpdate(this.lobbyPlayers);
-  }
-
-  // --- BROADCAST GAME START ---
-  broadcastGameStart(seed = Date.now()) {
-    if (!this.isHost) return;
-    const packet = {
-      type: 'START_GAME',
-      seed,
-      players: this.lobbyPlayers
-    };
-    const jsonStr = JSON.stringify(packet);
-
-    this.connections.forEach((conn, guestId) => {
-      if (conn.mode === 'p2p' && conn.dc?.readyState === 'open') {
-        try { conn.dc.send(jsonStr); } catch (e) {}
-      } else if (conn.mode === 'relay') {
-        this.signaling.sendRelayHostMessage(this.roomCode, guestId, packet);
-      }
-    });
-  }
-
-  // --- BROADCAST IN-GAME SNAPSHOT (Hybrid Transmission) ---
-  broadcastSnapshot(snapshot) {
-    if (!this.isHost) return;
-    const p2pPacket = JSON.stringify({ type: 'SNAPSHOT', snapshot });
-    const now = Date.now();
-    const shouldSendRelay = (now - this._lastHostSnapshotTs >= RELAY_THROTTLE_MS);
-    if (shouldSendRelay) this._lastHostSnapshotTs = now;
-
-    this.connections.forEach((conn, guestId) => {
-      if (conn.mode === 'p2p' && conn.dc?.readyState === 'open') {
-        // High fidelity 60Hz via WebRTC DataChannel (0 cost, 0ms)
-        try { conn.dc.send(p2pPacket); } catch (e) {}
-      } else if (conn.mode === 'relay' && shouldSendRelay) {
-        // 10Hz Throttled Relay via Firebase RTDB (< 250KB per match)
-        this.signaling.sendRelayHostMessage(this.roomCode, guestId, {
-          type: 'SNAPSHOT',
-          snapshot
-        });
-      }
-    });
-  }
-
-  // --- BROADCAST GAME OVER ---
-  broadcastGameOver(stats) {
-    if (!this.isHost) return;
-    const packet = { type: 'GAME_OVER', stats };
-    const jsonStr = JSON.stringify(packet);
-
-    this.connections.forEach((conn, guestId) => {
-      if (conn.mode === 'p2p' && conn.dc?.readyState === 'open') {
-        try { conn.dc.send(jsonStr); } catch (e) {}
-      } else if (conn.mode === 'relay') {
-        this.signaling.sendRelayHostMessage(this.roomCode, guestId, packet);
-      }
-    });
-  }
-
-  // --- DISCONNECT & CLEANUP ---
+  // Disconnect & cleanup
   disconnect() {
-    if (this.isHost && this.roomCode) {
-      this.signaling.cleanupRoom(this.roomCode);
-    } else if (this.roomCode && this.myPeerId) {
-      this.signaling.cleanupGuestSignaling(this.roomCode, this.myPeerId);
-      this.signaling.cleanupRelay(this.roomCode, this.myPeerId);
-    }
+    this._clearHandshakeTimer();
+    this._stopKeepAlive();
 
     if (this.connections) {
-      this.connections.forEach((conn, guestId) => {
-        if (conn.mode === 'p2p') {
-          try { conn.dc?.close(); } catch (e) {}
-          try { conn.pc?.close(); } catch (e) {}
-        } else if (conn.mode === 'relay') {
-          this.signaling.cleanupRelay(this.roomCode, guestId);
-        }
+      this.connections.forEach((conn) => {
+        try {
+          conn.close();
+        } catch (e) {}
       });
       this.connections.clear();
     }
-
     if (this.hostConnection) {
-      if (this.hostConnection.mode === 'p2p') {
-        try { this.hostConnection.dc?.close(); } catch (e) {}
-        try { this.hostConnection.pc?.close(); } catch (e) {}
-      }
+      try {
+        this.hostConnection.close();
+      } catch (e) {}
       this.hostConnection = null;
     }
-
+    if (this.peer) {
+      try {
+        this.peer.destroy();
+      } catch (e) {}
+      this.peer = null;
+    }
     this.isHost = false;
     this.lobbyPlayers = [];
   }

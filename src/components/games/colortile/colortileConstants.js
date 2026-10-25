@@ -1,4 +1,4 @@
-// Dochon Color Tile Game Constants & Configuration
+// Our School Color Tile Game Constants & Configuration
 
 export const GRID_SIZE = 14; // 14 x 14 grid (196 cells total)
 export const DEFAULT_SPAWN_RATE = 0.42; // ~82 tiles spawned initially

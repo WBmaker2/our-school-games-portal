@@ -1,4 +1,4 @@
-// Dochon Games Portal - The Great Ghoul Duel (도촌 영혼 대결) Constants & Config
+// Our School Games Portal - The Great Ghoul Duel (우리학교 영혼 대결) Constants & Config
 
 export const CANVAS_WIDTH = 960;
 export const CANVAS_HEIGHT = 600;

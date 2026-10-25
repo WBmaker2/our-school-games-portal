@@ -1,4 +1,7 @@
 :root {
+  --school-teal: #00F5D4;
+  --school-gold: #FFD166;
+  --school-pink: #FF007F;
   --dochon-teal: #00F5D4;
   --dochon-gold: #FFD166;
   --dochon-pink: #FF007F;
@@ -2591,7 +2594,7 @@ button, a, input, [role="button"], .dpad-btn, .btn-dino-jump, .btn-dino-duck, .m
 }
 
 /* ==========================================================================
-   🚨 Rules & Etiquette Notice Modal (도촌초 게임 이용 및 안전 수칙 팝업)
+   🚨 Rules & Etiquette Notice Modal (우리 학교 게임 이용 및 안전 수칙 팝업)
    ========================================================================== */
 
 .rules-modal-box {

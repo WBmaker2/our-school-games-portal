@@ -1,4 +1,4 @@
-// Dochon Games Portal - Micro Kart Racing Track Systems
+// Our School Games Portal - Micro Kart Racing Track Systems
 // 3 Unique Circuits: 1) Classroom Wood Desk, 2) Science Lab Bench, 3) Art Room Neon Sketchbook
 // Optimized 0-Cost 2D Canvas Procedural Rendering for Chromebooks (30FPS)
 
@@ -10,7 +10,7 @@ export const TRACK_CONFIGS = {
     name: '교실 책상 서킷',
     englishName: 'Classroom Wood Speedway',
     theme: 'wood',
-    bannerText: 'DOCHON SPEEDWAY',
+    bannerText: 'OUR SCHOOL SPEEDWAY',
     startPos: { x: 500, y: 1950, angle: 0 },
     bgTheme: {
       baseColor: '#C29B38',
@@ -44,7 +44,7 @@ export const TRACK_CONFIGS = {
       { type: 'circle', x: 2250, y: 1150, radius: 65, color: '#1E1B4B', label: '잉크병' },
       { type: 'rect', x: 1280, y: 750, width: 320, height: 110, angle: 0.15, color: '#047857', label: '필통' },
       { type: 'circle', x: 820, y: 1450, radius: 80, color: '#B45309', label: '머그잔' },
-      { type: 'rect', x: 2100, y: 920, width: 140, height: 75, angle: -0.2, color: '#F43F5E', isBouncy: true, label: '도촌 지우개' },
+      { type: 'rect', x: 2100, y: 920, width: 140, height: 75, angle: -0.2, color: '#F43F5E', isBouncy: true, label: '우리학교 지우개' },
       { type: 'rect', x: 1450, y: 1420, width: 130, height: 70, angle: 0.35, color: '#F1F5F9', isBouncy: true, label: '지우개' },
       { type: 'circle', x: 1850, y: 700, radius: 50, color: '#475569', label: '콤파스' },
       { type: 'rect', x: 2350, y: 1850, width: 180, height: 85, angle: -0.4, color: '#4338CA', label: '스테이플러' }

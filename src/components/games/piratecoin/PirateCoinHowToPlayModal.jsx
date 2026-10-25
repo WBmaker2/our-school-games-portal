@@ -1,4 +1,4 @@
-// Dochon Games Portal - Dochon Pirate Coin Heist How To Play Guide Modal
+// Our School Games Portal - Our School Pirate Coin Heist How To Play Guide Modal
 import React from 'react';
 import { X, Shield, Zap, Sparkles, Navigation, Anchor, Skull, Trophy } from 'lucide-react';
 
@@ -12,7 +12,7 @@ export default function PirateCoinHowToPlayModal({ isOpen, onClose }) {
         <div className="pirate-modal-header">
           <div className="pirate-modal-title">
             <span className="text-2xl">🏴‍☠️</span>
-            <h2>도촌 해적선 코인 쟁탈전 게임 가이드</h2>
+            <h2>우리학교 해적선 코인 쟁탈전 게임 가이드</h2>
           </div>
           <button className="pirate-modal-close-btn" onClick={onClose}>
             <X className="w-5 h-5" />

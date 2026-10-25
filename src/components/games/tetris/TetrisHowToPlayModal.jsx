@@ -23,7 +23,7 @@ export default function TetrisHowToPlayModal({ isOpen, onClose }) {
               <span style={{ fontSize: '24px' }}>🧱</span>
             </div>
             <div>
-              <h2 className="tetris-modal-title">도촌 테트리스 플레이 가이드</h2>
+              <h2 className="tetris-modal-title">우리학교 테트리스 플레이 가이드</h2>
               <p className="tetris-modal-subtitle">블록을 빈틈없이 채워 라인을 삭제하고 명예의 전당에 이름을 새겨보세요! ✨</p>
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function TetrisHowToPlayModal({ isOpen, onClose }) {
               </div>
               <div className="tetris-tip-item" style={{ borderTop: '1px dashed rgba(245, 158, 11, 0.4)', paddingTop: '8px' }}>
                 <CheckCircle2 style={{ width: '16px', height: '16px', color: '#F59E0B', flexShrink: 0 }} />
-                <span><strong>도촌초 명예의 전당 등록:</strong> 최종 점수가 <strong>100점을 초과</strong>하면 도촌초등학교 실시간 클라우드 랭킹에 이름을 등록할 수 있습니다! (100점 이하 달성 시 점수 등록창이 나타나지 않습니다)</span>
+                <span><strong>우리학교 명예의 전당 등록:</strong> 최종 점수가 <strong>100점을 초과</strong>하면 우리학교 실시간 클라우드 랭킹에 이름을 등록할 수 있습니다! (100점 이하 달성 시 점수 등록창이 나타나지 않습니다)</span>
               </div>
             </div>
           </div>

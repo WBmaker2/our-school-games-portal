@@ -3,47 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>도촌초등학교 명예의 전당 | 실시간 백엔드 데이터베이스</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+  <title>우리 학교 명예의 전당 | 실시간 리더보드</title>
   <style>
     :root {
-      --dochon-gold: #FFD166;
-      --bg-dark: #141619;
-      --bg-card: #1C1F24;
-      --font-family: 'Outfit', Pretendard, system-ui, sans-serif;
+      --bg-dark: #0F172A;
+      --card-bg: #1E293B;
+      --text-main: #F8FAFC;
+      --text-dim: #94A3B8;
+      --school-gold: #FFD166;
+      --neon-cyan: #00F5D4;
+      --neon-pink: #FF006E;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
     body {
       background-color: var(--bg-dark);
-      color: #FFFFFF;
-      font-family: var(--font-family);
-      padding: 20px;
-      min-height: 100vh;
+      color: var(--text-main);
+      padding: 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
+      min-height: 100vh;
     }
     .header {
-      margin-bottom: 16px;
+      text-align: center;
+      margin-bottom: 20px;
     }
     .title {
-      font-size: 22px;
-      font-weight: 900;
-      color: #FFFFFF;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
     }
-    .title span { color: var(--dochon-gold); }
+    .title span { color: var(--school-gold); }
     .subtitle {
-      font-size: 12px;
-      color: #94A3B8;
-      margin-top: 4px;
-      font-weight: 600;
+      color: var(--text-dim);
+      font-size: 14px;
+      margin-top: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -61,197 +64,205 @@
     .tabs {
       display: flex;
       gap: 8px;
-      background-color: #262A30;
+      margin-bottom: 20px;
+      background: rgba(30, 41, 59, 0.7);
       padding: 6px;
-      border-radius: 16px;
-      width: 100%;
-      max-width: 440px;
-      margin-bottom: 16px;
+      border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .tab-btn {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      border-radius: 12px;
       background: transparent;
-      color: #94A3B8;
-      font-weight: 800;
-      font-size: 13px;
+      border: none;
+      color: var(--text-dim);
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s;
     }
     .tab-btn.active {
-      background-color: var(--dochon-gold);
+      background-color: var(--school-gold);
       color: #0F172A;
-      box-shadow: 0 4px 12px rgba(255, 209, 102, 0.3);
+      box-shadow: 0 0 12px rgba(255, 209, 102, 0.4);
     }
     .score-list {
       width: 100%;
-      max-width: 440px;
+      max-width: 480px;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      flex: 1;
     }
     .score-item {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 14px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 18px;
-      background-color: var(--bg-card);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.2s, border-color 0.2s;
     }
-    .rank-1 {
-      background: rgba(255, 209, 102, 0.12);
-      border-color: rgba(255, 209, 102, 0.5);
+    .score-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .score-item.rank-1 {
+      border: 1px solid rgba(255, 209, 102, 0.6);
+      background: linear-gradient(135deg, rgba(255, 209, 102, 0.1), var(--card-bg));
     }
     .rank-badge {
-      font-size: 16px;
-      font-weight: 900;
-      width: 28px;
-      text-align: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      background: #334155;
+      color: var(--text-main);
+      margin-right: 14px;
+      flex-shrink: 0;
     }
+    .rank-1 .rank-badge { background: #FFD166; color: #0F172A; }
+    .rank-2 .rank-badge { background: #E2E8F0; color: #0F172A; }
+    .rank-3 .rank-badge { background: #CD7F32; color: #FFFFFF; }
     .player-info {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      text-align: left;
-      flex: 1;
-      margin-left: 10px;
+      gap: 2px;
     }
     .player-name {
-      font-size: 14px;
-      font-weight: 800;
-      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 700;
     }
     .player-date {
       font-size: 11px;
-      color: #64748B;
+      color: var(--text-dim);
     }
     .player-score {
-      font-size: 16px;
-      font-weight: 900;
-      color: var(--dochon-gold);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--school-gold);
     }
     .empty-msg {
-      padding: 40px 0;
-      color: #64748B;
-      font-size: 13px;
+      text-align: center;
+      padding: 40px;
+      color: var(--text-dim);
+      font-size: 14px;
     }
-    .footer-btn {
-      margin-top: 20px;
-      background-color: #2A2D32;
-      color: #FFFFFF;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 10px 24px;
-      border-radius: 12px;
-      font-weight: 800;
+    .actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 8px;
       font-size: 13px;
+      font-weight: 700;
       cursor: pointer;
+      border: none;
+      transition: opacity 0.2s;
     }
-    .footer-btn:hover { background-color: #3F434A; }
+    .btn-secondary {
+      background: #334155;
+      color: var(--text-main);
+    }
+    .btn:hover { opacity: 0.9; }
   </style>
 </head>
 <body>
-
   <div class="header">
-    <div class="title">🏆 도촌초등학교 <span>명예의 전당</span></div>
+    <div class="title">🏆 우리 학교 <span>명예의 전당</span></div>
     <div class="subtitle">
-      <span>클라우드 백엔드 데이터베이스 연동</span>
-      <span class="db-badge">⚡ Realtime Cloud DB</span>
+      <span>로컬 스토리지 연동</span>
+      <span class="db-badge">⚡ Offline Safe DB</span>
     </div>
   </div>
 
   <div class="tabs">
-    <button id="tab-pacman" class="tab-btn active" onclick="switchTab('pacman')">🟡 도촌 팩맨</button>
-    <button id="tab-dino" class="tab-btn" onclick="switchTab('dino')">🦖 도촌 공룡</button>
+    <button id="tab-pacman" class="tab-btn active" onclick="switchTab('pacman')">🟡 팩맨</button>
+    <button id="tab-dino" class="tab-btn" onclick="switchTab('dino')">🦖 공룡 달리기</button>
+    <button id="tab-snake" class="tab-btn" onclick="switchTab('snake')">🐍 스네이크</button>
+    <button id="tab-solitaire" class="tab-btn" onclick="switchTab('solitaire')">🃏 솔리테어</button>
+    <button id="tab-tetris" class="tab-btn" onclick="switchTab('tetris')">🧱 테트리스</button>
   </div>
 
   <div id="score-container" class="score-list">
-    <div class="empty-msg">클라우드 데이터베이스 수신 중...</div>
+    <div class="empty-msg">기록 수신 중...</div>
   </div>
 
-  <button class="footer-btn" onclick="window.close()">창 닫기 (Close Window)</button>
+  <div class="actions">
+    <button class="btn btn-secondary" onclick="renderScores()">🔄 새로고침</button>
+  </div>
 
   <script>
-    const DB_API_URL = 'https://dochon-games-portal-bbdbc-default-rtdb.asia-southeast1.firebasedatabase.app/leaderboards';
     let currentTab = 'pacman';
 
-    async function fetchLeaderboard(gameKey) {
+    function getLeaderboard(gameKey) {
       try {
-        const res = await fetch(`${DB_API_URL}/${gameKey}.json`);
-        if (res.ok) {
-          const data = await res.json();
-          if (data) {
-            const list = Object.keys(data).map(key => ({ id: key, ...data[key] }));
-            list.sort((a, b) => b.score - a.score);
-            return list.slice(0, 10);
-          }
-        }
-      } catch (err) {
-        console.warn('DB fetch error, falling back:', err);
-      }
+        const stored = localStorage.getItem(`school_leaderboard_${gameKey}`) || localStorage.getItem(`dochon_leaderboard_${gameKey}`);
+        if (stored) return JSON.parse(stored);
+      } catch (e) {}
 
-      // Fallback data
-      if (gameKey === 'pacman') {
-        return [
-          { id: '1', name: '김도촌 (5A)', score: 12400, date: '2026-08-12' },
+      const fallbackMap = {
+        pacman: [
+          { id: '1', name: '김학생 (5A)', score: 12400, date: '2026-08-12' },
           { id: '2', name: '이슬기 (4B)', score: 9800, date: '2026-08-12' },
           { id: '3', name: '박민준 (6C)', score: 8500, date: '2026-08-11' },
           { id: '4', name: '최하은 (3A)', score: 6200, date: '2026-08-10' },
           { id: '5', name: '정우진 (5B)', score: 4900, date: '2026-08-09' }
-        ];
-      } else {
-        return [
+        ],
+        dino: [
           { id: '1', name: '박민준 (6C)', score: 3450, date: '2026-08-12' },
-          { id: '2', name: '김도촌 (5A)', score: 2890, date: '2026-08-12' },
+          { id: '2', name: '김학생 (5A)', score: 2890, date: '2026-08-12' },
           { id: '3', name: '윤서연 (4A)', score: 2100, date: '2026-08-11' },
           { id: '4', name: '강현우 (6A)', score: 1750, date: '2026-08-10' }
-        ];
-      }
+        ]
+      };
+
+      return fallbackMap[gameKey] || [];
     }
 
-    async function renderScores() {
-      const container = document.getElementById('score-container');
-      container.innerHTML = '<div class="empty-msg">클라우드 DB 동기화 중...</div>';
-      
-      const list = await fetchLeaderboard(currentTab);
+    function switchTab(tabKey) {
+      currentTab = tabKey;
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(`tab-${tabKey}`);
+      if (activeBtn) activeBtn.classList.add('active');
+      renderScores();
+    }
 
-      if (list.length === 0) {
-        container.innerHTML = '<div class="empty-msg">등록된 기록이 없습니다.</div>';
+    function renderScores() {
+      const container = document.getElementById('score-container');
+      const list = getLeaderboard(currentTab);
+
+      if (!list || list.length === 0) {
+        container.innerHTML = '<div class="empty-msg">아직 등록된 명예의 전당 점수가 없습니다.</div>';
         return;
       }
 
-      container.innerHTML = list.map((item, idx) => {
-        const rank = idx + 1;
-        let badge = rank;
-        if (rank === 1) badge = '👑';
-        else if (rank === 2) badge = '🥈';
-        else if (rank === 3) badge = '🥉';
-
+      container.innerHTML = list.map((item, index) => {
+        const rank = index + 1;
+        const rankClass = rank <= 3 ? `rank-${rank}` : '';
         return `
-          <div class="score-item ${rank === 1 ? 'rank-1' : ''}">
-            <div class="rank-badge">${badge}</div>
+          <div class="score-item ${rankClass}">
+            <div class="rank-badge">${rank}</div>
             <div class="player-info">
               <div class="player-name">${item.name}</div>
               <div class="player-date">${item.date || '2026-08-13'}</div>
             </div>
-            <div class="player-score">${item.score.toLocaleString()} 점</div>
+            <div class="player-score">${Number(item.score).toLocaleString()}점</div>
           </div>
         `;
       }).join('');
     }
 
-    function switchTab(tab) {
-      currentTab = tab;
-      document.getElementById('tab-pacman').classList.toggle('active', tab === 'pacman');
-      document.getElementById('tab-dino').classList.toggle('active', tab === 'dino');
-      renderScores();
-    }
-
     renderScores();
-    setInterval(renderScores, 8000); // Auto-refresh real-time DB every 8 seconds
   </script>
 </body>
 </html>

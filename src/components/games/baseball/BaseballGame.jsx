@@ -822,7 +822,7 @@ export default function BaseballGame({ onScoreSubmitted }) {
     e.preventDefault();
     if (scoreRef.current <= 100 || isSubmitting || isSubmitted) return;
 
-    const trimmedName = playerName.trim() || '도촌 타자왕';
+    const trimmedName = playerName.trim() || '우리학교 타자왕';
     setIsSubmitting(true);
 
     try {
@@ -1051,7 +1051,7 @@ export default function BaseballGame({ onScoreSubmitted }) {
                 <div className="leaderboard-register-box">
                   <div className="leaderboard-box-title">
                     <Trophy style={{ width: '15px', height: '15px' }} />
-                    <span>도촌초 명예의 전당 점수 등록</span>
+                    <span>우리학교 명예의 전당 점수 등록</span>
                   </div>
 
                   {isSubmitted ? (
@@ -1083,7 +1083,7 @@ export default function BaseballGame({ onScoreSubmitted }) {
                 </div>
               ) : (
                 <div className="low-score-notice">
-                  💡 100점을 초과하여 득점하면 도촌초 명예의 전당에 이름을 남길 수 있습니다!
+                  💡 100점을 초과하여 득점하면 우리학교 명예의 전당에 이름을 남길 수 있습니다!
                 </div>
               )}
 

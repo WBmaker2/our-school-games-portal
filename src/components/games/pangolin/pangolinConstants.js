@@ -1,4 +1,4 @@
-// Constants and Stage Definitions for Dochon Pangolin Adventure
+// Constants and Stage Definitions for Our School Pangolin Adventure
 
 export const CANVAS_WIDTH = 960;
 export const CANVAS_HEIGHT = 540;

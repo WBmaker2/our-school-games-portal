@@ -1,4 +1,4 @@
-// Core Game Logic, Solvable Deal Engine & Dead-End Detection for Dochon Solitaire
+// Core Game Logic, Solvable Deal Engine & Dead-End Detection for Our School Solitaire
 
 import { SUITS, SUIT_KEYS, RANKS } from './solitaireConstants.js';
 

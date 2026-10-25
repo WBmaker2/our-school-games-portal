@@ -1,4 +1,4 @@
-// Dochon Pétanque Master Constants & Game Configuration
+// Our School Pétanque Master Constants & Game Configuration
 
 export const GAME_STATES = {
   INTRO: 'INTRO',
@@ -19,7 +19,7 @@ export const SHOT_TYPES = {
 export const TEAMS = {
   PLAYER: {
     id: 'PLAYER',
-    name: '도촌 청팀 (나)',
+    name: '우리학교 청팀 (나)',
     ballColor: '#2563eb', // Blue
     ballGlow: '#60a5fa',
     ballAccent: '#93c5fd',
@@ -29,7 +29,7 @@ export const TEAMS = {
   },
   AI: {
     id: 'AI',
-    name: '도촌 백팀 (AI)',
+    name: '우리학교 백팀 (AI)',
     ballColor: '#dc2626', // Red
     ballGlow: '#f87171',
     ballAccent: '#fca5a5',

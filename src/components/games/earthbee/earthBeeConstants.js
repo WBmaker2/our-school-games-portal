@@ -84,11 +84,11 @@ export const FLOWER_TYPES = {
 
 // Garden Ecosystem Levels
 export const ECO_LEVELS = [
-  { level: 1, name: '아늑한 도촌 화단', requiredBlooms: 0, flowerTypes: ['DAISY', 'TULIP'] },
+  { level: 1, name: '아늑한 우리학교 화단', requiredBlooms: 0, flowerTypes: ['DAISY', 'TULIP'] },
   { level: 2, name: '향기로운 들꽃 정원', requiredBlooms: 8, flowerTypes: ['DAISY', 'TULIP', 'SUNFLOWER'] },
   { level: 3, name: '활기찬 꿀벌 숲', requiredBlooms: 20, flowerTypes: ['DAISY', 'TULIP', 'SUNFLOWER', 'LAVENDER'] },
   { level: 4, name: '찬란한 무지개 꽃밭', requiredBlooms: 36, flowerTypes: ['DAISY', 'TULIP', 'SUNFLOWER', 'LAVENDER', 'RAINBOW'] },
-  { level: 5, name: '환상의 도촌 생태 낙원', requiredBlooms: 55, flowerTypes: ['DAISY', 'TULIP', 'SUNFLOWER', 'LAVENDER', 'RAINBOW'] }
+  { level: 5, name: '환상의 우리학교 생태 낙원', requiredBlooms: 55, flowerTypes: ['DAISY', 'TULIP', 'SUNFLOWER', 'LAVENDER', 'RAINBOW'] }
 ];
 
 // Educational Environmental & Honeybee Facts
@@ -98,7 +98,7 @@ export const ECO_FACTS = [
   '꿀벌의 비행 속도는 시속 약 24km에 달해요! 💨',
   '꿀벌은 춤을 춰서 다른 벌들에게 꽃의 위치와 거리를 알려줘요! 💃',
   '꽃가루받이를 통해 식물들이 열매를 맺고 지구가 푸르게 유지돼요! 🌻',
-  '도촌초 정원에 꽃과 나무를 가꾸면 꿀벌과 나비들이 찾아와요! 🦋',
+  '우리학교 정원에 꽃과 나무를 가꾸면 꿀벌과 나비들이 찾아와요! 🦋',
   '꿀벌의 날개는 1초에 200번 이상 빠르게 파닥거려요! 🐝',
   '꽃가루를 옮겨주는 꿀벌 덕분에 아름다운 숲과 생태계가 번성해요! 🌲'
 ];

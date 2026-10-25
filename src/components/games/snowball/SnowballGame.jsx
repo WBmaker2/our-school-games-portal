@@ -1,4 +1,4 @@
-// Dochon Games Portal - Snowball Survival React Component
+// Our School Games Portal - Snowball Survival React Component
 // 100% Zero-Asset Procedural Graphics, Web Audio API Sound & Zero-Cost WebRTC P2P
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
@@ -274,7 +274,7 @@ export default function SnowballGame({ onScoreSubmitted }) {
       snowballNet.onRoomCodeChanged = (newCode) => setP2pCode(newCode);
       snowballNet.onError = (msg) => setP2pError(msg);
 
-      await snowballNet.createRoom(p2pCode, p2pName || '도촌눈사람', selectedSkin);
+      await snowballNet.createRoom(p2pCode, p2pName || '우리학교눈사람', selectedSkin);
       setP2pIsHost(true);
       setP2pPlayers(snowballNet.lobbyPlayers);
     } catch (err) {
@@ -311,7 +311,7 @@ export default function SnowballGame({ onScoreSubmitted }) {
       };
       snowballNet.onError = (msg) => setP2pError(msg);
 
-      await snowballNet.joinRoom(cleanDigits, p2pName || '도촌친구', selectedSkin);
+      await snowballNet.joinRoom(cleanDigits, p2pName || '우리학교친구', selectedSkin);
       setP2pIsHost(false);
     } catch (err) {
       setP2pError(err.message || '방 접속에 실패했습니다.');
@@ -392,7 +392,7 @@ export default function SnowballGame({ onScoreSubmitted }) {
       <div className="snowball-header">
         <div className="snowball-header-title">
           <span style={{ fontSize: '24px' }}>☃️</span>
-          <h1>도촌 눈싸움 서바이벌</h1>
+          <h1>우리학교 눈싸움 서바이벌</h1>
         </div>
 
         <div className="snowball-header-controls">
@@ -527,7 +527,7 @@ export default function SnowballGame({ onScoreSubmitted }) {
                   <input
                     type="text"
                     className="snowball-text-input"
-                    placeholder="내 닉네임 입력 (기본: 도촌눈사람)"
+                    placeholder="내 닉네임 입력 (기본: 우리학교눈사람)"
                     value={p2pName}
                     onChange={(e) => setP2pName(e.target.value)}
                     maxLength={10}
@@ -795,7 +795,7 @@ export default function SnowballGame({ onScoreSubmitted }) {
                 <div className="snowball-halloffame-box p2p-active">
                   <div className="snowball-halloffame-title">
                     <Trophy size={14} color="#FBBF24" />
-                    <span>도촌초 명예의 전당 점수 등록 (실시간 P2P 멀티플레이 기록)</span>
+                    <span>우리학교 명예의 전당 점수 등록 (실시간 P2P 멀티플레이 기록)</span>
                   </div>
                   {isSubmitted ? (
                     <div style={{ color: '#34D399', fontSize: '13px', fontWeight: 800, padding: '6px' }}>
@@ -824,14 +824,14 @@ export default function SnowballGame({ onScoreSubmitted }) {
                 </div>
               ) : (
                 <div className="snowball-score-notice">
-                  * 100점을 초과 달성해야 도촌초 명예의 전당에 점수를 등록할 수 있습니다. (현재 {gameResult.totalScore}점)
+                  * 100점을 초과 달성해야 우리학교 명예의 전당에 점수를 등록할 수 있습니다. (현재 {gameResult.totalScore}점)
                 </div>
               )
             ) : (
               <div className="snowball-solo-p2p-notice">
                 <Globe size={16} color="#38BDF8" style={{ flexShrink: 0 }} />
                 <span>
-                  도촌초 명예의 전당 점수 등록은 <strong>'실시간 P2P 멀티플레이'</strong> 대결에서만 가능합니다! 친구와 4자리 코드로 함께 대결해보세요 🌐
+                  우리학교 명예의 전당 점수 등록은 <strong>'실시간 P2P 멀티플레이'</strong> 대결에서만 가능합니다! 친구와 4자리 코드로 함께 대결해보세요 🌐
                 </span>
               </div>
             )}

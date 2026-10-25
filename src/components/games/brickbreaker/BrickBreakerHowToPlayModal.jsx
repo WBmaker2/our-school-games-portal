@@ -13,7 +13,7 @@ export default function BrickBreakerHowToPlayModal({ isOpen, onClose }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontSize: '1.4rem' }}>🧱</span>
             <div>
-              <h2 className="bb-modal-title">도촌 벽돌 격파왕 게임 방법</h2>
+              <h2 className="bb-modal-title">우리학교 벽돌 격파왕 게임 방법</h2>
               <p className="bb-modal-subtitle">클래식 아케이드 블록 격파 가이드 & 아이템 도감</p>
             </div>
           </div>
@@ -144,11 +144,11 @@ export default function BrickBreakerHowToPlayModal({ isOpen, onClose }) {
           <div className="bb-guide-section">
             <h3 className="bb-section-title">
               <Trophy style={{ width: '16px', height: '16px', color: '#F59E0B' }} />
-              도촌초 명예의 전당 랭킹 등록
+              우리학교 명예의 전당 랭킹 등록
             </h3>
             <div className="bb-guide-box bb-highlight-box">
               <p>
-                게임 종료 후 <strong>100점을 초과 달성</strong>하면 도촌초등학교 실시간 명예의 전당에 본인의 이름을 남길 수 있습니다.
+                게임 종료 후 <strong>100점을 초과 달성</strong>하면 우리학교 실시간 명예의 전당에 본인의 이름을 남길 수 있습니다.
                 높은 콤보와 스테이지 클리어로 전교 1위에 도전해보세요!
               </p>
             </div>

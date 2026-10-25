@@ -1,7 +1,7 @@
-# Dochon Kids Coding (도촌 코딩 토끼)
+# Our School Kids Coding (우리학교 코딩 토끼)
 
 ## 개요
-* **게임명**: 도촌 코딩 토끼 (Dochon Kids Coding)
+* **게임명**: 우리학교 코딩 토끼 (Our School Kids Coding)
 * **모티브**: Google Doodle 50주년 어린이 코딩 기념작 (*Coding for Carrots*)
 * **장르**: 블록 코딩 기반 알고리즘 & 컴퓨팅 사고력 학습형 퍼즐
 

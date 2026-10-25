@@ -1,4 +1,4 @@
-// Dochon Games Portal - Micro Kart Racing Web Audio API Synthesizer
+// Our School Games Portal - Micro Kart Racing Web Audio API Synthesizer
 // 100% Procedural Zero-Asset Audio Engine
 
 class MicroKartAudioEngine {

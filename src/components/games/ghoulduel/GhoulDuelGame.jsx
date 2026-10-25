@@ -139,7 +139,7 @@ export default function GhoulDuelGame({ onScoreSubmitted }) {
     setP2pStatus('');
     setP2pConnecting(true);
     try {
-      const guestName = p2pName.trim() || '도촌 학생';
+      const guestName = p2pName.trim() || '우리 학교 학생';
       const cleanCode = GhoulDuelNetworkManager.sanitizeCode(p2pCode);
       setP2pCode(cleanCode);
       const code = await ghoulNet.joinRoom(cleanCode, guestName, 'purple');
@@ -423,7 +423,7 @@ export default function GhoulDuelGame({ onScoreSubmitted }) {
         <div className="ghoulduel-top-bar">
           <div className="ghoulduel-title-group">
             <span className="text-2xl">👻</span>
-            <h2>도촌 영혼 대결</h2>
+            <h2>우리학교 영혼 대결</h2>
             <span className={`ghoulduel-badge ${playMode === 'P2P' ? 'p2p' : ''}`}>
               {playMode === 'P2P' ? '🌐 P2P 멀티플레이' : '4 vs 4 AI 배틀'}
             </span>
@@ -858,7 +858,7 @@ export default function GhoulDuelGame({ onScoreSubmitted }) {
                   <div className="leaderboard-submit-form">
                     <div className="form-label">
                       <Award size={16} className="text-amber-400" />
-                      <span>도촌초등학교 명예의 전당 점수 등록 (실시간 대전 기록)</span>
+                      <span>우리학교 명예의 전당 점수 등록 (실시간 대전 기록)</span>
                     </div>
 
                     {!isSubmitted ? (

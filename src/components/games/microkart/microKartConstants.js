@@ -1,4 +1,4 @@
-// Dochon Games Portal - Micro Kart Racing Constants & Configurations
+// Our School Games Portal - Micro Kart Racing Constants & Configurations
 // School Desk & Stationary Top-Down Circuit Theme
 
 export const CANVAS_WIDTH = 1000;
@@ -48,7 +48,7 @@ export const TRACK_LIST = [
 export const KART_SKINS = [
   {
     id: 'eraser',
-    name: '도촌 지우개 레이서',
+    name: '우리학교 지우개 레이서',
     type: '균형형',
     avatarEmoji: '🧼',
     color: '#0284C7',
@@ -146,7 +146,7 @@ export const ITEM_CONFIGS = {
   },
   BOOSTER: {
     id: 'BOOSTER',
-    name: '도촌 슈퍼 부스터',
+    name: '우리학교 슈퍼 부스터',
     emoji: '💨',
     color: '#F97316',
     description: '순간적으로 초강력 불꽃을 뿜으며 최고 속도로 급가속합니다!'
@@ -180,7 +180,7 @@ export const DIFFICULTY_PRESETS = {
   },
   hard: {
     id: 'hard',
-    name: '도촌 마스터 (5~6학년)',
+    name: '우리학교 마스터 (5~6학년)',
     speedScale: 1.01,
     driftSkill: 0.95,
     reactionDelay: 0.12,

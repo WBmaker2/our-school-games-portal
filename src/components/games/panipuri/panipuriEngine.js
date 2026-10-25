@@ -1,4 +1,4 @@
-// Dochon Pani Puri Master - Integrated Game Engine & Canvas 2D Renderer
+// Our School Pani Puri Master - Integrated Game Engine & Canvas 2D Renderer
 // Encapsulates Game State, Game Loop (tick), and Visual Effects as a Single Source of Truth
 
 import {

@@ -140,7 +140,7 @@ export default function RoswellGame({ onScoreSubmitted }) {
     }
   };
 
-  // Score Submit Handler (Strict Dochon Portal Rule: Score > 100 & Placeholder '예: 홍길동')
+  // Score Submit Handler (Strict Our School Portal Rule: Score > 100 & Placeholder '예: 홍길동')
   const handleSubmitScore = async (e) => {
     e.preventDefault();
     if (!playerName.trim() || isSubmitting || isSubmitted) return;
@@ -173,10 +173,10 @@ export default function RoswellGame({ onScoreSubmitted }) {
   const getSceneName = (sceneKey) => {
     switch (sceneKey) {
       case SCENES.CRASH_SITE: return '불시착 지점 🛸';
-      case SCENES.FARMLAND: return '도촌 농장 들판 🌾';
+      case SCENES.FARMLAND: return '우리학교 농장 들판 🌾';
       case SCENES.BARN: return '오래된 헛간 🏚️';
       case SCENES.FARMHOUSE: return '농부의 오두막 🏡';
-      default: return '도촌 마을';
+      default: return '우리학교 마을';
     }
   };
 
@@ -236,7 +236,7 @@ export default function RoswellGame({ onScoreSubmitted }) {
           <div className="roswell-victory-overlay">
             <div className="text-5xl mb-3 animate-bounce">🛸</div>
             <h1 className="text-2xl sm:text-3xl font-black text-emerald-300 mb-2">
-              도촌 UFO 탈출작전
+              우리학교 UFO 탈출작전
             </h1>
             <p className="text-xs sm:text-sm text-slate-300 max-w-md mb-6 leading-relaxed">
               지구에 불시착한 외계인을 도와 흩어진 <strong className="text-emerald-400">3대 부품</strong>을 찾아 비행접시를 수리하고 우주로 탈출시키세요!
@@ -267,7 +267,7 @@ export default function RoswellGame({ onScoreSubmitted }) {
               🎉 탈출 대성공! (MISSION ACCOMPLISHED)
             </h2>
             <p className="text-xs text-slate-300 mb-4">
-              외계인이 고향 별로 무사히 귀환했습니다! 도촌초 명예의 전당에 이름을 남겨보세요.
+              외계인이 고향 별로 무사히 귀환했습니다! 우리학교 명예의 전당에 이름을 남겨보세요.
             </p>
 
             <div className="bg-slate-900/80 border border-emerald-500/40 rounded-2xl p-4 mb-4 w-full max-w-sm">

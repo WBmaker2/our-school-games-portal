@@ -1,4 +1,4 @@
-// Dochon Games Portal - School Tag (도촌 야간 학교 숨바꼭질) Main Component
+// Our School Games Portal - School Tag (우리학교 야간 학교 숨바꼭질) Main Component
 // 2D Fog of War Raycasting Lighting, Stealth Survival Mechanics, Web Audio & P2P WebRTC
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -737,7 +737,7 @@ export default function SchoolTagGame({ onScoreSubmitted }) {
     e.preventDefault();
     if (finalScore <= 100 || isSubmittingScore || isScoreSubmitted) return;
 
-    const trimmedName = playerNameInput.trim() || '익명의 도촌러';
+    const trimmedName = playerNameInput.trim() || '익명의 우리학교러';
     setIsSubmittingScore(true);
 
     try {
@@ -1140,7 +1140,7 @@ export default function SchoolTagGame({ onScoreSubmitted }) {
       <div className="schooltag-header">
         <div className="schooltag-title">
           <span>🔦</span>
-          <span>도촌 야간 학교 숨바꼭질</span>
+          <span>우리학교 야간 학교 숨바꼭질</span>
         </div>
 
         <div className="schooltag-header-actions">
@@ -1265,10 +1265,10 @@ export default function SchoolTagGame({ onScoreSubmitted }) {
           <div className="schooltag-modal-overlay">
             <div className="schooltag-card">
               <div style={{ fontSize: '3rem', marginBottom: '8px' }}>🔦</div>
-              <h2 className="schooltag-card-title">도촌 불 꺼진 학교 숨바꼭질</h2>
+              <h2 className="schooltag-card-title">우리학교 불 꺼진 학교 숨바꼭질</h2>
               <p className="schooltag-card-desc">
                 손전등 불빛만 믿고 달린다! 심장 쫄깃한 야간 술래잡기<br />
-                불 꺼진 도촌초 교실에서 황금 열쇠 3개를 찾아 비상구로 탈출하세요.
+                불 꺼진 우리학교 교실에서 황금 열쇠 3개를 찾아 비상구로 탈출하세요.
               </p>
 
               {/* Character Skin Selection */}
@@ -1575,7 +1575,7 @@ export default function SchoolTagGame({ onScoreSubmitted }) {
 
               <p className="schooltag-card-desc">
                 {gameResult === 'ESCAPE_SUCCESS'
-                  ? '황금 열쇠를 모두 찾고 불 꺼진 도촌초등학교를 무사히 빠져나왔습니다!'
+                  ? '황금 열쇠를 모두 찾고 불 꺼진 우리학교를 무사히 빠져나왔습니다!'
                   : '어두운 복도에서 발각되어 양호실로 이송되었습니다. 다시 도전해보세요!'}
               </p>
 

@@ -1,4 +1,4 @@
-// Dochon Pizza Master - 2D Canvas Procedural Rendering & Geometric Slicing Engine
+// Our School Pizza Master - 2D Canvas Procedural Rendering & Geometric Slicing Engine
 import {
   PIZZA_CENTER,
   PIZZA_RADIUS,

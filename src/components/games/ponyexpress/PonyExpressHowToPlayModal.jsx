@@ -12,7 +12,7 @@ export default function PonyExpressHowToPlayModal({ isOpen, onClose }) {
           <div className="flex items-center gap-2">
             <span className="text-2xl">🐎</span>
             <div>
-              <h2 className="text-lg font-black text-amber-300 tracking-tight">도촌 포니 익스프레스 게임 방법</h2>
+              <h2 className="text-lg font-black text-amber-300 tracking-tight">우리학교 포니 익스프레스 게임 방법</h2>
               <p className="text-xs text-amber-200/70">100통의 편지를 모두 모아 서부 마을에 배달하세요!</p>
             </div>
           </div>
@@ -102,10 +102,10 @@ export default function PonyExpressHowToPlayModal({ isOpen, onClose }) {
           {/* 4. Honor System */}
           <div className="bg-gradient-to-r from-amber-950/40 via-yellow-950/30 to-amber-950/40 p-4 rounded-xl border border-amber-500/40">
             <h3 className="text-amber-400 font-bold mb-2 flex items-center gap-2 text-base">
-              <Trophy className="w-4 h-4 text-amber-400" /> 도촌초 명예의 전당 등록 안내
+              <Trophy className="w-4 h-4 text-amber-400" /> 우리학교 명예의 전당 등록 안내
             </h3>
             <p className="text-xs text-amber-200/90 leading-relaxed">
-              게임 클리어 후 <strong>100점을 초과</strong>하여 달성하면 도촌초등학교 전교 랭킹(명예의 전당)에 여러분의 이름을 남길 수 있습니다! 100통 만점에 도전해보세요!
+              게임 클리어 후 <strong>100점을 초과</strong>하여 달성하면 우리학교 전교 랭킹(명예의 전당)에 여러분의 이름을 남길 수 있습니다! 100통 만점에 도전해보세요!
             </p>
           </div>
         </div>

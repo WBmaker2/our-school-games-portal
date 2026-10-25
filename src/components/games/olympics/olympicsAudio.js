@@ -1,4 +1,4 @@
-// Olympics Web Audio API Synthesizer Sound Engine for Dochon Mini Olympics
+// Olympics Web Audio API Synthesizer Sound Engine for Our School Mini Olympics
 
 class OlympicsAudioEngine {
   constructor() {

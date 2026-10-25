@@ -828,8 +828,8 @@ export default function TetrisGame({ onScoreSubmitted }) {
           <div className="tetris-hud-left">
             <div className="tetris-hud-logo">🧱</div>
             <div className="tetris-hud-titles">
-              <h1 className="tetris-hud-title">도촌 테트리스</h1>
-              <span className="tetris-hud-subtitle">DOCHON TETRIS ARCADE</span>
+              <h1 className="tetris-hud-title">우리학교 테트리스</h1>
+              <span className="tetris-hud-subtitle">OUR SCHOOL TETRIS ARCADE</span>
             </div>
           </div>
           <div className="tetris-hud-actions">
@@ -920,7 +920,7 @@ export default function TetrisGame({ onScoreSubmitted }) {
             {gameState === 'ready' && (
               <div className="tetris-pause-overlay">
                 <span style={{ fontSize: '48px', marginBottom: '4px' }}>🧱</span>
-                <h2 className="tetris-pause-title">도촌 테트리스</h2>
+                <h2 className="tetris-pause-title">우리학교 테트리스</h2>
                 <p
                   style={{
                     color: '#94A3B8',
@@ -1016,7 +1016,7 @@ export default function TetrisGame({ onScoreSubmitted }) {
                     <form onSubmit={handleScoreSubmit} className="tetris-hof-form">
                       <div className="tetris-hof-title">
                         <Trophy style={{ width: '14px', height: '14px' }} />
-                        <span>도촌초 명예의 전당 등록</span>
+                        <span>우리학교 명예의 전당 등록</span>
                       </div>
                       <div className="tetris-hof-input-group">
                         <input

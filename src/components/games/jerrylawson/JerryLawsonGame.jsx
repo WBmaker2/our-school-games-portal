@@ -531,7 +531,7 @@ export default function JerryLawsonGame({ onScoreSubmitted }) {
             <div className="jerry-overlay animate-fadeIn">
               <div className="jerry-title-card">
                 <div className="text-4xl mb-2">🕹️💾</div>
-                <h2 className="jerry-title-text">도촌 제리 로슨 (Jerry Lawson)</h2>
+                <h2 className="jerry-title-text">우리학교 제리 로슨 (Jerry Lawson)</h2>
                 <p className="jerry-subtitle-text">
                   비디오 게임 롬 카트리지의 아버지! 8비트 레트로 모험을 떠나거나 나만의 게임을 직접 만들어보세요!
                 </p>
@@ -597,11 +597,11 @@ export default function JerryLawsonGame({ onScoreSubmitted }) {
                 </div>
               </div>
 
-              {/* Strict Dochon Rule: Score > 100 condition & placeholder "예: 홍길동" */}
+              {/* Strict Our School Rule: Score > 100 condition & placeholder "예: 홍길동" */}
               {hudData.score > 100 ? (
                 <div className="jerry-submit-form">
                   <p className="text-xs text-amber-300 font-medium">
-                    🏆 100점 돌파! 도촌초 명예의 전당에 이름을 등록하세요:
+                    🏆 100점 돌파! 우리학교 명예의 전당에 이름을 등록하세요:
                   </p>
                   {!isSubmitted ? (
                     <form onSubmit={handleSubmitScore} className="jerry-submit-input-group">
@@ -625,14 +625,14 @@ export default function JerryLawsonGame({ onScoreSubmitted }) {
                   ) : (
                     <div className="p-2 mt-2 bg-emerald-950/70 border border-emerald-500/50 rounded-lg text-emerald-300 text-xs font-bold flex items-center justify-center gap-1.5">
                       <Trophy className="w-4 h-4 text-amber-400" />
-                      도촌초 명예의 전당에 등록되었습니다!
+                      우리학교 명예의 전당에 등록되었습니다!
                     </div>
                   )}
                   {submitError && <p className="text-xs text-rose-400 mt-1">{submitError}</p>}
                 </div>
               ) : (
                 <div className="p-2 bg-slate-800/80 rounded-lg text-xs text-slate-400 mb-2">
-                  💡 100점을 초과하여 달성하면 도촌초 명예의 전당에 등록할 수 있습니다!
+                  💡 100점을 초과하여 달성하면 우리학교 명예의 전당에 등록할 수 있습니다!
                 </div>
               )}
 
@@ -669,11 +669,11 @@ export default function JerryLawsonGame({ onScoreSubmitted }) {
                 </div>
               </div>
 
-              {/* Strict Dochon Rule: Score > 100 condition & placeholder "예: 홍길동" */}
+              {/* Strict Our School Rule: Score > 100 condition & placeholder "예: 홍길동" */}
               {hudData.score > 100 && (
                 <div className="jerry-submit-form">
                   <p className="text-xs text-amber-300 font-medium">
-                    👑 전설의 챔피언! 도촌초 명예의 전당에 이름을 새기세요:
+                    👑 전설의 챔피언! 우리학교 명예의 전당에 이름을 새기세요:
                   </p>
                   {!isSubmitted ? (
                     <form onSubmit={handleSubmitScore} className="jerry-submit-input-group">
@@ -697,7 +697,7 @@ export default function JerryLawsonGame({ onScoreSubmitted }) {
                   ) : (
                     <div className="p-2 mt-2 bg-emerald-950/70 border border-emerald-500/50 rounded-lg text-emerald-300 text-xs font-bold flex items-center justify-center gap-1.5">
                       <Trophy className="w-4 h-4 text-amber-400" />
-                      도촌초 명예의 전당에 등록되었습니다!
+                      우리학교 명예의 전당에 등록되었습니다!
                     </div>
                   )}
                   {submitError && <p className="text-xs text-rose-400 mt-1">{submitError}</p>}

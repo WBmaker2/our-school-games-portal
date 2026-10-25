@@ -673,13 +673,13 @@ export default function OlympicsGame({ onScoreSubmitted }) {
   // Determine Medal
   const getMedalInfo = (total) => {
     if (total >= MEDAL_CUTOFFS.GOLD) {
-      return { label: '🥇 금메달 (GOLD MEDAL)', color: '#FBBF24', title: '도촌 올림픽 챔피언' };
+      return { label: '🥇 금메달 (GOLD MEDAL)', color: '#FBBF24', title: '우리학교 올림픽 챔피언' };
     }
     if (total >= MEDAL_CUTOFFS.SILVER) {
-      return { label: '🥈 은메달 (SILVER MEDAL)', color: '#CBD5E1', title: '도촌 올림픽 준우승' };
+      return { label: '🥈 은메달 (SILVER MEDAL)', color: '#CBD5E1', title: '우리학교 올림픽 준우승' };
     }
     if (total >= MEDAL_CUTOFFS.BRONZE) {
-      return { label: '🥉 동메달 (BRONZE MEDAL)', color: '#D97706', title: '도촌 올림픽 입상' };
+      return { label: '🥉 동메달 (BRONZE MEDAL)', color: '#D97706', title: '우리학교 올림픽 입상' };
     }
     return { label: '🎖️ 참가상 (PARTICIPANT)', color: '#94A3B8', title: '열정의 올림픽 도전자' };
   };
@@ -694,7 +694,7 @@ export default function OlympicsGame({ onScoreSubmitted }) {
           <span style={{ fontSize: '24px' }}>🏅</span>
           <div>
             <h2 className="olympics-title-main">
-              도촌 미니 올림픽
+              우리학교 미니 올림픽
             </h2>
             <div className="flex items-center gap-1.5 mt-0.5">
               {currentEvent !== GAME_EVENTS.INTRO && currentEvent !== GAME_EVENTS.RESULTS ? (
@@ -759,11 +759,11 @@ export default function OlympicsGame({ onScoreSubmitted }) {
             <div className="olympics-intro-card">
               <div className="text-4xl mb-2 animate-bounce">🏃 🏀 🛶</div>
               <h1 className="text-2xl font-black text-amber-400 mb-1 tracking-tight">
-                DOCHON MINI OLYMPICS
+                OUR SCHOOL MINI OLYMPICS
               </h1>
               <p className="text-xs text-slate-300 mb-4 font-medium leading-relaxed">
                 100m 허들 달리기 · 3점슛 챌린지 · 급류 카누 슬라럼<br />
-                <strong className="text-white">도촌초등학교 3대 릴레이 스포츠 챔피언</strong>에 도전하세요!
+                <strong className="text-white">우리학교 3대 릴레이 스포츠 챔피언</strong>에 도전하세요!
               </p>
 
               {/* Team Selection */}
@@ -818,7 +818,7 @@ export default function OlympicsGame({ onScoreSubmitted }) {
             <div className="olympics-results-card">
               <div className="text-4xl mb-1 animate-bounce">🏆</div>
               <h2 className="text-xl font-black text-white mb-0.5">
-                도촌 미니 올림픽 <span className="text-amber-400">종합 시상식</span>
+                우리학교 미니 올림픽 <span className="text-amber-400">종합 시상식</span>
               </h2>
               <p className="text-xs text-slate-300 font-bold mb-3">
                 {selectedTeam.name}의 모든 경기가 완료되었습니다!
@@ -880,7 +880,7 @@ export default function OlympicsGame({ onScoreSubmitted }) {
                     </form>
                   ) : (
                     <div className="p-2.5 rounded-xl bg-emerald-950/60 border border-emerald-500/50 text-emerald-300 text-xs font-bold">
-                      ✅ 도촌초 명예의 전당 랭킹 등록 완료!
+                      ✅ 우리학교 명예의 전당 랭킹 등록 완료!
                     </div>
                   )}
                 </div>

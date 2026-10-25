@@ -1,4 +1,4 @@
-// Dochon Pétanque Master Web Audio API Procedural Sound Engine
+// Our School Pétanque Master Web Audio API Procedural Sound Engine
 
 class PetanqueAudio {
   constructor() {

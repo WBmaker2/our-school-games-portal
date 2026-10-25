@@ -1,10 +1,11 @@
-// Leaderboard Store for Dochon Games Portal
+// Leaderboard Store for Our School Games Portal
 
-const STORAGE_KEY = 'dochon_games_leaderboard_v1';
+const STORAGE_KEY = 'school_games_leaderboard_v1';
+const LEGACY_STORAGE_KEY = 'dochon_games_leaderboard_v1';
 
 const INITIAL_SCORES = {
   pacman: [
-    { id: 'p1', name: '김도촌 (6학년 1반)', score: 3250, date: '2026-08-10' },
+    { id: 'p1', name: '김학생 (6학년 1반)', score: 3250, date: '2026-08-10' },
     { id: 'p2', name: '이마스코트 (5학년 3반)', score: 2800, date: '2026-08-11' },
     { id: 'p3', name: '박급식 (6학년 2반)', score: 2450, date: '2026-08-12' },
     { id: 'p4', name: '최선생 (교직원)', score: 2100, date: '2026-08-09' },
@@ -12,20 +13,25 @@ const INITIAL_SCORES = {
   ],
   dino: [
     { id: 'd1', name: '박달리기 (5학년 2반)', score: 1420, date: '2026-08-12' },
-    { id: 'd2', name: '김도촌 (6학년 1반)', score: 1150, date: '2026-08-11' },
+    { id: 'd2', name: '김학생 (6학년 1반)', score: 1150, date: '2026-08-11' },
     { id: 'd3', name: '이점프 (4학년 3반)', score: 980, date: '2026-08-13' },
-    { id: 'd4', name: '강도촌 (6학년 4반)', score: 840, date: '2026-08-10' },
+    { id: 'd4', name: '강학생 (6학년 4반)', score: 840, date: '2026-08-10' },
     { id: 'd5', name: '윤체육 (3학년 1반)', score: 720, date: '2026-08-08' }
   ],
   snake: [
-    { id: 's1', name: '도촌스네이크 (6학년 3반)', score: 680, date: '2026-08-01' }
+    { id: 's1', name: '스네이크고수 (6학년 3반)', score: 680, date: '2026-08-01' }
   ]
 };
 
 export const getLeaderboard = () => {
   try {
-    const data = localStorage.getItem(STORAGE_KEY);
+    let data = localStorage.getItem(STORAGE_KEY);
     if (!data) {
+      const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
+      if (legacy) {
+        localStorage.setItem(STORAGE_KEY, legacy);
+        return JSON.parse(legacy);
+      }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_SCORES));
       return INITIAL_SCORES;
     }
@@ -39,14 +45,14 @@ export const getLeaderboard = () => {
 export const saveScore = (gameKey, name, score) => {
   const numScore = Number(score) || 0;
   // Rule: Do not register scores of 100 or below to Leaderboard
-  if (numScore <= 100) return;
+  if (numScore <= 100) return false;
 
   const current = getLeaderboard();
   const gameScores = current[gameKey] || [];
 
   const newEntry = {
     id: Date.now().toString(),
-    name: name || '도촌학생',
+    name: name || '우리 학교 학생',
     score: numScore,
     date: new Date().toISOString().split('T')[0]
   };
@@ -68,12 +74,15 @@ export const saveScore = (gameKey, name, score) => {
 
   // Check if it's a new high score
   const isTop1 = updatedGameScores[0].id === newEntry.id;
-  const isTop10 = updatedGameScores.some(item => item.id === newEntry.id);
+  return { updated, isTop1 };
+};
 
-  return { updated, isTop1, isTop10 };
+export const getGameScores = (gameKey) => {
+  const allScores = getLeaderboard();
+  return allScores[gameKey] || [];
 };
 
 export const getHighScore = (gameKey) => {
-  const scores = getLeaderboard()[gameKey] || [];
+  const scores = getGameScores(gameKey);
   return scores.length > 0 ? scores[0].score : 0;
 };

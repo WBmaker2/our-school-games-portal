@@ -59,7 +59,7 @@ export const CARD_THEMES = {
   },
   SCHOOL: {
     id: 'school',
-    name: '도촌 학교생활',
+    name: '우리학교 학교생활',
     icon: '🏫',
     cards: [
       { id: 'book', emoji: '📚', label: '책', color: '#3b82f6' },

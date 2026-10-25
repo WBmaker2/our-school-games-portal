@@ -1,4 +1,4 @@
-// Web Audio API Procedural Synthesizer for Dochon Pangolin Adventure
+// Web Audio API Procedural Synthesizer for Our School Pangolin Adventure
 
 class PangolinAudio {
   constructor() {

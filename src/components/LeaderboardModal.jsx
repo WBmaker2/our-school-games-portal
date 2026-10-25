@@ -149,13 +149,13 @@ export default function LeaderboardModal({ isOpen, onClose, activeTab = 'pacman'
                 userSelect: 'none',
                 flexShrink: 0
               }}
-              title="도촌초등학교 명예의 전당"
+              title="우리 학교 명예의 전당"
             >
               <Trophy style={{ width: '20px', height: '20px', color: '#FBBF24', fill: 'rgba(251, 191, 36, 0.5)' }} />
             </div>
 
             <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#FFFFFF', margin: 0, whiteSpace: 'nowrap' }}>
-              도촌초등학교 <span style={{ color: '#FBBF24' }}>명예의 전당</span>
+              우리 학교 <span style={{ color: '#FBBF24' }}>명예의 전당</span>
             </h2>
 
             {/* Right Pastel Sparkles Circle */}
@@ -176,7 +176,7 @@ export default function LeaderboardModal({ isOpen, onClose, activeTab = 'pacman'
 
           {/* Sub-Badges Row */}
           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '8px', flexWrap: 'wrap', width: '100%' }}>
-            {/* Left Badge: Heart - 도촌어린이 랭킹 - Star */}
+            {/* Left Badge: Heart - 우리학교 학생 랭킹 - Star */}
             <span style={{
               backgroundColor: 'rgba(244, 63, 94, 0.18)',
               color: '#FDA4AF',
@@ -193,13 +193,13 @@ export default function LeaderboardModal({ isOpen, onClose, activeTab = 'pacman'
               <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#F43F5E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Heart style={{ width: '10px', height: '10px', color: '#FFFFFF', fill: '#FFFFFF' }} />
               </div>
-              <span>도촌어린이 랭킹</span>
+              <span>우리학교 학생 랭킹</span>
               <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#F43F5E', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Star style={{ width: '10px', height: '10px', color: '#FFFFFF', fill: '#FFFFFF' }} />
               </div>
             </span>
 
-            {/* Right Badge: Refresh - 실시간 클라우드 DB - Zap */}
+            {/* Right Badge: Refresh - 실시간 로컬 랭킹 - Zap */}
             <span style={{
               backgroundColor: 'rgba(16, 185, 129, 0.18)',
               color: '#6EE7B7',
@@ -216,7 +216,7 @@ export default function LeaderboardModal({ isOpen, onClose, activeTab = 'pacman'
               <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#10B981', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <RefreshCw style={{ width: '10px', height: '10px', color: '#FFFFFF' }} />
               </div>
-              <span>실시간 클라우드 DB</span>
+              <span>실시간 로컬 랭킹</span>
               <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: '#10B981', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Zap style={{ width: '10px', height: '10px', color: '#FFFFFF', fill: '#FFFFFF' }} />
               </div>
@@ -268,7 +268,7 @@ export default function LeaderboardModal({ isOpen, onClose, activeTab = 'pacman'
           {PLAYABLE_GAMES.map(game => {
             const isActive = currentTab === game.id;
             const iconEmoji = game.iconEmoji || '🎮';
-            const shortTitle = game.title.replace(/^도촌\s*/, '');
+            const shortTitle = game.title.replace(/^우리학교\s*/, '').replace(/^우리\s*학교\s*/, '').replace(/^도촌\s*/, '');
             const textColor = ['pacman', 'dino', 'earthbee'].includes(game.id) ? '#78350F' : '#FFFFFF';
             const activeCustomStyle = isActive
               ? { background: game.themeGradient || 'linear-gradient(135deg, #F59E0B, #D97706)', color: textColor }
@@ -446,7 +446,7 @@ export default function LeaderboardModal({ isOpen, onClose, activeTab = 'pacman'
           <div style={{ width: '18px', height: '18px', borderRadius: '50%', backgroundColor: 'rgba(253, 224, 71, 0.3)', display: 'flex', alignItems: 'center', justify: 'center' }}>
             <Star style={{ width: '10px', height: '10px', color: '#FDE047', fill: '#FDE047' }} />
           </div>
-          <span style={{ fontSize: '11px', fontWeight: 800, color: '#FDE047' }}>도촌초등학교 게임 명예의 전당</span>
+          <span style={{ fontSize: '11px', fontWeight: 800, color: '#FDE047' }}>우리 학교 게임 명예의 전당</span>
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-// Dochon Games Portal - School Tag Web Audio Procedural Synthesizer
+// Our School Games Portal - School Tag Web Audio Procedural Synthesizer
 // 100% Zero-External-Asset Audio Engine (Heartbeat, Flashlight, Steps, Jingle, Siren)
 
 class SchoolTagAudioEngine {

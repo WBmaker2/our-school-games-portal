@@ -232,7 +232,7 @@ export default function MemoryGame({ onScoreSubmitted }) {
   // Play Sequence with lights and audio
   const playSimonSequence = (sequence) => {
     setIsSimonPlayingSequence(true);
-    setSimonStatusText('🎶 도촌 멜로디가 연주 중입니다...');
+    setSimonStatusText('🎶 우리학교 멜로디가 연주 중입니다...');
 
     sequence.forEach((btnId, idx) => {
       setTimeout(() => {
@@ -347,7 +347,7 @@ export default function MemoryGame({ onScoreSubmitted }) {
           </div>
           <div>
             <div className="memory-title-main">
-              도촌 기억력 마스터
+              우리학교 기억력 마스터
             </div>
             <div className="memory-title-sub">
               {gameMode === GAME_MODES.CARD_MATCH ? '🃏 3D 카드 짝 맞추기 퍼즐' : '🎵 멜로디 & 순서 기억 챌린지'}
@@ -408,7 +408,7 @@ export default function MemoryGame({ onScoreSubmitted }) {
           
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold mb-2">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>도촌초 어린이 두뇌 훈련 프로젝트</span>
+            <span>우리학교 어린이 두뇌 훈련 프로젝트</span>
           </div>
 
           <h2 className="text-xl sm:text-2xl font-black text-white mb-2">
@@ -706,7 +706,7 @@ export default function MemoryGame({ onScoreSubmitted }) {
             <div className="w-full bg-slate-800/80 border border-amber-500/30 rounded-2xl p-4 mb-2">
               <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-amber-300 mb-2.5">
                 <Trophy className="w-4 h-4 text-amber-400" />
-                <span>도촌초 명예의 전당 랭킹 등록</span>
+                <span>우리학교 명예의 전당 랭킹 등록</span>
               </div>
 
               {!submitSuccess ? (

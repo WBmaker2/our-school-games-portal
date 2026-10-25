@@ -1,4 +1,4 @@
-// Dochon Baseball Game Physics, Trajectory, Timing Judgments, and Particle Logic
+// Our School Baseball Game Physics, Trajectory, Timing Judgments, and Particle Logic
 
 import {
   CANVAS_WIDTH,

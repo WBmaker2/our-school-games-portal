@@ -13,7 +13,7 @@ export default function OlympicsHowToPlayModal({ isOpen, onClose }) {
             <span className="text-3xl">🏅</span>
             <div>
               <h3 className="text-xl font-black text-white leading-tight">
-                도촌 미니 올림픽 <span className="text-amber-400">게임 방법</span>
+                우리학교 미니 올림픽 <span className="text-amber-400">게임 방법</span>
               </h3>
               <p className="text-[11px] text-slate-400 font-bold">
                 초등학생 맞춤 3대 릴레이 스포츠 챔피언십
@@ -32,7 +32,7 @@ export default function OlympicsHowToPlayModal({ isOpen, onClose }) {
           <div className="olympics-howto-intro">
             <p className="text-xs text-amber-200 leading-relaxed font-bold">
               🔥 3개 종목의 점수를 합산하여 최종 올림픽 순위와 메달이 결정됩니다!<br />
-              최고 점수를 기록하여 도촌초 명예의 전당 1위에 도전하세요!
+              최고 점수를 기록하여 우리학교 명예의 전당 1위에 도전하세요!
             </p>
           </div>
 

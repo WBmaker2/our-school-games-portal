@@ -1,4 +1,4 @@
-// Dochon Brick Breaker (도촌 벽돌 격파왕) Constants & Level Map Configurations
+// Our School Brick Breaker (우리학교 벽돌 격파왕) Constants & Level Map Configurations
 
 export const CANVAS_WIDTH = 480;
 export const CANVAS_HEIGHT = 640;
@@ -100,10 +100,10 @@ export const POWERUP_DROP_CHANCE = 0.28; // 28% drop rate on breaking bricks
 // Level Map Blueprints (Grid: 10 cols x Variable rows)
 // 0: Empty, 1: N1, 2: N2, 3: N3, 4: N4, 5: H2, 6: H3, 7: BOMB, 8: STAR, 9: UNBREAKABLE
 export const STAGE_MAPS = [
-  // Stage 1: Welcome Dochon (클래식 도촌 무지개)
+  // Stage 1: Welcome Our School (클래식 우리학교 무지개)
   {
     stage: 1,
-    name: '스테이지 1: 도촌 클래식 무지개',
+    name: '스테이지 1: 우리학교 클래식 무지개',
     grid: [
       [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
       [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
@@ -112,10 +112,10 @@ export const STAGE_MAPS = [
       [0, 1, 2, 7, 0, 0, 7, 2, 1, 0]
     ]
   },
-  // Stage 2: Heart Castle (도촌초 사랑의 하트)
+  // Stage 2: Heart Castle (우리학교 사랑의 하트)
   {
     stage: 2,
-    name: '스테이지 2: 도촌 사랑의 하트',
+    name: '스테이지 2: 우리학교 사랑의 하트',
     grid: [
       [0, 4, 4, 0, 0, 0, 0, 4, 4, 0],
       [4, 4, 4, 4, 0, 0, 4, 4, 4, 4],
@@ -155,10 +155,10 @@ export const STAGE_MAPS = [
       [0, 0, 0, 6, 8, 8, 6, 0, 0, 0]
     ]
   },
-  // Stage 5: Dochon Master Boss Gate (도촌초 대마왕 관문)
+  // Stage 5: Our School Master Boss Gate (우리학교 대마왕 관문)
   {
     stage: 5,
-    name: '스테이지 5: 도촌 대마왕 최종 관문',
+    name: '스테이지 5: 우리학교 대마왕 최종 관문',
     grid: [
       [6, 6, 6, 6, 8, 8, 6, 6, 6, 6],
       [5, 7, 5, 5, 7, 7, 5, 5, 7, 5],

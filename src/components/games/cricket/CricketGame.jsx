@@ -101,7 +101,7 @@ export default function CricketGame({ onScoreSubmitted }) {
   // Load High Score from LocalStorage
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('dochon_cricket_high_score');
+      const saved = localStorage.getItem('school_cricket_high_score');
       if (saved) {
         const val = parseInt(saved, 10) || 0;
         highScoreRef.current = val;
@@ -238,7 +238,7 @@ export default function CricketGame({ onScoreSubmitted }) {
         highScoreRef.current = newScore;
         setHighScore(newScore);
         try {
-          localStorage.setItem('dochon_cricket_high_score', String(newScore));
+          localStorage.setItem('school_cricket_high_score', String(newScore));
         } catch (e) {}
       }
 
@@ -856,7 +856,7 @@ export default function CricketGame({ onScoreSubmitted }) {
               {/* Tip box for scores <= 100 */}
               {finalScore <= 100 && (
                 <div className="cricket-gameover-tip">
-                  💡 <strong>100점을 초과 달성</strong>하면 도촌초 실시간 명예의 전당 랭킹에 이름을 남길 수 있습니다!
+                  💡 <strong>100점을 초과 달성</strong>하면 우리학교 실시간 명예의 전당 랭킹에 이름을 남길 수 있습니다!
                 </div>
               )}
 
@@ -865,7 +865,7 @@ export default function CricketGame({ onScoreSubmitted }) {
                 <div className="cricket-submit-box">
                   <div className="cricket-submit-title">
                     <Trophy style={{ width: '16px', height: '16px' }} />
-                    <span>도촌초 명예의 전당 점수 등록</span>
+                    <span>우리학교 명예의 전당 점수 등록</span>
                   </div>
                   {submittedSuccess ? (
                     <div

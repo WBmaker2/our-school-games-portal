@@ -1,5 +1,5 @@
-// Dochon Games Portal - School Tag Map Generator & Grid Layout
-// Dochon Elementary School Layout (Classrooms, Science Lab, Music Room, Infirmary, Exit)
+// Our School Games Portal - School Tag Map Generator & Grid Layout
+// Our School Elementary School Layout (Classrooms, Science Lab, Music Room, Infirmary, Exit)
 
 import { SCHOOL_TAG_CONSTANTS } from './schoolTagConstants';
 

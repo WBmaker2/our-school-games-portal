@@ -1,4 +1,4 @@
-// Dochon Brick Breaker Physics Engine, Canvas 2D Rendering & Collision System
+// Our School Brick Breaker Physics Engine, Canvas 2D Rendering & Collision System
 import { CANVAS_WIDTH, CANVAS_HEIGHT, PADDLE_DEFAULT, BALL_DEFAULT, BRICK_TYPES, POWERUP_TYPES, POWERUP_DROP_CHANCE } from './brickBreakerConstants';
 import { brickAudio } from './brickBreakerAudio';
 

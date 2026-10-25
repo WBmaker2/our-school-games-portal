@@ -1,4 +1,4 @@
-// Olympics Canvas 2D Vector Rendering Engine for Dochon Mini Olympics (High-Agency Redesign)
+// Olympics Canvas 2D Vector Rendering Engine for Our School Mini Olympics (High-Agency Redesign)
 
 export class OlympicsRenderEngine {
   constructor(canvas) {
@@ -95,7 +95,7 @@ export class OlympicsRenderEngine {
     ctx.textBaseline = 'middle';
     ctx.shadowColor = 'rgba(253, 224, 71, 0.6)';
     ctx.shadowBlur = 8;
-    ctx.fillText('DOCHON MINI OLYMPICS 2026 · 100M HURDLES DASH', width * 0.5, boardY + boardH * 0.5);
+    ctx.fillText('OUR SCHOOL MINI OLYMPICS 2026 · 100M HURDLES DASH', width * 0.5, boardY + boardH * 0.5);
     ctx.shadowBlur = 0; // reset
 
     // B. Running Track (High Quality Mondo Red Athletic Track)

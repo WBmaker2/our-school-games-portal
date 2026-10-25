@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { DOCHON_MAZE_GRID, TILE_SIZE, COLS, ROWS, LETTER_REGIONS } from './mazeData';
+import { PACMAN_MAZE_GRID, TILE_SIZE, COLS, ROWS, LETTER_REGIONS } from './mazeData';
 import { soundFx } from '../../../utils/audio';
 import { saveScore, getHighScore } from '../../../utils/leaderboard';
 import { submitScoreToDB } from '../../../utils/leaderboardApi';
@@ -20,7 +20,7 @@ export default function PacManGame({ onScoreSubmitted }) {
   const [comboText, setComboText] = useState('');
 
   const gameStateRef = useRef({
-    grid: JSON.parse(JSON.stringify(DOCHON_MAZE_GRID)),
+    grid: JSON.parse(JSON.stringify(PACMAN_MAZE_GRID)),
     pacman: { x: 16, y: 11, dx: 0, dy: 0, nextDx: 0, nextDy: 0, mouthAngle: 0.2, mouthSpeed: 0.05 },
     ghosts: [
       { id: 'blinky', name: '시험지', color: '#FF0055', x: 14, y: 7, dx: 1, dy: 0, frightened: false },
@@ -38,7 +38,7 @@ export default function PacManGame({ onScoreSubmitted }) {
 
   useEffect(() => {
     let count = 0;
-    DOCHON_MAZE_GRID.forEach(row => {
+    PACMAN_MAZE_GRID.forEach(row => {
       row.forEach(cell => {
         if (cell === 2 || cell === 3) count++;
       });
@@ -89,7 +89,7 @@ export default function PacManGame({ onScoreSubmitted }) {
   const restartGame = () => {
     soundFx.init();
     const g = gameStateRef.current;
-    g.grid = JSON.parse(JSON.stringify(DOCHON_MAZE_GRID));
+    g.grid = JSON.parse(JSON.stringify(PACMAN_MAZE_GRID));
     g.pacman = { x: 16, y: 11, dx: 0, dy: 0, nextDx: 0, nextDy: 0, mouthAngle: 0.2, mouthSpeed: 0.05 };
     g.ghosts = [
       { id: 'blinky', name: '시험지', color: '#FF0055', x: 14, y: 7, dx: 1, dy: 0, frightened: false },
@@ -108,7 +108,7 @@ export default function PacManGame({ onScoreSubmitted }) {
     setGameState('PLAYING');
 
     let count = 0;
-    DOCHON_MAZE_GRID.forEach(row => {
+    PACMAN_MAZE_GRID.forEach(row => {
       row.forEach(cell => {
         if (cell === 2 || cell === 3) count++;
       });
@@ -177,7 +177,7 @@ export default function PacManGame({ onScoreSubmitted }) {
             g.dotsRemaining--;
             setScore(g.score);
             soundFx.playPowerup();
-            triggerComboMsg('🍔 DOCHON 햄버거 파워업!');
+            triggerComboMsg('🍔 OUR SCHOOL 햄버거 파워업!');
 
             g.frightenedTimeLeft = 8;
             g.ghosts.forEach(gh => (gh.frightened = true));
@@ -255,7 +255,7 @@ export default function PacManGame({ onScoreSubmitted }) {
         if (ghost.x === p.x && ghost.y === p.y) {
           if (ghost.frightened) {
             soundFx.playPacmanEatGhost();
-            triggerComboMsg(`💥 DOCHON! ${ghost.name} 퇴치! (+200점)`);
+            triggerComboMsg(`💥 OUR SCHOOL! ${ghost.name} 퇴치! (+200점)`);
             ghost.x = 16; ghost.y = 7;
             ghost.frightened = false;
             g.score += 200;
@@ -315,7 +315,7 @@ export default function PacManGame({ onScoreSubmitted }) {
             ctx.arc(x + TILE_SIZE / 2, y + TILE_SIZE / 2, 3, 0, Math.PI * 2);
             ctx.fill();
           } else if (cell === 3) {
-            // Dochon School Lunch Burger / Strawberry Milk
+            // Our School School Lunch Burger / Strawberry Milk
             ctx.fillStyle = '#FF007F';
             ctx.beginPath();
             ctx.arc(x + TILE_SIZE / 2, y + TILE_SIZE / 2, 7.5, 0, Math.PI * 2);
@@ -488,7 +488,7 @@ export default function PacManGame({ onScoreSubmitted }) {
       <div className="pacman-header-hud">
         {/* Title */}
         <div className="pacman-title-group">
-          <span className="pacman-title-text">🕹️ Dochon Pac-Man</span>
+          <span className="pacman-title-text">🕹️ Our School Pac-Man</span>
           <span className="pacman-map-badge">D-O-C-H-O-N 미로 맵</span>
         </div>
 
@@ -547,12 +547,12 @@ export default function PacManGame({ onScoreSubmitted }) {
         {gameState === 'IDLE' && (
           <div className="pacman-overlay-screen">
             <h3 className="pacman-overlay-title">
-              도촌 팩맨 (DOCHON PAC-MAN)
+              우리학교 팩맨 (SCHOOL PAC-MAN)
             </h3>
             <p className="pacman-overlay-desc">
-              알파벳 <strong>D O C H O N</strong>으로 디자인된 도촌초등학교 팩맨 미로!<br />
+              알파벳 <strong>D O C H O N</strong>으로 디자인된 우리학교 팩맨 미로!<br />
               키보드 방향키(W/A/S/D) 또는 아래 십자키로 조작하며<br />
-              <span className="highlight-pink">도촌 급식 햄버거(파워 구슬)</span>를 먹고 유령을 물리치세요!
+              <span className="highlight-pink">맛있는 급식 햄버거(파워 구슬)</span>를 먹고 유령을 물리치세요!
             </p>
             <button onClick={restartGame} className="btn-gold text-base px-8 py-3 animate-pulse shadow-2xl">
               <Play className="w-5 h-5 fill-current" /> 게임 시작하기
@@ -585,7 +585,7 @@ export default function PacManGame({ onScoreSubmitted }) {
                 <form onSubmit={handleScoreSubmit} className="pacman-score-form">
                   <div className="pacman-score-form__header">
                     <Sparkles className="w-4 h-4 text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.8)]" />
-                    <span>도촌 명예의 전당 점수 등록</span>
+                    <span>우리학교 명예의 전당 점수 등록</span>
                   </div>
                   <div className="pacman-score-form__input-wrap">
                     <span className="pacman-score-form__input-icon">✏️</span>
@@ -605,7 +605,7 @@ export default function PacManGame({ onScoreSubmitted }) {
                 </form>
               ) : (
                 <p className="pacman-success-badge">
-                  ✅ 도촌 명예의 전당에 성공적으로 등록되었습니다!
+                  ✅ 우리학교 명예의 전당에 성공적으로 등록되었습니다!
                 </p>
               )
             ) : (
@@ -646,7 +646,7 @@ export default function PacManGame({ onScoreSubmitted }) {
         {/* 2. Large & Cute 3-Row D-Pad Controller for Mobile, Tablet & Desktop */}
         <div className="dpad-panel">
           <div className="dpad-title">
-            <span>🕹️ DOCHON TOUCH CONTROLLER</span>
+            <span>🕹️ OUR SCHOOL TOUCH CONTROLLER</span>
           </div>
 
           {/* 3x3 Grid Layout for D-Pad */}
@@ -672,7 +672,7 @@ export default function PacManGame({ onScoreSubmitted }) {
             </button>
 
             {/* Row 2: Center = Joystick Pivot Dot */}
-            <div className="dpad-btn-center select-none" title="도촌 아케이드 조이스틱 코어">
+            <div className="dpad-btn-center select-none" title="우리학교 아케이드 조이스틱 코어">
               <div className="dpad-center-core" />
             </div>
 

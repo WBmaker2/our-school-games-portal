@@ -1,4 +1,4 @@
-// Dochon Games Portal - Snowball Survival Constants & Configurations
+// Our School Games Portal - Snowball Survival Constants & Configurations
 
 export const CANVAS_WIDTH = 1000;
 export const CANVAS_HEIGHT = 700;
@@ -34,7 +34,7 @@ export const PLAYER_CONFIG = {
 export const CHARACTER_SKINS = [
   {
     id: 'penguin',
-    name: '도촌 꼬마 펭귄',
+    name: '우리학교 꼬마 펭귄',
     role: '균형형',
     color: '#0284C7',
     bodyColor: '#1E293B',
@@ -67,7 +67,7 @@ export const CHARACTER_SKINS = [
   },
   {
     id: 'student',
-    name: '도촌초 패딩 대장',
+    name: '우리학교 패딩 대장',
     role: '스피드형',
     color: '#8B5CF6',
     bodyColor: '#3B82F6',
@@ -107,11 +107,11 @@ export const DIFFICULTY_PRESETS = {
 };
 
 // PeerJS Networking Constants
-export const SNOWBALL_PEER_PREFIX = 'dochon-snow-';
+export const SNOWBALL_PEER_PREFIX = 'school-snow-';
 export const NETWORK_TICK_RATE = 20; // 20 updates per second
 export const NETWORK_TICK_INTERVAL = 1000 / NETWORK_TICK_RATE;
 
-// Scoring Constants (Strict Dochon Rule: Score > 100 for Hall of Fame)
+// Scoring Constants (Strict Our School Rule: Score > 100 for Hall of Fame)
 export const SCORING = {
   RANK_BONUS: [600, 350, 200, 120, 80, 50, 30, 10], // 1st to 8th rank
   KILL_BONUS: 150, // Per ring-out knockback elimination

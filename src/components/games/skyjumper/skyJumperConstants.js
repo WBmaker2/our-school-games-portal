@@ -1,5 +1,5 @@
 /**
- * Dochon Sky Jumper - Constants & Configurations
+ * Our School Sky Jumper - Constants & Configurations
  */
 
 export const CANVAS_WIDTH = 480;

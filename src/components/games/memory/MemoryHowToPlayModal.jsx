@@ -23,7 +23,7 @@ export default function MemoryHowToPlayModal({ isOpen, onClose }) {
           </div>
           <div>
             <h2 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-200 to-pink-300">
-              도촌 기억력 마스터 가이드
+              우리학교 기억력 마스터 가이드
             </h2>
             <p className="text-xs text-indigo-300/80">두뇌의 단기 기억력과 집중력을 키우는 2가지 게임 모드!</p>
           </div>

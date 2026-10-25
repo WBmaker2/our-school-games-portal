@@ -377,7 +377,7 @@ export default function MagicCatGame({ onScoreSubmitted }) {
                 <div className="magic-leaderboard-box">
                   <div className="magic-leaderboard-header">
                     <Award className="w-4 h-4 text-amber-400" />
-                    <span>도촌초등학교 명예의 전당 점수 등록</span>
+                    <span>우리학교 명예의 전당 점수 등록</span>
                   </div>
 
                   {!isSubmitted ? (

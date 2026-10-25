@@ -1,5 +1,5 @@
 /**
- * Dochon Sky Jumper - Physics Engine & Canvas Procedural Renderer
+ * Our School Sky Jumper - Physics Engine & Canvas Procedural Renderer
  */
 
 import {
@@ -1362,7 +1362,7 @@ export class SkyJumperPhysics {
       ctx.fillRect(-20, 14, 8, 4);
     }
 
-    // 2. Main Cute Character Body (Dochon Green Jumper)
+    // 2. Main Cute Character Body (Our School Green Jumper)
     const bodyGrad = ctx.createRadialGradient(-4, -6, 4, 0, 0, 22);
     bodyGrad.addColorStop(0, '#86EFAC');
     bodyGrad.addColorStop(0.7, '#22C55E');

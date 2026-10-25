@@ -1,4 +1,4 @@
-// Dochon Games Portal - Micro Kart 2D Physics, Waypoints & Battle Item Engine
+// Our School Games Portal - Micro Kart 2D Physics, Waypoints & Battle Item Engine
 // 100% Deterministic & Modular Logic Class
 
 import {

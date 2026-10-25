@@ -93,7 +93,7 @@ export default function DonutTicTacToeHowToPlayModal({ isOpen, onClose }) {
               </li>
               <li>
                 <span className="rule-bullet">🎖️</span>
-                <span><strong>100점 초과 시</strong> 도촌초 <strong>'명예의 전당'</strong>에 이름을 올릴 수 있습니다!</span>
+                <span><strong>100점 초과 시</strong> 우리학교 <strong>'명예의 전당'</strong>에 이름을 올릴 수 있습니다!</span>
               </li>
             </ul>
           </div>

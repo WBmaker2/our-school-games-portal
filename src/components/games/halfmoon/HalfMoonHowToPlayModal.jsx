@@ -116,7 +116,7 @@ export default function HalfMoonHowToPlayModal({ isOpen, onClose }) {
           <section className="guide-section bg-slate-900/60 p-3.5 rounded-xl border border-slate-800">
             <h4 className="font-bold text-amber-300 text-xs flex items-center gap-1.5 mb-2">
               <Zap className="w-4 h-4 text-amber-400" />
-              <span>도촌 챔피언이 되기 위한 고득점 꿀팁</span>
+              <span>우리학교 챔피언이 되기 위한 고득점 꿀팁</span>
             </h4>
             <ul className="list-disc list-inside space-y-1 text-[11px] text-slate-300">
               <li>보드의 <strong>정중앙 슬롯</strong>은 최대 8개 방향과 인접하므로 콤보를 터뜨리기 가장 좋은 명당입니다!</li>

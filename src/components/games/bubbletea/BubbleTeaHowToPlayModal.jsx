@@ -60,7 +60,7 @@ export default function BubbleTeaHowToPlayModal({ isOpen, onClose }) {
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
             <span style={{ fontSize: '28px' }}>🧋</span>
             <h2 style={{ fontSize: '20px', fontWeight: 900, color: '#FBBF24', margin: 0 }}>
-              도촌 버블티 카페 이용안내
+              우리학교 버블티 카페 이용안내
             </h2>
             <span style={{ fontSize: '28px' }}>✨</span>
           </div>
@@ -136,7 +136,7 @@ export default function BubbleTeaHowToPlayModal({ isOpen, onClose }) {
             <div>⭐️ <strong>PERFECT (별 3개)</strong>: 정량선에 완벽히 맞추면 +150점 & 콤보 보너스!</div>
             <div>⭐️ <strong>연속 콤보(COMBO)</strong>: 연속으로 퍼펙트를 달성하면 점수가 배수로 증가합니다.</div>
             <div style={{ color: '#FBBF24', marginTop: '4px', fontWeight: 700 }}>
-              🏆 총 6명의 동물 손님을 만족시키고 <strong>100점 초과</strong>를 달성하면 도촌초등학교 명예의 전당에 이름을 올릴 수 있습니다!
+              🏆 총 6명의 동물 손님을 만족시키고 <strong>100점 초과</strong>를 달성하면 우리학교 명예의 전당에 이름을 올릴 수 있습니다!
             </div>
           </div>
         </div>

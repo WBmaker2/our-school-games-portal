@@ -1,4 +1,4 @@
-// Dochon Pani Puri Master - How to Play Guide Modal Component
+// Our School Pani Puri Master - How to Play Guide Modal Component
 
 import React from 'react';
 import { X, Sparkles, Flame, Clock, Trophy, Heart, CheckCircle2 } from 'lucide-react';

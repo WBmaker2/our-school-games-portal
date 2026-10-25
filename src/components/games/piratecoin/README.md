@@ -1,4 +1,4 @@
-# 도촌 해적선 코인 쟁탈전 (Dochon Pirate Coin Heist)
+# 우리학교 해적선 코인 쟁탈전 (Our School Pirate Coin Heist)
 
 황금 보물섬에서 쏟아지는 금화를 모아 자신의 해적선으로 안전하게 수송하고, 상대 배를 전속력으로 들이받아 코인을 강탈하는 4인 실시간 P2P 배틀 아케이드 게임입니다.
 
@@ -12,7 +12,7 @@
 - `pirateCoinMap.js`: 푸른 바다 파도 애니메이션, 중앙 황금 보물섬, 암초, 소용돌이, 4개 팀 베이스 선착장 및 미니맵 레이더 절차적 렌더러
 - `pirateCoinLogic.js`: 선박 2D 가속/감속/선회 물리, 소지 코인 트레일 체인 동역학, 충돌 들이받기(Tackle) & 코인 스필 연산, 입금 존 판정, AI 봇 의사결정 트리
 - `pirateCoinAudio.js`: Web Audio API 기반 100% 무에셋 사운드 신시사이저 (파도, 뱃고동, 코인 짤랑, 들이받기 쿵, 대포 발사, 입금 팡파레)
-- `pirateCoinNetwork.js`: 도촌초 전용 Firebase RTDB 기반 WebRTC P2P + 실시간 릴레이 자동 폴백(Hybrid Fallback) 멀티플레이어 동기화 매니저 (4초 직결 타임아웃 ➔ 0.5초 무중단 릴레이 전환, 10Hz 대역폭 델타 압축, 잔여 0-Byte 자동 삭제)
+- `pirateCoinNetwork.js`: 우리학교 전용 Firebase RTDB 기반 WebRTC P2P + 실시간 릴레이 자동 폴백(Hybrid Fallback) 멀티플레이어 동기화 매니저 (4초 직결 타임아웃 ➔ 0.5초 무중단 릴레이 전환, 10Hz 대역폭 델타 압축, 잔여 0-Byte 자동 삭제)
 - `piratecoin.css`: 해적 골드 & 네이비 테마 반응형 HUD, 미니맵, 가상 D-Pad 및 게임 모달 스타일
 - `README.md`: 본 문서
 

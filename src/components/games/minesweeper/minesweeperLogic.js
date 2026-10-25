@@ -1,4 +1,4 @@
-// Dochon Minesweeper Logic Engine
+// Our School Minesweeper Logic Engine
 // Handles 100% Safe First Click, Cascade Reveal, Chording, Win Check, and Smart Coaching Hints
 
 import { TILE_STATUS } from './minesweeperConstants';

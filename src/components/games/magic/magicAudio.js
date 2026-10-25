@@ -1,4 +1,4 @@
-// Web Audio API Procedural Sound Synthesizer for Dochon Magic Cat Academy
+// Web Audio API Procedural Sound Synthesizer for Our School Magic Cat Academy
 
 class MagicAudioEngine {
   constructor() {

@@ -1,6 +1,6 @@
-# 도촌 크리켓 (Dochon Cricket)
+# 우리학교 크리켓 (Our School Cricket)
 
-도촌초등학교 게임 포털의 12번째 공식 정식 출시 게임인 **도촌 크리켓**의 전용 소스코드 폴더입니다.
+우리학교 게임 포털의 12번째 공식 정식 출시 게임인 **우리학교 크리켓**의 전용 소스코드 폴더입니다.
 
 상세 기획 및 개발 설계 사양은 루트의 [`CRICKET_DESIGN.md`](file:///d:/Antigravity/google-game-modify/CRICKET_DESIGN.md)를 참고하세요.
 

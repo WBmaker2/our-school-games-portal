@@ -1,5 +1,5 @@
 /**
- * Dochon Kids Coding (도촌 코딩 토끼) - Constants & Stage Configurations
+ * Our School Kids Coding (우리학교 코딩 토끼) - Constants & Stage Configurations
  * Motivated by Google Doodle "Celebrating 50 Years of Kids Coding"
  */
 
@@ -251,7 +251,7 @@ export const STAGES = [
   },
   {
     id: 8,
-    title: '스테이지 8: 도촌 코딩 마스터',
+    title: '스테이지 8: 우리학교 코딩 마스터',
     subtitle: '물웅덩이와 돌 장애물을 피해 당근을 가장 효율적인 코드로 수확하세요!',
     hint: '장애물에 부딪히지 않도록 최적의 경로를 설계하고 루프를 과감하게 활용하세요!',
     gridWidth: 7,

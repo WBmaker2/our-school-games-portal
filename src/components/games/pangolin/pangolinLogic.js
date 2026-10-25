@@ -1,4 +1,4 @@
-// Canvas 2D Physics and Procedural Terrain Engine for Dochon Pangolin Adventure
+// Canvas 2D Physics and Procedural Terrain Engine for Our School Pangolin Adventure
 import { CANVAS_WIDTH, CANVAS_HEIGHT, PHYSICS, STAGES, ITEM_DEFS, OBSTACLE_DEFS } from './pangolinConstants';
 import { pangolinAudio } from './pangolinAudio';
 

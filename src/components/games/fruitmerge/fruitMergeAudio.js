@@ -1,4 +1,4 @@
-// Web Audio API Synthesizer for Fruit Merge (도촌 과일 합치기)
+// Web Audio API Synthesizer for Fruit Merge (우리학교 과일 합치기)
 // Zero-dependency, lightweight, high-fidelity sound synthesis
 
 class FruitMergeAudio {

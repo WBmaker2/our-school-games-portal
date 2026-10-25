@@ -12,7 +12,7 @@ export default function SolitaireHowToPlayModal({ isOpen, onClose }) {
           <div className="flex items-center gap-2">
             <span className="text-2xl animate-bounce">🃏</span>
             <div>
-              <h2 className="solitaire-help-title">도촌 솔리테어 완벽 가이드</h2>
+              <h2 className="solitaire-help-title">우리학교 솔리테어 완벽 가이드</h2>
               <p className="solitaire-help-subtitle">초등학생도 1분이면 쉽게 배우는 솔리테어 필승 규칙!</p>
             </div>
           </div>

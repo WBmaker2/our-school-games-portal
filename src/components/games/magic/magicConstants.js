@@ -1,4 +1,4 @@
-// Dochon Magic Cat Academy Game Constants & Configuration
+// Our School Magic Cat Academy Game Constants & Configuration
 
 export const CANVAS_WIDTH = 960;
 export const CANVAS_HEIGHT = 540;

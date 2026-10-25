@@ -1,4 +1,4 @@
-// Champion Island (도촌 챔피언 아일랜드) Game Constants & Map Definitions
+// Champion Island (우리학교 챔피언 아일랜드) Game Constants & Map Definitions
 
 export const CANVAS_WIDTH = 800;
 export const CANVAS_HEIGHT = 500;
@@ -143,7 +143,7 @@ export const NPCS = [
   },
   {
     id: 'team_captain',
-    name: '도촌 응원단장',
+    name: '우리학교 응원단장',
     tileX: 8,
     tileY: 6,
     icon: '📣',

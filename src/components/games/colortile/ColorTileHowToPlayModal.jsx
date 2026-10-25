@@ -43,10 +43,10 @@ export default function ColorTileHowToPlayModal({ isOpen, onClose }) {
             </div>
             <div>
               <h2 style={{ fontSize: '18px', fontWeight: 900, color: '#FBBF24', margin: 0 }}>
-                도촌 컬러 타일 완벽 가이드
+                우리학교 컬러 타일 완벽 가이드
               </h2>
               <p style={{ fontSize: '11px', color: '#94A3B8', margin: 0 }}>
-                도촌초 학생들을 위한 1분 쉬운 룰 설명서 ✨
+                우리학교 학생들을 위한 1분 쉬운 룰 설명서 ✨
               </p>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function ColorTileHowToPlayModal({ isOpen, onClose }) {
         <div style={{ backgroundColor: 'rgba(245, 158, 11, 0.1)', border: '1px dashed #F59E0B', borderRadius: '12px', padding: '12px', marginBottom: '20px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
             <Sparkles style={{ width: '15px', height: '15px', color: '#FBBF24' }} />
-            <span style={{ fontWeight: 800, fontSize: '12px', color: '#FBBF24' }}>도촌 챔피언 공략 비법 꿀팁</span>
+            <span style={{ fontWeight: 800, fontSize: '12px', color: '#FBBF24' }}>우리학교 챔피언 공략 비법 꿀팁</span>
           </div>
           <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '11px', color: '#E2E8F0', lineHeight: 1.6 }}>
             <li>타일 뒤쪽에 가려진 타일들을 위해 앞쪽 방해 타일을 먼저 지워 길을 열어주세요.</li>

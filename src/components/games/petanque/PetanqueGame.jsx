@@ -1,4 +1,4 @@
-// Dochon Pétanque Master Main Game Component
+// Our School Pétanque Master Main Game Component
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
@@ -220,7 +220,7 @@ export default function PetanqueGame({ onScoreSubmitted }) {
   const executeAiThrow = useCallback(() => {
     if (ballsLeftRef.current.ai <= 0) return;
     setGameState(GAME_STATES.AI_THINKING);
-    setInGameMessage('🔴 도촌 백팀 (AI)이 조준하고 있습니다...');
+    setInGameMessage('🔴 우리학교 백팀 (AI)이 조준하고 있습니다...');
 
     if (aiTimerRef.current) {
       clearTimeout(aiTimerRef.current);
@@ -528,7 +528,7 @@ export default function PetanqueGame({ onScoreSubmitted }) {
         <div className="petanque-title-row">
           <div className="petanque-icon-badge">🎯</div>
           <div>
-            <div className="petanque-title-main">도촌 페탕크 마스터</div>
+            <div className="petanque-title-main">우리학교 페탕크 마스터</div>
             <div className="petanque-title-sub">프랑스 전통 구기 스포츠 · 2.5D 물리 챌린지</div>
           </div>
         </div>
@@ -556,7 +556,7 @@ export default function PetanqueGame({ onScoreSubmitted }) {
         {/* Player Team */}
         <div className="petanque-team-card">
           <div className="petanque-team-info-left">
-            <div className="petanque-team-label-blue">🔵 도촌 청팀 (나)</div>
+            <div className="petanque-team-label-blue">🔵 우리학교 청팀 (나)</div>
             <div className="petanque-team-score-blue">{scores.player}점</div>
           </div>
           <div className="petanque-team-balls">
@@ -583,7 +583,7 @@ export default function PetanqueGame({ onScoreSubmitted }) {
         {/* AI Team */}
         <div className="petanque-team-card" style={{ flexDirection: 'row-reverse' }}>
           <div className="petanque-team-info-right">
-            <div className="petanque-team-label-red">🔴 도촌 백팀 (AI)</div>
+            <div className="petanque-team-label-red">🔴 우리학교 백팀 (AI)</div>
             <div className="petanque-team-score-red">{scores.ai}점</div>
           </div>
           <div className="petanque-team-balls">
@@ -620,7 +620,7 @@ export default function PetanqueGame({ onScoreSubmitted }) {
             <div className="petanque-card-panel animate-fade-in">
               <span className="petanque-card-icon-hero">🎯 🇫🇷 ⚪</span>
               <h2 className="petanque-card-title">
-                도촌 페탕크 마스터
+                우리학교 페탕크 마스터
               </h2>
               <p className="petanque-card-desc">
                 노란 표적구(뷔슈)에 쇠구슬을 가장 가깝게 붙이거나,<br />
@@ -675,8 +675,8 @@ export default function PetanqueGame({ onScoreSubmitted }) {
               </h3>
               <p className="text-sm font-bold text-white mb-3">
                 {roundResultInfo.winningTeam === TEAMS.PLAYER.id
-                  ? `도촌 청팀 (나) 승리! (+${roundResultInfo.roundPoints}점)`
-                  : `도촌 백팀 (AI) 승리! (+${roundResultInfo.roundPoints}점)`}
+                  ? `우리학교 청팀 (나) 승리! (+${roundResultInfo.roundPoints}점)`
+                  : `우리학교 백팀 (AI) 승리! (+${roundResultInfo.roundPoints}점)`}
               </p>
 
               {/* Bonus Information */}
@@ -719,10 +719,10 @@ export default function PetanqueGame({ onScoreSubmitted }) {
                 {scores.player > scores.ai ? '🏆 🥇' : '🥈 👏'}
               </span>
               <h2 className="petanque-card-title">
-                {scores.player > scores.ai ? '도촌 페탕크 챔피언 등극!' : '경기 종료! 아쉬운 준우승'}
+                {scores.player > scores.ai ? '우리학교 페탕크 챔피언 등극!' : '경기 종료! 아쉬운 준우승'}
               </h2>
               <p className="petanque-card-desc" style={{ marginBottom: '10px' }}>
-                최종 스코어 {scores.player} : {scores.ai} (도촌 청팀 vs 백팀)
+                최종 스코어 {scores.player} : {scores.ai} (우리학교 청팀 vs 백팀)
               </p>
 
               {/* Total Score Display */}

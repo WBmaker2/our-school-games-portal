@@ -1,4 +1,4 @@
-// Dochon Games Portal - Dochon Pirate Coin Heist Main Component
+// Our School Games Portal - Our School Pirate Coin Heist Main Component
 // 34th Official Playable Game - WebRTC P2P Multiplayer & Solo AI Practice Battle
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
@@ -41,7 +41,7 @@ export default function PirateCoinGame({ onScoreSubmitted, onBackToLobby, isMute
   const [selectedShip, setSelectedShip] = useState('caravel');
   const [selectedDifficulty, setSelectedDifficulty] = useState('normal');
   const [playerName, setPlayerName] = useState(() => {
-    return localStorage.getItem('dochon_player_name') || '도촌 해적';
+    return localStorage.getItem('school_player_name') || '우리학교 해적';
   });
   const [roomCodeInput, setRoomCodeInput] = useState('');
   const [activeRoomCode, setActiveRoomCode] = useState('');
@@ -192,7 +192,7 @@ export default function PirateCoinGame({ onScoreSubmitted, onBackToLobby, isMute
 
   // --- Start Game Match ---
   const startMatch = (isMulti = false, difficultyKey = selectedDifficulty) => {
-    localStorage.setItem('dochon_player_name', playerName);
+    localStorage.setItem('school_player_name', playerName);
 
     const logic = new PirateCoinLogic({
       difficulty: difficultyKey,
@@ -678,7 +678,7 @@ export default function PirateCoinGame({ onScoreSubmitted, onBackToLobby, isMute
             <ArrowLeft className="w-4 h-4" />
             <span>포털로 나가기</span>
           </button>
-          <h1>🏴‍☠️ 도촌 해적선 코인 쟁탈전</h1>
+          <h1>🏴‍☠️ 우리학교 해적선 코인 쟁탈전</h1>
         </div>
 
         <div className="pirate-header-controls">
@@ -824,7 +824,7 @@ export default function PirateCoinGame({ onScoreSubmitted, onBackToLobby, isMute
           <div className="pirate-overlay">
             <div className="pirate-card">
               <div className="pirate-card-title">
-                <h2>🏴‍☠️ 도촌 해적선 코인 쟁탈전</h2>
+                <h2>🏴‍☠️ 우리학교 해적선 코인 쟁탈전</h2>
                 <p>보물섬의 황금 코인을 모으고, 상대를 들이받아 코인을 털어내세요!</p>
               </div>
 

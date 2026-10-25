@@ -1,5 +1,5 @@
 // =========================================================================
-// Constants & Configuration for Dochon Garden Gnomes (도촌 정원 요정)
+// Constants & Configuration for Our School Garden Gnomes (우리학교 정원 요정)
 // =========================================================================
 
 export const CANVAS_WIDTH = 960;

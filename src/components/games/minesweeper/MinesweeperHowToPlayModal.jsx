@@ -43,7 +43,7 @@ export default function MinesweeperHowToPlayModal({ isOpen, onClose }) {
             </div>
             <div>
               <h2 style={{ fontSize: '18px', fontWeight: 900, color: '#FBBF24', margin: 0 }}>
-                도촌 지뢰찾기 완벽 가이드
+                우리학교 지뢰찾기 완벽 가이드
               </h2>
               <p style={{ fontSize: '11px', color: '#94A3B8', margin: 0 }}>
                 초등학생을 위한 1분 쉬운 룰 설명서 🌿

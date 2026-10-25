@@ -1,4 +1,4 @@
-// Dochon Pizza Master - Game Constants & Stage Configurations
+// Our School Pizza Master - Game Constants & Stage Configurations
 
 export const CANVAS_WIDTH = 640;
 export const CANVAS_HEIGHT = 560;
@@ -66,7 +66,7 @@ export const STAGES = [
   {
     level: 1,
     title: '입문: 1/2로 반 나누기',
-    customerName: '도촌 토끼',
+    customerName: '우리학교 토끼',
     customerAvatar: '🐰',
     customerSpeech: '친구랑 둘이서 먹으려고 해요! 피자를 똑같이 2조각(1/2)으로 나누고, 페퍼로니를 2개씩 나눠주세요!',
     fractionText: '1/2 (2등분)',
@@ -87,7 +87,7 @@ export const STAGES = [
   {
     level: 2,
     title: '기초: 1/4로 4등분하기',
-    customerName: '도촌 곰돌이',
+    customerName: '우리학교 곰돌이',
     customerAvatar: '🐻',
     customerSpeech: '우리 가족 4명이 사이좋게 1조각씩! 피자를 똑같이 4조각(1/4)으로 나누고, 각 조각에 올리브 1개씩 넣어주세요!',
     fractionText: '1/4 (4등분)',
@@ -107,7 +107,7 @@ export const STAGES = [
   {
     level: 3,
     title: '응용: 반반 피자 4등분',
-    customerName: '도촌 냥이',
+    customerName: '우리학교 냥이',
     customerAvatar: '🐱',
     customerSpeech: '저는 페퍼로니파, 동생은 버섯파예요! 왼쪽은 페퍼로니 2조각, 오른쪽은 버섯 2조각으로 4등분(1/4)해주세요!',
     fractionText: '1/4 (4등분)',
@@ -128,7 +128,7 @@ export const STAGES = [
   {
     level: 4,
     title: '심화: 1/3 균등 3등분',
-    customerName: '도촌 다람쥐',
+    customerName: '우리학교 다람쥐',
     customerAvatar: '🐿️',
     customerSpeech: '도토리 삼총사가 모였어요! 피자를 정확하게 3조각(1/3)으로 나누고 방울토마토를 2개씩 공평하게 나눠줘요!',
     fractionText: '1/3 (3등분)',
@@ -150,7 +150,7 @@ export const STAGES = [
   {
     level: 5,
     title: '숙련: 1/6 정밀 6등분',
-    customerName: '도촌 펭귄',
+    customerName: '우리학교 펭귄',
     customerAvatar: '🐧',
     customerSpeech: '피자 파티 시작! 3번의 멋진 칼질로 피자를 똑같이 6조각(1/6)으로 나누고, 각 조각에 파프리카 1개씩 넣어주세요!',
     fractionText: '1/6 (6등분)',
@@ -172,7 +172,7 @@ export const STAGES = [
   {
     level: 6,
     title: '스페셜: 콤비네이션 4등분',
-    customerName: '도촌 여우',
+    customerName: '우리학교 여우',
     customerAvatar: '🦊',
     customerSpeech: '페퍼로니 1개와 버섯 1개가 모든 조각에 동시에 들어가도록 4조각(1/4)으로 깔끔하게 등분해주세요!',
     fractionText: '1/4 (4등분)',
@@ -197,7 +197,7 @@ export const STAGES = [
   {
     level: 7,
     title: '마스터: 1/8 대형 8등분',
-    customerName: '도촌 사자',
+    customerName: '우리학교 사자',
     customerAvatar: '🦁',
     customerSpeech: '우와! 8명의 친구들이 기다려요! 4번의 직선 컷팅으로 완벽한 8등분(1/8)을 만들고 올리브를 1개씩 채워주세요!',
     fractionText: '1/8 (8등분)',
@@ -221,7 +221,7 @@ export const STAGES = [
   {
     level: 8,
     title: '이탈리안: 마르게리타 6등분',
-    customerName: '도촌 부엉이',
+    customerName: '우리학교 부엉이',
     customerAvatar: '🦉',
     customerSpeech: '신선한 생바질과 방울토마토가 조화로운 6조각(1/6) 피자를 주문합니다! 각 조각에 바질과 토마토가 1개씩 쏙!',
     fractionText: '1/6 (6등분)',
@@ -250,7 +250,7 @@ export const STAGES = [
   {
     level: 9,
     title: '올스타: 3색 토핑 8등분',
-    customerName: '도촌 판다',
+    customerName: '우리학교 판다',
     customerAvatar: '🐼',
     customerSpeech: '페퍼로니, 올리브, 파프리카가 골고루 어우러진 8등분(1/8) 최고급 피자를 부탁해요! 칼질 4번으로 성공해보세요!',
     fractionText: '1/8 (8등분)',
@@ -279,9 +279,9 @@ export const STAGES = [
   {
     level: 10,
     title: '그랜드 마스터: 셰프 승급전',
-    customerName: '도촌 마스터 셰프',
+    customerName: '우리학교 마스터 셰프',
     customerAvatar: '👨‍🍳',
-    customerSpeech: '마지막 관문일세! 8조각(1/8)으로 오차 없이 완벽하게 분할하고 전설의 도촌 피자 마스터 칭호를 획득하게!',
+    customerSpeech: '마지막 관문일세! 8조각(1/8)으로 오차 없이 완벽하게 분할하고 전설의 우리학교 피자 마스터 칭호를 획득하게!',
     fractionText: '1/8 (8등분)',
     targetSlices: 8,
     maxCuts: 4,

@@ -1,4 +1,4 @@
-// Pure Web Audio API Sound Synthesizer for Dochon Cricket Game
+// Pure Web Audio API Sound Synthesizer for Our School Cricket Game
 // No external mp3/wav files required, zero latency, 100% reliable
 
 class CricketAudioEngine {

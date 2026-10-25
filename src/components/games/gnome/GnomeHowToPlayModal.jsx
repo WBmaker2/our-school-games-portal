@@ -15,7 +15,7 @@ export default function GnomeHowToPlayModal({ isOpen, onClose }) {
               <span style={{ fontSize: '24px' }}>🌿</span>
             </div>
             <div>
-              <h2 className="gnome-modal-title">도촌 정원 요정 플레이 가이드</h2>
+              <h2 className="gnome-modal-title">우리학교 정원 요정 플레이 가이드</h2>
               <p className="gnome-modal-subtitle">투석기로 요정을 날려 가장 멀리 비행하고 정원에 꽃을 심어보세요!</p>
             </div>
           </div>

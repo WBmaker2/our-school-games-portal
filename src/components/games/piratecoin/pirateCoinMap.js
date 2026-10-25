@@ -1,4 +1,4 @@
-// Dochon Games Portal - Dochon Pirate Coin Heist Map & Arena Renderer
+// Our School Games Portal - Our School Pirate Coin Heist Map & Arena Renderer
 // Procedural Sea, Golden Treasure Island, Reefs, Team Docks, Whirlpools & Minimap
 
 import {

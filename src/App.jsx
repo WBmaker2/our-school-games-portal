@@ -57,7 +57,7 @@ export default function App() {
     try {
       const d = new Date();
       const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-      const hideDate = localStorage.getItem('dochon_rules_hide_today');
+      const hideDate = localStorage.getItem('school_rules_hide_today');
       return hideDate !== today;
     } catch (e) {
       return true;
@@ -73,7 +73,7 @@ export default function App() {
   const [isMuted, setIsMuted] = useState(() => soundFx.muted);
   const [favorites, setFavorites] = useState(() => {
     try {
-      const saved = localStorage.getItem('dochon_favorites');
+      const saved = localStorage.getItem('school_favorites');
       return saved ? JSON.parse(saved) : [];
     } catch (e) {
       return [];
@@ -83,7 +83,7 @@ export default function App() {
   // Local Play Counts Tracking for Engagement Score
   const [playCounts, setPlayCounts] = useState(() => {
     try {
-      const saved = localStorage.getItem('dochon_play_counts');
+      const saved = localStorage.getItem('school_play_counts');
       return saved ? JSON.parse(saved) : {};
     } catch (e) {
       return {};
@@ -133,7 +133,7 @@ export default function App() {
         ? prev.filter(id => id !== gameId)
         : [...prev, gameId];
       try {
-        localStorage.setItem('dochon_favorites', JSON.stringify(next));
+        localStorage.setItem('school_favorites', JSON.stringify(next));
       } catch (e) {}
       return next;
     });
@@ -143,7 +143,7 @@ export default function App() {
     setPlayCounts(prev => {
       const next = { ...prev, [gameId]: (prev[gameId] || 0) + 1 };
       try {
-        localStorage.setItem('dochon_play_counts', JSON.stringify(next));
+        localStorage.setItem('school_play_counts', JSON.stringify(next));
       } catch (e) {}
       return next;
     });
@@ -226,7 +226,7 @@ export default function App() {
   }, []);
 
   const featuredGame = PLAYABLE_GAMES[featuredGameIndex] || PLAYABLE_GAMES[0];
-  const featuredChampion = topScores[featuredGame.id] || { name: '도촌 학생', score: 0 };
+  const featuredChampion = topScores[featuredGame.id] || { name: '우리 학교 학생', score: 0 };
   const featuredScoreUnit = featuredGame.scoreUnit || (featuredGame.id === 'dino' ? 'm' : '점');
 
   const getChallengeBtnText = (game) => {
@@ -237,7 +237,7 @@ export default function App() {
     if (game.id === 'minesweeper') return '🔥 지뢰찾기 챔피언에 도전하기';
     if (game.id === 'baseball') return '🔥 야구왕 챔피언에 도전하기';
     if (game.id === 'tetris') return '🔥 테트리스 챔피언에 도전하기';
-    return `🔥 ${game.title.replace('도촌 ', '')} 챔피언에 도전하기`;
+    return `🔥 ${game.title.replace('우리학교 ', '').replace('우리 학교 ', '').replace('도촌 ', '')} 챔피언에 도전하기`;
   };
 
   return (
@@ -249,12 +249,12 @@ export default function App() {
           <div className="portal-title-heading-row">
             <span className="portal-title-icon animate-bounce">🎮</span>
             <h1 className="portal-title-text">
-              DOCHON GAMES <span className="text-amber-400">PORTAL</span>
+              OUR SCHOOL GAMES <span className="text-amber-400">PORTAL</span>
             </h1>
             <span className="portal-title-icon animate-bounce">✨</span>
           </div>
           <p className="portal-subtitle-text">
-            도촌초등학교 아케이드 게임 종합 포털
+            우리 학교 아케이드 게임 종합 포털
           </p>
         </div>
 
@@ -295,7 +295,7 @@ export default function App() {
             <button
               onClick={() => setIsGuideOpen(true)}
               className="btn-guide shadow-md flex items-center gap-1.5"
-              title="도촌 게임 포털 이용안내 확인하기"
+              title="우리 학교 게임 포털 이용안내 확인하기"
             >
               <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
               <span>이용안내</span>
@@ -305,7 +305,7 @@ export default function App() {
             <button
               onClick={() => setIsRulesOpen(true)}
               className="btn-rules shadow-md flex items-center gap-1.5"
-              title="도촌초 게임 이용 및 안전 수칙 확인하기"
+              title="우리 학교 게임 이용 및 안전 수칙 확인하기"
             >
               <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
               <span>이용수칙</span>
@@ -346,7 +346,7 @@ export default function App() {
                   👑 {featuredGame.title} 1위 챔피언&nbsp;&nbsp;
                 </span>
                 <span className="portal-hero-champion-name">
-                  {featuredChampion.name || '도촌 학생'}
+                  {featuredChampion.name || '우리 학교 학생'}
                   <strong className="portal-hero-champion-score">
                     ({featuredChampion.score ? featuredChampion.score.toLocaleString() : 0}{featuredScoreUnit})
                   </strong>
@@ -527,7 +527,7 @@ export default function App() {
         {/* SECTION SEPARATOR LINE DIVIDER */}
         <div className="portal-divider">
           <span className="portal-divider-badge">
-            Dochon Arcade Matrix
+            School Arcade Matrix
           </span>
         </div>
 
@@ -592,7 +592,7 @@ export default function App() {
                 <span style={{ fontSize: '1.05rem', fontWeight: 900, color: '#FBBF24' }}>
                   {(() => {
                     const g = PLAYABLE_GAMES.find(item => item.id === activeGame);
-                    return g ? `${g.iconEmoji || '🎮'} ${g.title} (${g.englishTitle || g.title})` : '도촌 게임';
+                    return g ? `${g.iconEmoji || '🎮'} ${g.title} (${g.englishTitle || g.title})` : '우리 학교 게임';
                   })()}
                 </span>
                 <span style={{
@@ -605,7 +605,7 @@ export default function App() {
                   fontWeight: 900,
                   textTransform: 'uppercase'
                 }}>
-                  Dochon Arcade
+                  School Arcade
                 </span>
               </div>
 
@@ -709,7 +709,7 @@ export default function App() {
 
       {/* 9. Centered Footer */}
       <footer className="portal-footer">
-        <p className="font-bold text-amber-200/80">도촌초등학교 게임 포털</p>
+        <p className="font-bold text-amber-200/80">우리 학교 게임 포털</p>
         <p className="text-[11px] text-slate-500 mt-1">
           Google Games 타일 방식 모방 · 비영리 초등학교 교육용 아케이드 포털
         </p>

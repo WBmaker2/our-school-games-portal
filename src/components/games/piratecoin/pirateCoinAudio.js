@@ -1,4 +1,4 @@
-// Dochon Games Portal - Dochon Pirate Coin Heist Web Audio Synthesizer
+// Our School Games Portal - Our School Pirate Coin Heist Web Audio Synthesizer
 // 100% Zero-Asset Procedural Audio (Chimes, Ram Impacts, Cannons, Foghorns, Fanfares)
 
 class PirateCoinAudio {

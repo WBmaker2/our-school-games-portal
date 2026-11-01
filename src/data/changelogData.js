@@ -3,11 +3,30 @@
 
 export const CHANGELOG_DATA = [
   {
+    version: 'v2.0.1',
+    date: '2026-11-01',
+    title: '🍿 [우리학교 팝콘] 게임 입장 시 캔버스 렌더링 오류 수정 및 씬 애니메이션 안정성 강화',
+    badge: 'LATEST',
+    badgeColor: 'emerald',
+    items: [
+      {
+        tag: 'BUG FIX',
+        tagColor: 'amber',
+        text: '[게임 화면 렌더링 오류 수정] 서바이벌 시작 시 화면 진동 효과(Screen Shake) 참조 누락으로 인해 화면이 검정색으로 표시되던 현상을 해결하여, 프라이팬 전장과 캐릭터가 즉시 정상 표시되도록 개선'
+      },
+      {
+        tag: 'GRAPHICS OPTIMIZATION',
+        tagColor: 'emerald',
+        text: '[전장 그래픽 및 캔버스 엔진 안정화] 달궈진 프라이팬 배경 이미지 로딩 바인딩을 정상화하고 씬 변환 매트릭스 복원 처리를 보완하여 부드럽고 안정적인 탄막 서바이벌 환경 제공'
+      }
+    ]
+  },
+  {
     version: 'v2.0.0',
     date: '2026-10-25',
     title: '🏫 [우리 학교 게임 포털] 전면 리브랜딩, 서버리스 로컬 스토리지 명예의 전당 전환 및 100% 독립 P2P 멀티플레이어 구축',
-    badge: 'LATEST',
-    badgeColor: 'emerald',
+    badge: 'UPDATE',
+    badgeColor: 'blue',
     items: [
       {
         tag: 'REBRANDING',

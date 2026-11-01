@@ -108,6 +108,7 @@ export default function PopcornGame({ onScoreSubmitted }) {
   const lastItemSpawnRef = useRef(0);
   const freezeTimerRef = useRef(0);
   const spiralAngleRef = useRef(0);
+  const shakeRef = useRef(0);
 
   // Preload Asset Images
   const imagesRef = useRef({});
@@ -206,6 +207,7 @@ export default function PopcornGame({ onScoreSubmitted }) {
     lastItemSpawnRef.current = Date.now();
     freezeTimerRef.current = 0;
     spiralAngleRef.current = 0;
+    shakeRef.current = 0;
 
     initStage(0);
   };
@@ -558,7 +560,7 @@ export default function PopcornGame({ onScoreSubmitted }) {
       }
 
       // Draw Heated Pan Background
-      let panImg = imagesRef.current.pan;
+      let panImg = imagesRef.current.bgPan;
       if (panImg && panImg.complete) {
         ctx.drawImage(panImg, PAN_CENTER_X - PAN_RADIUS - 20, PAN_CENTER_Y - PAN_RADIUS - 20, (PAN_RADIUS + 20) * 2, (PAN_RADIUS + 20) * 2);
       } else {
@@ -645,7 +647,8 @@ export default function PopcornGame({ onScoreSubmitted }) {
         ctx.strokeStyle = '#D97706';
         ctx.stroke();
       }
-      ctx.restore();
+      ctx.restore(); // Restore player save
+      ctx.restore(); // Restore scene save (shake transform)
         }
       } catch (err) {
         console.error('[Popcorn Loop Error]', err);

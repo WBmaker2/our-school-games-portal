@@ -83,6 +83,7 @@ export default function PopcornGame({ onScoreSubmitted }) {
     radius: 20,
     vx: 0,
     vy: 0,
+    hp: PLAYER_CLASSES.KNIGHT.maxHp,
     invincibleTimer: 0,
     skillActiveTimer: 0,
     lastSkillUsed: 0
@@ -105,6 +106,7 @@ export default function PopcornGame({ onScoreSubmitted }) {
   });
 
   const stageTimerRef = useRef(0);
+  const stageWaveTimerRef = useRef(0);
   const lastItemSpawnRef = useRef(0);
   const freezeTimerRef = useRef(0);
   const spiralAngleRef = useRef(0);
@@ -195,6 +197,7 @@ export default function PopcornGame({ onScoreSubmitted }) {
       radius: 20,
       vx: 0,
       vy: 0,
+      hp: classConfig.maxHp,
       invincibleTimer: 60, // 1 second initial spawn invincibility
       skillActiveTimer: 0,
       lastSkillUsed: -999999
@@ -204,6 +207,7 @@ export default function PopcornGame({ onScoreSubmitted }) {
     itemsRef.current = [];
     particlesRef.current = [];
     stageTimerRef.current = 0;
+    stageWaveTimerRef.current = 0;
     lastItemSpawnRef.current = Date.now();
     freezeTimerRef.current = 0;
     spiralAngleRef.current = 0;
@@ -295,7 +299,8 @@ export default function PopcornGame({ onScoreSubmitted }) {
       }
     } else if (selectedClass.id === 'wizard') {
       soundManager.playHeal();
-      setHp(prev => Math.min(maxHp, prev + 1));
+      playerRef.current.hp = Math.min(maxHp, playerRef.current.hp + 1);
+      setHp(playerRef.current.hp);
       const clearRadius = 220;
       bulletsRef.current = bulletsRef.current.filter(b => {
         const dist = Math.hypot(b.x - playerRef.current.x, b.y - playerRef.current.y);
@@ -449,9 +454,11 @@ export default function PopcornGame({ onScoreSubmitted }) {
           }
         }
       } else {
-        // Stage 1 Perimeter Ring Waves
-        spiralAngleRef.current += 0.03;
-        if (Math.random() < 0.05) {
+        // Stage 1 Perimeter Ring Waves (Controlled interval)
+        stageWaveTimerRef.current += dt * 1000;
+        if (stageWaveTimerRef.current >= currentStageCfg.spawnInterval) {
+          stageWaveTimerRef.current = 0;
+          soundManager.playPop();
           const ring = createRingPattern(PAN_CENTER_X, PAN_CENTER_Y - 40, 8, currentStageCfg.bulletSpeed, 'butter');
           bulletsRef.current.push(...ring);
         }
@@ -471,7 +478,8 @@ export default function PopcornGame({ onScoreSubmitted }) {
           soundManager.playItem();
           setScore(sc => sc + item.type.score);
           if (item.type.id === 'heart') {
-            setHp(h => Math.min(maxHp, h + 1));
+            playerRef.current.hp = Math.min(maxHp, playerRef.current.hp + 1);
+            setHp(playerRef.current.hp);
           } else if (item.type.id === 'ice') {
             freezeTimerRef.current = item.type.freezeTime;
           }
@@ -504,14 +512,16 @@ export default function PopcornGame({ onScoreSubmitted }) {
           if (b.type === 'reflect') return false; // Reflected bullets don't hurt
           if (player.invincibleTimer <= 0) {
             soundManager.playHit();
-            setHp(h => {
-              const next = h - b.damage;
-              if (next <= 0) {
-                setGameState('gameover');
-                soundManager.playVictory();
-              }
-              return Math.max(0, next);
-            });
+            playerRef.current.hp = Math.max(0, playerRef.current.hp - b.damage);
+            const remainingHp = playerRef.current.hp;
+            setHp(remainingHp);
+
+            if (remainingHp <= 0) {
+              soundManager.playGameOver();
+              setGameState('gameover');
+              return false;
+            }
+
             player.invincibleTimer = 60; // 1 second invulnerability
 
             // Screen shake
@@ -520,7 +530,7 @@ export default function PopcornGame({ onScoreSubmitted }) {
             // Damage Particles
             for (let i = 0; i < 12; i++) {
               particlesRef.current.push(
-                new Particle(player.x, player.y, (Math.random() - 0.5) * 8, (Math.random() - 0.5) * 8, '#EF4444', 5, 25)
+                new Particle(player.x, player.y, (Math.random() - 0.5) * 8, (Math.random() - 0.5) * 8, '#EF4444', 5, 25, 25)
               );
             }
           }
@@ -559,10 +569,24 @@ export default function PopcornGame({ onScoreSubmitted }) {
         if (shakeRef.current < 0.5) shakeRef.current = 0;
       }
 
-      // Draw Heated Pan Background
+      // Draw Heated Pan Background (Crop center square to maintain 1:1 circular aspect)
       let panImg = imagesRef.current.bgPan;
-      if (panImg && panImg.complete) {
-        ctx.drawImage(panImg, PAN_CENTER_X - PAN_RADIUS - 20, PAN_CENTER_Y - PAN_RADIUS - 20, (PAN_RADIUS + 20) * 2, (PAN_RADIUS + 20) * 2);
+      if (panImg && panImg.complete && panImg.naturalWidth > 0) {
+        const sSize = Math.min(panImg.naturalWidth, panImg.naturalHeight);
+        const sx = (panImg.naturalWidth - sSize) / 2;
+        const sy = (panImg.naturalHeight - sSize) / 2;
+        const arenaSize = (PAN_RADIUS + 20) * 2;
+        ctx.drawImage(
+          panImg,
+          sx,
+          sy,
+          sSize,
+          sSize,
+          PAN_CENTER_X - PAN_RADIUS - 20,
+          PAN_CENTER_Y - PAN_RADIUS - 20,
+          arenaSize,
+          arenaSize
+        );
       } else {
         ctx.fillStyle = '#1E293B';
         ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);

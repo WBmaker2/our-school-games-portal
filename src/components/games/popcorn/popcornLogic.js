@@ -246,7 +246,7 @@ export const soundManager = new SoundManager();
 
 // --- Particle Engine ---
 export class Particle {
-  constructor(x, y, vx, vy, color, radius, life, maxLife, shape = 'circle') {
+  constructor(x, y, vx, vy, color, radius, life = 30, maxLife = life, shape = 'circle') {
     this.x = x;
     this.y = y;
     this.vx = vx;
@@ -254,7 +254,7 @@ export class Particle {
     this.color = color;
     this.radius = radius;
     this.life = life;
-    this.maxLife = maxLife;
+    this.maxLife = maxLife || life;
     this.shape = shape; // 'circle' | 'star' | 'heart' | 'smoke'
   }
 
@@ -262,6 +262,10 @@ export class Particle {
     this.x += this.vx;
     this.y += this.vy;
     this.life--;
+  }
+
+  isDead() {
+    return this.life <= 0;
   }
 
   draw(ctx) {

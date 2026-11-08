@@ -295,6 +295,21 @@ class GhoulDuelAudioEngine {
       osc.stop(now + 0.45);
     });
   }
+  // Final 10 Seconds Warning Beep (alias)
+  playTimeWarning() {
+    this.playCountdownBeep();
+  }
+
+  // Match Victory Fanfare (alias)
+  playMatchVictory() {
+    this.playVictory();
+  }
+
+  // Match Defeat Tone (alias)
+  playMatchDefeat() {
+    this.playDefeat();
+  }
+
 }
 
 export const ghoulAudio = new GhoulDuelAudioEngine();

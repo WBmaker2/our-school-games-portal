@@ -364,7 +364,7 @@ export class GhoulDuelLogic {
     // Audio warning when time is low
     const currentSecond = Math.ceil(this.matchTime);
     if (currentSecond <= 10 && currentSecond < this.lastSecond && currentSecond > 0) {
-      ghoulAudio.playTimeWarning();
+      try { ghoulAudio.playTimeWarning(); } catch (e) {}
     }
     this.lastSecond = currentSecond;
 

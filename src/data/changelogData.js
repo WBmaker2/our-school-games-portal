@@ -3,11 +3,30 @@
 
 export const CHANGELOG_DATA = [
   {
+    version: 'v2.0.2',
+    date: '2026-11-08',
+    title: '👻 [우리학교 영혼 대결] 10초 전 경기 멈춤 현상 수정 및 게임오버 오디오 오류 해결',
+    badge: 'LATEST',
+    badgeColor: 'emerald',
+    items: [
+      {
+        tag: 'BUG FIX',
+        tagColor: 'amber',
+        text: '[10초 전 경기 멈춤 해결] 시간 경고 음성(playTimeWarning) 함수가 존재하지 않아 매 프레임 예외가 발생하고 lastSecond가 갱신되지 않으면서 경기 종료 10초 전부터 화면이 정지되던 문제를 수정 (오디오 함수명 정합성 확보 + 예외 가드 추가)'
+      },
+      {
+        tag: 'BUG FIX',
+        tagColor: 'amber',
+        text: '[게임오버 오디오 오류 해결] 경기 종료 시 playMatchVictory/playMatchDefeat 함수 미구현으로 발생하던 Uncaught TypeError를 해결하여 정상적인 승리/패배 효과음 재생'
+      }
+    ]
+  },
+  {
     version: 'v2.0.1',
     date: '2026-11-01',
     title: '🍿 [우리학교 팝콘] 게임 화면 멈춤 및 렌더링 오류 전면 수정 & 그래픽 비율 최적화',
-    badge: 'LATEST',
-    badgeColor: 'emerald',
+    badge: 'UPDATE',
+    badgeColor: 'blue',
     items: [
       {
         tag: 'BUG FIX',
